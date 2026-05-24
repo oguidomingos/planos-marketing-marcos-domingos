@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Planos de Marketing — Marcos Domingos</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    background: #0f0f1a;
+    color: #e0e0e0;
+    line-height: 1.6;
+    min-height: 100vh;
+  }
+  .bg-ambient {
+    position: fixed;
+    inset: 0;
+    z-index: 0;
+    background: radial-gradient(ellipse at 20% 30%, rgba(212,123,42,0.08) 0%, transparent 50%),
+                radial-gradient(ellipse at 80% 20%, rgba(192,57,43,0.08) 0%, transparent 50%),
+                radial-gradient(ellipse at 50% 80%, rgba(41,128,185,0.08) 0%, transparent 50%);
+    pointer-events: none;
+  }
+  .container { position: relative; z-index: 1; max-width: 1100px; margin: 0 auto; padding: 4rem 2rem; }
+  header {
+    text-align: center;
+    padding: 3rem 0 4rem;
+    border-bottom: 1px solid rgba(255,255,255,0.06);
+    margin-bottom: 4rem;
+  }
+  header h1 {
+    font-size: clamp(2rem, 5vw, 3.5rem);
+    font-weight: 800;
+    background: linear-gradient(135deg, #e0e0e0 0%, #888 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    margin-bottom: 0.5rem;
+  }
+  header p {
+    font-size: 1.2rem;
+    color: #666;
+    font-weight: 400;
+  }
+  header .date {
+    font-size: 0.9rem;
+    color: #444;
+    margin-top: 0.5rem;
+  }
+  .subtitle {
+    text-align: center;
+    color: #888;
+    font-size: 1.1rem;
+    margin-bottom: 3rem;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+  }
+  .card {
+    background: rgba(255,255,255,0.03);
+    border: 1px solid rgba(255,255,255,0.08);
+    border-radius: 1.5rem;
+    padding: 2.5rem 2rem;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+    text-decoration: none;
+    color: inherit;
+    display: block;
+  }
+  .card:hover {
+    transform: translateY(-4px);
+    border-color: rgba(255,255,255,0.15);
+    background: rgba(255,255,255,0.05);
+    box-shadow: 0 20px 60px rgba(0,0,0,0.4);
+  }
+  .card .accent {
+    width: 60px; height: 4px;
+    border-radius: 2px;
+    margin-bottom: 1.5rem;
+  }
+  .card h2 {
+    font-size: 1.6rem;
+    font-weight: 700;
+    margin-bottom: 0.75rem;
+  }
+  .card p {
+    color: #999;
+    font-size: 0.95rem;
+    line-height: 1.7;
+    margin-bottom: 1.5rem;
+  }
+  .card .tag {
+    display: inline-block;
+    padding: 0.35rem 1rem;
+    border-radius: 100px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    margin-right: 0.5rem;
+    margin-bottom: 0.5rem;
+    background: rgba(255,255,255,0.06);
+    color: #aaa;
+  }
+  .card .cta {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-weight: 600;
+    font-size: 0.95rem;
+    margin-top: 0.5rem;
+  }
+  .card .cta .arrow { transition: transform 0.2s; }
+  .card:hover .cta .arrow { transform: translateX(4px); }
+  .card .icon { font-size: 2.5rem; margin-bottom: 1rem; }
+  .pimel .accent { background: linear-gradient(90deg, #D47B2A, #f0a050); }
+  .pimel .cta { color: #D47B2A; }
+  .linguica .accent { background: linear-gradient(90deg, #C0392B, #e74c3c); }
+  .linguica .cta { color: #e74c3c; }
+  .condel .accent { background: linear-gradient(90deg, #2980B9, #3498db); }
+  .condel .cta { color: #3498db; }
+  .footer {
+    text-align: center;
+    padding: 3rem 0;
+    color: #444;
+    font-size: 0.85rem;
+    border-top: 1px solid rgba(255,255,255,0.06);
+    margin-top: 4rem;
+  }
+  .footer a { color: #666; text-decoration: none; }
+  .footer a:hover { color: #999; }
+  @media (max-width: 600px) {
+    .container { padding: 2rem 1rem; }
+    header { padding: 2rem 0 3rem; }
+    .cards { grid-template-columns: 1fr; }
+    .card { padding: 2rem 1.5rem; }
+  }
+</style>
+</head>
+<body>
+<div class="bg-ambient"></div>
+<div class="container">
+  <header>
+    <h1>Planos de Marketing</h1>
+    <p>Consolidado Comercial</p>
+    <div class="date">Marcos Domingos • Maio 2026</div>
+  </header>
+  
+  <div class="subtitle">
+    Três planos estratégicos completos de marketing e vendas para os negócios da família Domingos. Cada plano contém estratégia de prospecção, scripts comerciais, régua de follow-up, cronograma de implementação e KPIs.
+  </div>
+  
+  <div class="cards">
+    <a href="pimel.html" class="card pimel">
+      <div class="icon">🍯</div>
+      <div class="accent"></div>
+      <h2>PIMEL</h2>
+      <p>Mel e Cera de Abelha — Entreposto com certificação SISBI. Expansão nacional a partir do DF. Atende redes como Atacadão Dia a Dia, Tático e Superbom.</p>
+      <div>
+        <span class="tag">Prospecção 4 quadrantes</span>
+        <span class="tag">WhatsApp Business</span>
+        <span class="tag">Recorrência</span>
+        <span class="tag">Escala Nacional</span>
+      </div>
+      <div class="cta">Ver plano completo <span class="arrow">→</span></div>
+    </a>
+
+    <a href="linguica-exata.html" class="card linguica">
+      <div class="icon">🥩</div>
+      <div class="accent"></div>
+      <h2>Linguiça Exata</h2>
+      <p>Linguiças Artesanais — 25 anos de mercado em Anápolis-GO. Meta de 300kg a 2.000kg/semana. R$6.720 a R$44.800/mês de lucro líquido.</p>
+      <div>
+        <span class="tag">Varejo local</span>
+        <span class="tag">Food Service</span>
+        <span class="tag">WhatsApp B2C</span>
+        <span class="tag">Eventos sazonais</span>
+      </div>
+      <div class="cta">Ver plano completo <span class="arrow">→</span></div>
+    </a>
+
+    <a href="condel.html" class="card condel">
+      <div class="icon">⚡</div>
+      <div class="accent"></div>
+      <h2>Condel</h2>
+      <p>Condutores Elétricos — Distribuidora em Brasília. Meta R$25k no 1º mês, R$65k/mês até o 5º mês. Lojas de material + construtoras + grandes obras.</p>
+      <div>
+        <span class="tag">Lojas de bairro</span>
+        <span class="tag">Construtoras</span>
+        <span class="tag">Prospecção presencial</span>
+        <span class="tag">R$25k → R$65k</span>
+      </div>
+      <div class="cta">Ver plano completo <span class="arrow">→</span></div>
+    </a>
+  </div>
+  
+  <div style="text-align:center;margin-top:4rem;">
+    <a href="Planos-de-Marketing-Consolidado.docx" style="display:inline-flex;align-items:center;gap:0.5rem;padding:0.8rem 2rem;background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);border-radius:100px;color:#ccc;text-decoration:none;font-weight:500;transition:all 0.2s;">
+      📄 Baixar DOCX para impressão
+    </a>
+  </div>
+  
+  <div class="footer">
+    Gerado por CMO Agent — Paperclip<br>
+    <a href="#">Planos de Marketing • Marcos Domingos</a>
+  </div>
+</div>
+</body>
+</html>

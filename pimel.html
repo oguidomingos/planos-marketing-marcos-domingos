@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>PIMEL — Plano de Marketing | Marcos Domingos</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    background: #0f0f1a;
+    color: #e0e0e0;
+    line-height: 1.7;
+  }
+  .topbar {
+    position: sticky; top: 0; z-index: 100;
+    background: rgba(15,15,26,0.92);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgba(255,255,255,0.06);
+    padding: 1rem 2rem;
+    display: flex; align-items: center; gap: 1rem;
+  }
+  .topbar a {
+    color: #666; text-decoration: none; font-size: 0.9rem; font-weight: 500;
+    display: flex; align-items: center; gap: 0.4rem;
+  }
+  .topbar a:hover { color: #D47B2A; }
+  .topbar .brand { margin-left: auto; font-weight: 600; color: #D47B2A; font-size: 0.9rem; }
+  .container { max-width: 900px; margin: 0 auto; padding: 3rem 2rem 6rem; }
+  .hero {
+    text-align: center;
+    padding: 3rem 0;
+    margin-bottom: 3rem;
+  }
+  .hero .icon { font-size: 3.5rem; margin-bottom: 0.5rem; }
+  .hero h1 {
+    font-size: clamp(2rem, 4vw, 3rem);
+    font-weight: 800;
+    color: #D47B2A;
+    margin-bottom: 0.5rem;
+  }
+  .hero .tagline {
+    color: #888;
+    font-size: 1.1rem;
+    max-width: 600px;
+    margin: 0 auto;
+  }
+  .hero .cert {
+    display: inline-block;
+    margin-top: 1rem;
+    padding: 0.4rem 1.2rem;
+    background: rgba(212,123,42,0.12);
+    border: 1px solid rgba(212,123,42,0.25);
+    border-radius: 100px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: #D47B2A;
+  }
+  .section {
+    margin-bottom: 3rem;
+    padding: 2.5rem;
+    background: rgba(255,255,255,0.02);
+    border: 1px solid rgba(255,255,255,0.06);
+    border-radius: 1.2rem;
+  }
+  .section h2 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #D47B2A;
+    margin-bottom: 1.5rem;
+    display: flex; align-items: center; gap: 0.75rem;
+  }
+  .section h3 {
+    font-size: 1.15rem;
+    font-weight: 600;
+    color: #ccc;
+    margin: 1.5rem 0 0.75rem;
+  }
+  .section h3:first-child { margin-top: 0; }
+  .section p { margin-bottom: 1rem; color: #aaa; }
+  .section ul, .section ol { margin: 0.5rem 0 1rem 1.5rem; color: #aaa; }
+  .section li { margin-bottom: 0.4rem; }
+  .highlight-box {
+    background: rgba(212,123,42,0.06);
+    border-left: 3px solid #D47B2A;
+    padding: 1.2rem 1.5rem;
+    border-radius: 0 0.8rem 0.8rem 0;
+    margin: 1.5rem 0;
+    color: #bbb;
+  }
+  .grid-2 {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    margin: 1rem 0;
+  }
+  .stat-card {
+    background: rgba(255,255,255,0.03);
+    border: 1px solid rgba(255,255,255,0.06);
+    border-radius: 0.8rem;
+    padding: 1.2rem;
+    text-align: center;
+  }
+  .stat-card .value { font-size: 1.8rem; font-weight: 800; color: #D47B2A; }
+  .stat-card .label { font-size: 0.85rem; color: #666; margin-top: 0.25rem; }
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 1rem 0;
+    font-size: 0.9rem;
+  }
+  th, td {
+    border: 1px solid rgba(255,255,255,0.08);
+    padding: 0.7rem 1rem;
+    text-align: left;
+  }
+  th { background: rgba(212,123,42,0.1); color: #D47B2A; font-weight: 600; }
+  td { color: #aaa; }
+  code, pre {
+    font-family: 'JetBrains Mono', 'Fira Code', monospace;
+    font-size: 0.85rem;
+  }
+  pre {
+    background: rgba(0,0,0,0.35);
+    border: 1px solid rgba(255,255,255,0.06);
+    border-radius: 0.8rem;
+    padding: 1.2rem 1.5rem;
+    overflow-x: auto;
+    margin: 1rem 0;
+    color: #ccc;
+    white-space: pre-wrap;
+  }
+  .tag-list { display: flex; flex-wrap: wrap; gap: 0.5rem; margin: 1rem 0; }
+  .tag-list span {
+    padding: 0.3rem 0.8rem;
+    background: rgba(212,123,42,0.08);
+    border: 1px solid rgba(212,123,42,0.15);
+    border-radius: 100px;
+    font-size: 0.8rem;
+    color: #D47B2A;
+  }
+  .back-link {
+    display: inline-flex; align-items: center; gap: 0.4rem;
+    color: #666; text-decoration: none; font-weight: 500; padding: 0.5rem 0;
+  }
+  .back-link:hover { color: #D47B2A; }
+  @media (max-width: 600px) {
+    .container { padding: 2rem 1rem; }
+    .section { padding: 1.5rem; }
+    .grid-2 { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+<div class="topbar">
+  <a href="index.html">← Voltar ao índice</a>
+  <span class="brand">PIMEL</span>
+</div>
+<div class="container">
+  
+  <div class="hero">
+    <div class="icon">🍯</div>
+    <h1>PIMEL</h1>
+    <div class="tagline">Plano de Marketing e Expansão — Mel e Cera de Abelha</div>
+    <div class="cert">✅ Certificação SISBI — Venda Nacional</div>
+  </div>
+
+  <div class="section">
+    <h2>📋 Diagnóstico e Posicionamento</h2>
+    <p>A PIMEL é um entreposto de mel e cera de abelha com certificação SISBI — o que permite venda em todo território nacional. Já atende redes como Atacadão Dia a Dia, Tático, Costa Atacado e Superbom no Distrito Federal.</p>
+    <div class="highlight-box">
+      <strong>Diferenciais competitivos:</strong> Certificação SISBI (barreira de entrada), capacidade produtiva consistente, entrega própria no DF, linha completa (mel 1kg, 500g, orgânico, própolis, pólen) e preço competitivo sem intermediação.
+    </div>
+  </div>
+
+  <div class="section">
+    <h2>🗺️ Estratégia de Prospecção</h2>
+    <p><strong>Mapa de Quadrantes do DF:</strong> divisão da cidade em 4 regiões + 1 dia digital, com metas diárias claras.</p>
+    <table>
+      <tr><th>Dia</th><th>Quadrante</th><th>Foco</th><th>Meta</th></tr>
+      <tr><td>Segunda</td><td>Norte</td><td>Visitas presenciais</td><td>10 leads</td></tr>
+      <tr><td>Terça</td><td>Sul</td><td>Visitas presenciais</td><td>10 leads</td></tr>
+      <tr><td>Quarta</td><td>Oeste</td><td>Visitas presenciais</td><td>10 leads</td></tr>
+      <tr><td>Quinta</td><td>Entorno</td><td>Visitas presenciais</td><td>10 leads</td></tr>
+      <tr><td>Sexta</td><td>Digital</td><td>Follow-ups + GMaps + DMs + LinkedIn</td><td>Métricas</td></tr>
+    </table>
+    <p><strong>Busca avançada por segmento no Google Maps:</strong> mercados, padarias, lojas naturais, restaurantes, empórios, distribuidoras, quitandas — cada quadrante tem seu foco semanal.</p>
+    <p><strong>Metas:</strong> 10 novos leads/dia → 50/semana → 200/mês.</p>
+  </div>
+
+  <div class="section">
+    <h2>📱 Canais de Abordagem</h2>
+    <div class="tag-list">
+      <span>WhatsApp Business</span>
+      <span>Instagram Direct</span>
+      <span>LinkedIn</span>
+      <span>Google Maps</span>
+      <span>Visita presencial</span>
+    </div>
+    <p><strong>WhatsApp Business:</strong> Catálogo completo de produtos, etiquetas de lead, listas de transmissão por quadrante.</p>
+    <p><strong>Instagram:</strong> Perfil comercial, conteúdo de bastidores, DMs para restaurantes e lojas naturais com tom leve e visual.</p>
+    <p><strong>LinkedIn:</strong> Perfil comercial do Marcos, conexões com gerentes de compras, conteúdo técnico sobre SISBI.</p>
+  </div>
+
+  <div class="section">
+    <h2>💬 Scripts de Abordagem</h2>
+    <h3>WhatsApp — Primeiro Contato (Frio)</h3>
+    <pre>Olá, [nome/estabelecimento]! Aqui é Marcos, da PIMEL Mel.
+
+Somos um entreposto de mel com certificação SISBI — produzimos e
+distribuímos mel puro direto para o varejo. Já atendemos Atacadão
+Dia a Dia, Tático, Superbom e outras redes do DF.
+
+Gostaria de saber: vocês trabalham com mel? Posso mandar nossa
+tabela de preços e condições para avaliação?</pre>
+    
+    <h3>Instagram DM — Restaurantes e Lojas Naturais</h3>
+    <pre>Olá! Acompanho o trabalho de vocês aqui no Instagram e achei super
+alinhado com o que fazemos na PIMEL.
+
+Somos produtores de mel com SISBI (venda nacional) e temos uma
+linha que combina super com o perfil do estabelecimento de vocês
+— mel orgânico, própolis, pólen.
+
+Posso mandar mais informações? 😊</pre>
+
+    <h3>E-mail / LinkedIn — Redes Grandes</h3>
+    <pre>Assunto: PIMEL SISBI — Parceria Mel
+
+Olá [Nome], tudo bem?
+
+Meu nome é Marcos Domingos, sou representante da PIMEL,
+entreposto de mel e cera de abelha com certificação SISBI
+— o que significa que podemos vender em todo território
+nacional com rastreabilidade total.
+
+Hoje atendemos redes como Atacadão Dia a Dia, Tático,
+Costa Atacado e Superbom no DF. Estamos estruturando
+expansão para outros estados.</pre>
+  </div>
+
+  <div class="section">
+    <h2>📅 Fluxo de Follow-up e Cadência</h2>
+    <table>
+      <tr><th>Dia</th><th>Canal</th><th>Ação</th><th>Gatilho</th></tr>
+      <tr><td>D0</td><td>WhatsApp/DM</td><td>Primeiro contato com tabela</td><td>—</td></tr>
+      <tr><td>D2</td><td>WhatsApp</td><td>Reforço: oferta de amostra grátis</td><td>Não respondeu</td></tr>
+      <tr><td>D5</td><td>WhatsApp</td><td>Follow-up consultivo</td><td>Respondeu mas não fechou</td></tr>
+      <tr><td>D10</td><td>WhatsApp/Visita</td><td>Último contato + amostra</td><td>Neutro/morno</td></tr>
+      <tr><td>D30</td><td>WhatsApp</td><td>Reativação: novidades</td><td>Sem resposta desde D10</td></tr>
+    </table>
+    <p><strong>Regras de negócio:</strong> Lead que fecha → cadência de recorrência. "Não agora" → neutro D5. Nunca abriu → 1 ligação extra. Parou de comprar → reativação D30.</p>
+  </div>
+
+  <div class="section">
+    <h2>🔄 Estratégia de Recorrência e Fidelização</h2>
+    <h3>Frequência de Recompra por Tipo de Cliente</h3>
+    <table>
+      <tr><th>Tipo</th><th>Ticket Médio</th><th>Frequência</th></tr>
+      <tr><td>Supermercado médio</td><td>50-200 un/mês</td><td>Quinzenal</td></tr>
+      <tr><td>Padaria</td><td>10-30 un/mês</td><td>Semanal</td></tr>
+      <tr><td>Loja Natural</td><td>20-60 un/mês</td><td>Quinzenal</td></tr>
+      <tr><td>Farmácia</td><td>30-100 un/mês</td><td>Mensal</td></tr>
+      <tr><td>Restaurante</td><td>5-15 un/mês</td><td>Quinzenal</td></tr>
+      <tr><td>Indústria (balde 25kg)</td><td>200-1000kg/mês</td><td>Mensal</td></tr>
+    </table>
+    
+    <h3>Programa de Fidelidade</h3>
+    <p><strong>Bronze</strong> (3 meses): Prioridade na entrega + 10 unidades de mel 200g para degustação.<br>
+    <strong>Prata</strong> (6 meses): Preço diferenciado em linha orgânica + material de PDV.<br>
+    <strong>Ouro</strong> (12 meses): Condição especial em balde 25kg + visita mensal exclusiva + Cesta de Mel no fim do ano.</p>
+    
+    <p><strong>Cross-sell:</strong> Mel → Própolis → Pólen → Balde 25kg. Script de reposição automática incluso.</p>
+  </div>
+
+  <div class="section">
+    <h2>🌎 Estratégia de Escala Nacional</h2>
+    <table>
+      <tr><th>Fase</th><th>Prazo</th><th>Foco</th></tr>
+      <tr><td>Fase 1</td><td>Mês 1-3</td><td>DF consolidado + GO</td></tr>
+      <tr><td>Fase 2</td><td>Mês 4-6</td><td>GO + MG (Triângulo)</td></tr>
+      <tr><td>Fase 3</td><td>Mês 7-9</td><td>SP interior (distribuidor)</td></tr>
+      <tr><td>Fase 4</td><td>Mês 10-12</td><td>SP capital + RJ (redes nacionais)</td></tr>
+    </table>
+    <p><strong>Estados prioritários:</strong> GO, MG, SP, RJ, BA.</p>
+    <p><strong>Documentos necessários:</strong> Portfólio digital, apresentação corporativa (5 slides), tabela nacional, laudos por lote, certificado SISBI, kit executivo.</p>
+  </div>
+
+  <div class="section">
+    <h2>📆 Calendário Semanal Tipo</h2>
+    <table>
+      <tr><th>Horário</th><th>Seg (Norte)</th><th>Ter (Sul)</th><th>Qua (Oeste)</th><th>Qui (Entorno)</th><th>Sex (Digital)</th></tr>
+      <tr><td>08-09</td><td>Preparação</td><td>Preparação</td><td>Preparação</td><td>Preparação</td><td>Planejamento</td></tr>
+      <tr><td>09-12</td><td>3 visitas</td><td>3 visitas</td><td>3 visitas</td><td>3 visitas</td><td>Follow-ups</td></tr>
+      <tr><td>13-15</td><td>Porta-a-porta</td><td>Porta-a-porta</td><td>Porta-a-porta</td><td>Porta-a-porta</td><td>GMaps + DMs</td></tr>
+      <tr><td>15-17</td><td>Fechamento</td><td>Fechamento</td><td>Fechamento</td><td>Fechamento</td><td>LinkedIn + métricas</td></tr>
+    </table>
+    
+    <h3>Checklist Semana 1</h3>
+    <p>Dias 1-2: Configurar WhatsApp Business, etiquetas, Instagram, portfólio digital, kit amostras.<br>
+    Dias 3-5: Mapear 50 leads GMaps (Norte), enviar 20 contatos WhatsApp, agendar 5 visitas.<br>
+    Dias 6-7: Avaliar taxa de resposta, ajustar scripts, planejar Semana 2 (Sul).</p>
+  </div>
+
+  <a href="index.html" class="back-link">← Voltar ao índice</a>
+</div>
+</body>
+</html>

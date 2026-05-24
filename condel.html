@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Condel — Plano de Marketing | Marcos Domingos</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    background: #0f0f1a;
+    color: #e0e0e0;
+    line-height: 1.7;
+  }
+  .topbar {
+    position: sticky; top: 0; z-index: 100;
+    background: rgba(15,15,26,0.92);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgba(255,255,255,0.06);
+    padding: 1rem 2rem;
+    display: flex; align-items: center; gap: 1rem;
+  }
+  .topbar a {
+    color: #666; text-decoration: none; font-size: 0.9rem; font-weight: 500;
+    display: flex; align-items: center; gap: 0.4rem;
+  }
+  .topbar a:hover { color: #3498db; }
+  .topbar .brand { margin-left: auto; font-weight: 600; color: #3498db; font-size: 0.9rem; }
+  .container { max-width: 900px; margin: 0 auto; padding: 3rem 2rem 6rem; }
+  .hero {
+    text-align: center;
+    padding: 3rem 0;
+    margin-bottom: 3rem;
+  }
+  .hero .icon { font-size: 3.5rem; margin-bottom: 0.5rem; }
+  .hero h1 {
+    font-size: clamp(2rem, 4vw, 3rem);
+    font-weight: 800;
+    color: #3498db;
+    margin-bottom: 0.5rem;
+  }
+  .hero .tagline {
+    color: #888;
+    font-size: 1.1rem;
+    max-width: 600px;
+    margin: 0 auto;
+  }
+  .hero .meta {
+    display: inline-flex; gap: 1.5rem; margin-top: 1.5rem; flex-wrap: wrap; justify-content: center;
+  }
+  .hero .meta-item { text-align: center; }
+  .hero .meta-item .val { font-size: 1.6rem; font-weight: 800; color: #3498db; }
+  .hero .meta-item .lbl { font-size: 0.8rem; color: #666; }
+  .section {
+    margin-bottom: 3rem;
+    padding: 2.5rem;
+    background: rgba(255,255,255,0.02);
+    border: 1px solid rgba(255,255,255,0.06);
+    border-radius: 1.2rem;
+  }
+  .section h2 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #3498db;
+    margin-bottom: 1.5rem;
+    display: flex; align-items: center; gap: 0.75rem;
+  }
+  .section h3 {
+    font-size: 1.15rem;
+    font-weight: 600;
+    color: #ccc;
+    margin: 1.5rem 0 0.75rem;
+  }
+  .section p { margin-bottom: 1rem; color: #aaa; }
+  .section ul, .section ol { margin: 0.5rem 0 1rem 1.5rem; color: #aaa; }
+  .section li { margin-bottom: 0.4rem; }
+  .highlight-box {
+    background: rgba(41,128,185,0.06);
+    border-left: 3px solid #3498db;
+    padding: 1.2rem 1.5rem;
+    border-radius: 0 0.8rem 0.8rem 0;
+    margin: 1.5rem 0;
+    color: #bbb;
+  }
+  .pillars {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 1rem;
+    margin: 1.5rem 0;
+  }
+  .pillar {
+    background: rgba(255,255,255,0.03);
+    border: 1px solid rgba(255,255,255,0.08);
+    border-radius: 1rem;
+    padding: 1.5rem;
+    text-align: center;
+  }
+  .pillar .icon-big { font-size: 2rem; margin-bottom: 0.5rem; }
+  .pillar .name { font-weight: 600; color: #3498db; margin-bottom: 0.3rem; }
+  .pillar .desc { font-size: 0.85rem; color: #666; }
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 1rem 0;
+    font-size: 0.9rem;
+  }
+  th, td {
+    border: 1px solid rgba(255,255,255,0.08);
+    padding: 0.7rem 1rem;
+    text-align: left;
+  }
+  th { background: rgba(41,128,185,0.1); color: #3498db; font-weight: 600; }
+  td { color: #aaa; }
+  pre {
+    font-family: 'JetBrains Mono', 'Fira Code', monospace;
+    font-size: 0.85rem;
+    background: rgba(0,0,0,0.35);
+    border: 1px solid rgba(255,255,255,0.06);
+    border-radius: 0.8rem;
+    padding: 1.2rem 1.5rem;
+    overflow-x: auto;
+    margin: 1rem 0;
+    color: #ccc;
+    white-space: pre-wrap;
+  }
+  .tag-list { display: flex; flex-wrap: wrap; gap: 0.5rem; margin: 1rem 0; }
+  .tag-list span {
+    padding: 0.3rem 0.8rem;
+    background: rgba(41,128,185,0.08);
+    border: 1px solid rgba(41,128,185,0.15);
+    border-radius: 100px;
+    font-size: 0.8rem;
+    color: #3498db;
+  }
+  .back-link {
+    display: inline-flex; align-items: center; gap: 0.4rem;
+    color: #666; text-decoration: none; font-weight: 500; padding: 0.5rem 0;
+  }
+  .back-link:hover { color: #3498db; }
+  @media (max-width: 600px) {
+    .container { padding: 2rem 1rem; }
+    .section { padding: 1.5rem; }
+  }
+</style>
+</head>
+<body>
+<div class="topbar">
+  <a href="index.html">← Voltar ao índice</a>
+  <span class="brand">Condel</span>
+</div>
+<div class="container">
+  
+  <div class="hero">
+    <div class="icon">⚡</div>
+    <h1>Condel Condutores Elétricos</h1>
+    <div class="tagline">Distribuidora de Fios e Cabos — Brasília-DF</div>
+    <div class="meta">
+      <div class="meta-item"><div class="val">R$25k</div><div class="lbl">Meta 1º mês</div></div>
+      <div class="meta-item"><div class="val">R$65k</div><div class="lbl">Meta 5º mês</div></div>
+      <div class="meta-item"><div class="val">N/DF</div><div class="lbl">Entrega mesmo dia</div></div>
+    </div>
+  </div>
+
+  <div class="section">
+    <h2>📋 Posicionamento</h2>
+    <p>Distribuidora de fios e cabos elétricos com depósito próprio em Brasília. Vantagem competitiva direta: estoque local + entrega no mesmo dia + preço de distribuidor (sem atravessador).</p>
+    
+    <div class="pillars">
+      <div class="pillar">
+        <div class="icon-big">🚚</div>
+        <div class="name">Entrega no Mesmo Dia</div>
+        <div class="desc">DF e entorno. Não precisa esperar caminhão chegar de fora.</div>
+      </div>
+      <div class="pillar">
+        <div class="icon-big">💰</div>
+        <div class="name">Preço Competitivo</div>
+        <div class="desc">Distribuidor direto, sem atravessador. Melhor margem pro lojista.</div>
+      </div>
+      <div class="pillar">
+        <div class="icon-big">🏭</div>
+        <div class="name">Depósito Próprio</div>
+        <div class="desc">Estoque local em Brasília. Menos ICMS, mais agilidade.</div>
+      </div>
+      <div class="pillar">
+        <div class="icon-big">✅</div>
+        <div class="name">Linha INMETRO</div>
+        <div class="desc">Certificação para memoriais descritivos e vistorias CREA.</div>
+      </div>
+    </div>
+
+    <p><strong>3 perfis de cliente:</strong> Lojas de material de construção (ticket R$300-500), construtoras/empreiteiros (R$1.500-3.000), grandes obras/redes (R$5.000+).</p>
+  </div>
+
+  <div class="section">
+    <h2>📅 Cronograma de 30 Dias — R$25.000</h2>
+    
+    <h3>Semana 1 (25-31 maio): Fundação</h3>
+    <p><strong>Objetivo:</strong> Prospectar 30 lojas de bairro. Portfólio impresso + amostra física (tato convence mais que PDF). WhatsApp com oferta de tabela.</p>
+    <p><strong>Meta:</strong> 30 visitas, 10 lojas comprando, R$3.000 faturados.</p>
+
+    <h3>Semana 2 (1-7 junho): Indicações + Digital</h3>
+    <p><strong>Objetivo:</strong> Clientes da Semana 1 indicarem outras lojas. Iniciar prospecção digital (Instagram + OLX). Iniciar prospecção de obras.</p>
+    <p><strong>Meta:</strong> +5 lojas, R$5.250. Acumulado: R$8.250.</p>
+
+    <h3>Semana 3 (8-14 junho): Grandes Contas</h3>
+    <p><strong>Objetivo:</strong> Visitar 3 construtoras de médio porte. Oferecer amostra grátis para engenheiro responsável ("testa nosso fio na sua obra").</p>
+    <p><strong>Meta:</strong> +2 construtoras. Ticket médio R$2.000. Acumulado: R$12.250.</p>
+
+    <h3>Semana 4 (15-21 junho): Fechamento</h3>
+    <p><strong>Objetivo:</strong> Campanha de reposição para lojas que compraram. Visitar 10 novas lojas (zona norte). Orçamentos para +5 construtoras. Dia de fechamento.</p>
+    <p><strong>Meta:</strong> R$12.750 na semana. <strong>Total Mês 1: R$25.000 batido.</strong></p>
+
+    <h3>Semana 5 (Bônus 22-30 junho): Transição</h3>
+    <p>Reabastecer lojas fiéis. Mapear 5 grandes redes. Preparar material institucional.</p>
+  </div>
+
+  <div class="section">
+    <h2>📈 Escala — R$65k/mês (5 meses)</h2>
+
+    <table>
+      <tr><th>Segmento</th><th>Mês 1-2</th><th>Mês 3</th><th>Mês 4-5</th><th>Ticket</th></tr>
+      <tr><td>Lojas de bairro</td><td>25 clientes</td><td>40</td><td>50</td><td>R$400</td></tr>
+      <tr><td>Pequenas construtoras</td><td>3</td><td>8</td><td>15</td><td>R$1.500</td></tr>
+      <tr><td>Médias construtoras</td><td>—</td><td>2</td><td>5</td><td>R$3.000</td></tr>
+      <tr><td>Grandes obras/redes</td><td>—</td><td>—</td><td>2</td><td>R$5.000+</td></tr>
+    </table>
+
+    <table>
+      <tr><th>Mês</th><th>Faturamento</th></tr>
+      <tr><td>1 (Jun)</td><td>R$15.000 (período parcial)</td></tr>
+      <tr><td>2 (Jul)</td><td>R$23.500</td></tr>
+      <tr><td>3 (Ago)</td><td>R$32.400</td></tr>
+      <tr><td>4 (Set)</td><td>R$46.500</td></tr>
+      <tr><td>5 (Out)</td><td><strong>R$65.000 ✅</strong></td></tr>
+    </table>
+
+    <h3>Gatilhos de Escala</h3>
+    <p><strong>30 lojas ativas</strong> → contratar ajudante de entregas.<br>
+    <strong>R$30k/mês</strong> → investir em estoque (SKUs 1,5mm e 2,5mm).<br>
+    <strong>10 construtoras ativas</strong> → tabela progressiva por volume.<br>
+    <strong>R$45k/mês</strong> → contratar vendedor externo (comissão 5%).<br>
+    <strong>R$60k/mês</strong> → estoque cabos PP maior bitola (maior margem).</p>
+  </div>
+
+  <div class="section">
+    <h2>💬 Scripts de Abordagem</h2>
+
+    <h3>Script 1: WhatsApp — Loja de Material</h3>
+    <pre>Olá [Nome], aqui é o Marcos da Condel Condutores Elétricos.
+
+Já fornecemos pra Castelo Forte e Casa Forte aqui no DF. Fio com
+INMETRO, entrega no mesmo dia e preço que dá boa margem pro
+revendedor.
+
+Quer ver nossa tabela?</pre>
+
+    <h3>Script 2: Abordagem Presencial — Loja de Bairro</h3>
+    <pre>1. Olhar o balcão — ver se tem fio exposto e de qual marca
+2. "Tudo bem? Sou da Condel — entrega mais rápida e preço melhor"
+3. Mostrar amostra física do fio (tato convence mais que PDF)
+4. "Qual bitola você mais vende? 1,5mm e 2,5mm? A gente tem o
+   melhor preço nessas duas."
+5. "Vou deixar uma caixa experimental. Se vender em uma semana
+   e a margem for boa, acertamos um pedido maior."</pre>
+
+    <h3>Script 3: WhatsApp/LinkedIn — Construtora</h3>
+    <pre>Prezado(a) [Nome],
+
+Me chamo Marcos Domingos, distribuidor da Condel Condutores
+Elétricos em Brasília.
+
+Trabalhamos com linha completa de fios e cabos com certificação
+INMETRO — ideais para memoriais descritivos e vistorias do CREA.
+
+Diferenciais:
+• Entrega direto no canteiro em até 24h (DF)
+• Preço competitivo para obras de médio/grande porte
+• Depósito próprio em Brasília
+• Linha econômica para obras sem laudo
+
+Gostaria de enviar uma cotação?</pre>
+
+    <h3>Script 4: Objeção — "Já tenho fornecedor"</h3>
+    <pre>"Que bom! Significa que você conhece bem o mercado. A gente
+entrega no mesmo dia — se seu fornecedor atrasar ou ficar sem
+estoque, você tem a Condel como opção. Quer deixar uma tabela
+conosco?"</pre>
+  </div>
+
+  <div class="section">
+    <h2>🔄 Régua de Follow-up e Recorrência</h2>
+    
+    <h3>Lojas</h3>
+    <table>
+      <tr><th>Dia</th><th>Ação</th></tr>
+      <tr><td>D+3</td><td>O fio vendeu bem? Precisa de reposição?</td></tr>
+      <tr><td>D+7</td><td>Preço especial em [X] esta semana</td></tr>
+      <tr><td>D+15</td><td>Estoque de 1,5mm e 2,5mm ok?</td></tr>
+      <tr><td>D+30</td><td>Faz 1 mês! Pedido maior?</td></tr>
+      <tr><td>D+60</td><td>Visita presencial de reabastecimento</td></tr>
+    </table>
+
+    <h3>Construtoras</h3>
+    <table>
+      <tr><th>Marco</th><th>Ação</th></tr>
+      <tr><td>Pós-orçamento</td><td>Recebeu? Posso ajustar pra fechar hoje?</td></tr>
+      <tr><td>1ª compra</td><td>Foi tranquilo? Só chamar se precisar.</td></tr>
+      <tr><td>15 dias</td><td>Obra progredindo? Próxima remessa?</td></tr>
+      <tr><td>30 dias</td><td>Quer cotar material pra próxima etapa?</td></tr>
+      <tr><td>Fim da obra</td><td>Parabéns! Pra próxima, chama a gente.</td></tr>
+    </table>
+
+    <h3>Fidelização</h3>
+    <p><strong>5+ pedidos:</strong> Tabela especial com 5% de desconto.<br>
+    <strong>Indicação que vira cliente:</strong> 1 rolo de fio 1,5mm de brinde.<br>
+    <strong>Grupo WhatsApp VIP:</strong> Apenas clientes com 3+ compras — ofertas relâmpago.</p>
+  </div>
+
+  <div class="section">
+    <h2>📊 KPI Dashboard</h2>
+    <table>
+      <tr><th>Métrica</th><th>Semana 1</th><th>Meta Semana 4</th></tr>
+      <tr><td>Lojas visitadas</td><td>30</td><td>80</td></tr>
+      <tr><td>Lojas que compraram</td><td>10</td><td>30</td></tr>
+      <tr><td>Construtoras abordadas</td><td>0</td><td>15</td></tr>
+      <tr><td>Construtoras que compraram</td><td>0</td><td>5</td></tr>
+      <tr><td>Ticket médio loja</td><td>R$300</td><td>R$500</td></tr>
+      <tr><td>Faturamento semanal</td><td>R$3.000</td><td>R$6.250</td></tr>
+      <tr><td><strong>Acumulado</strong></td><td><strong>R$3.000</strong></td><td><strong>R$25.000</strong></td></tr>
+    </table>
+  </div>
+
+  <div class="section">
+    <h2>📆 Calendário Executivo</h2>
+    <pre>MÊS 1 — JUNHO 2026
+
+SEMANA 1 (25-31 mai)   →  Prospectar 30 lojas de bairro
+SEMANA 2 (01-07 jun)   →  Ativar indicações + prospecção digital + início obras
+SEMANA 3 (08-14 jun)   →  Grandes contas e empreiteiros
+SEMANA 4 (15-21 jun)   →  Fechamento + consolidação → META R$25K
+SEMANA 5 (22-30 jun)   →  Transição mês 2 + mapear grandes redes
+
+MÊS 2 — JULHO        →  R$25-35k. Reforçar recorrência.
+MÊS 3 — AGOSTO       →  R$30-40k. Contratar ajudante. 8 construtoras.
+MÊS 4 — SETEMBRO     →  R$40-50k. Primeiras grandes contas.
+MÊS 5 — OUTUBRO      →  R$60k+. 15 construtoras + 55 lojas + 2 redes.</pre>
+    
+    <div class="highlight-box">
+      <strong>Regra de Ouro:</strong> Nos primeiros 30 dias, 80% do tempo é prospecção presencial. O WhatsApp sustenta a recorrência, mas a conquista se faz na loja e na obra. Não substituir visita por mensagem na fase inicial.
+    </div>
+  </div>
+
+  <a href="index.html" class="back-link">← Voltar ao índice</a>
+</div>
+</body>
+</html>

@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Linguiça Exata — Plano de Marketing | Marcos Domingos</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    background: #0f0f1a;
+    color: #e0e0e0;
+    line-height: 1.7;
+  }
+  .topbar {
+    position: sticky; top: 0; z-index: 100;
+    background: rgba(15,15,26,0.92);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgba(255,255,255,0.06);
+    padding: 1rem 2rem;
+    display: flex; align-items: center; gap: 1rem;
+  }
+  .topbar a {
+    color: #666; text-decoration: none; font-size: 0.9rem; font-weight: 500;
+    display: flex; align-items: center; gap: 0.4rem;
+  }
+  .topbar a:hover { color: #e74c3c; }
+  .topbar .brand { margin-left: auto; font-weight: 600; color: #e74c3c; font-size: 0.9rem; }
+  .container { max-width: 900px; margin: 0 auto; padding: 3rem 2rem 6rem; }
+  .hero {
+    text-align: center;
+    padding: 3rem 0;
+    margin-bottom: 3rem;
+  }
+  .hero .icon { font-size: 3.5rem; margin-bottom: 0.5rem; }
+  .hero h1 {
+    font-size: clamp(2rem, 4vw, 3rem);
+    font-weight: 800;
+    color: #e74c3c;
+    margin-bottom: 0.5rem;
+  }
+  .hero .tagline {
+    color: #888;
+    font-size: 1.1rem;
+    max-width: 600px;
+    margin: 0 auto;
+  }
+  .hero .meta {
+    display: inline-flex; gap: 1.5rem; margin-top: 1.5rem; flex-wrap: wrap; justify-content: center;
+  }
+  .hero .meta-item { text-align: center; }
+  .hero .meta-item .val { font-size: 1.6rem; font-weight: 800; color: #e74c3c; }
+  .hero .meta-item .lbl { font-size: 0.8rem; color: #666; }
+  .section {
+    margin-bottom: 3rem;
+    padding: 2.5rem;
+    background: rgba(255,255,255,0.02);
+    border: 1px solid rgba(255,255,255,0.06);
+    border-radius: 1.2rem;
+  }
+  .section h2 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #e74c3c;
+    margin-bottom: 1.5rem;
+    display: flex; align-items: center; gap: 0.75rem;
+  }
+  .section h3 {
+    font-size: 1.15rem;
+    font-weight: 600;
+    color: #ccc;
+    margin: 1.5rem 0 0.75rem;
+  }
+  .section h3:first-child { margin-top: 0; }
+  .section p { margin-bottom: 1rem; color: #aaa; }
+  .section ul, .section ol { margin: 0.5rem 0 1rem 1.5rem; color: #aaa; }
+  .section li { margin-bottom: 0.4rem; }
+  .highlight-box {
+    background: rgba(192,57,43,0.06);
+    border-left: 3px solid #e74c3c;
+    padding: 1.2rem 1.5rem;
+    border-radius: 0 0.8rem 0.8rem 0;
+    margin: 1.5rem 0;
+    color: #bbb;
+  }
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 1rem 0;
+    font-size: 0.9rem;
+  }
+  th, td {
+    border: 1px solid rgba(255,255,255,0.08);
+    padding: 0.7rem 1rem;
+    text-align: left;
+  }
+  th { background: rgba(192,57,43,0.1); color: #e74c3c; font-weight: 600; }
+  td { color: #aaa; }
+  pre {
+    font-family: 'JetBrains Mono', 'Fira Code', monospace;
+    font-size: 0.85rem;
+    background: rgba(0,0,0,0.35);
+    border: 1px solid rgba(255,255,255,0.06);
+    border-radius: 0.8rem;
+    padding: 1.2rem 1.5rem;
+    overflow-x: auto;
+    margin: 1rem 0;
+    color: #ccc;
+    white-space: pre-wrap;
+  }
+  .tag-list { display: flex; flex-wrap: wrap; gap: 0.5rem; margin: 1rem 0; }
+  .tag-list span {
+    padding: 0.3rem 0.8rem;
+    background: rgba(192,57,43,0.08);
+    border: 1px solid rgba(192,57,43,0.15);
+    border-radius: 100px;
+    font-size: 0.8rem;
+    color: #e74c3c;
+  }
+  .back-link {
+    display: inline-flex; align-items: center; gap: 0.4rem;
+    color: #666; text-decoration: none; font-weight: 500; padding: 0.5rem 0;
+  }
+  .back-link:hover { color: #e74c3c; }
+  @media (max-width: 600px) {
+    .container { padding: 2rem 1rem; }
+    .section { padding: 1.5rem; }
+  }
+</style>
+</head>
+<body>
+<div class="topbar">
+  <a href="index.html">← Voltar ao índice</a>
+  <span class="brand">Linguiça Exata</span>
+</div>
+<div class="container">
+  
+  <div class="hero">
+    <div class="icon">🥩</div>
+    <h1>Linguiça Exata</h1>
+    <div class="tagline">Linguiças Artesanais — 25 anos de mercado em Anápolis-GO</div>
+    <div class="meta">
+      <div class="meta-item"><div class="val">300kg</div><div class="lbl">Meta curto prazo/semana</div></div>
+      <div class="meta-item"><div class="val">2.000kg</div><div class="lbl">Meta 3-5 meses/semana</div></div>
+      <div class="meta-item"><div class="val">R$44.800</div><div class="lbl">Lucro líquido/mês (2.000kg)</div></div>
+    </div>
+  </div>
+
+  <div class="section">
+    <h2>📋 Posicionamento</h2>
+    <p>Linguiça artesanal de Anápolis-GO — 25 anos de receita de família. Sem conservantes, sem enchimento, sem química. A linguiça que não encolhe no fogo: perde só a gordura natural, nada de desperdiçar 30% em água e soro como as industrializadas.</p>
+    <div class="highlight-box">
+      <strong>🚀 Diferencial decisivo:</strong> "O que você compra é o que você assa." Enquanto a concorrência industrial entrega 700g de carne útil por kg, a Linguiça Exata entrega 950g+. Isso rende mais porções, mais satisfação e mais margem para o revendedor.
+    </div>
+    <p><strong>Linhas:</strong> Fina Frango, Fina Porco, Grossa Suína, Premium (calabresa, bacon, queijo coalho).</p>
+  </div>
+
+  <div class="section">
+    <h2>🎯 Estratégia por Fase</h2>
+    
+    <h3>FASE 1 — Varejo Local (150kg/semana)</h3>
+    <p>Abordagem presencial em mercados, casas de carne, padarias e mercearias de Anápolis. Oferta loss leader: 5kg grátis da linha grossa suína para teste de vendas (R$110 de investimento).</p>
+    <p><strong>Conversão:</strong> 3 em cada 10 abordagens. 50 abordagens/semana = 15 novos clientes, média 10kg/semana cada = 150kg.</p>
+
+    <h3>FASE 2 — Food Service (100kg/semana)</h3>
+    <p>Churrascarias, restaurantes por kg, espetinhos de rua, hamburguerias artesanais. Degustação in loco: levar 1kg já assada da fina + 1kg da grossa.</p>
+    <div class="highlight-box">
+      <strong>Argumento decisivo para espetinhos:</strong> "Sua linguiça encolhe 30% no fogo? A nossa perde só a gordura. O que você compra é o que você vende. Rende mais, cliente gosta mais, margem igual."
+    </div>
+
+    <h3>FASE 3 — WhatsApp B2C (50kg/semana)</h3>
+    <p>Grupo "Linguiça Exata — Encomendas Anápolis". Mecânica: Segunda cardápio, Quarta fechamento, Sexta retirada/entrega. Meta: 20 membros ativos, média 2,5kg/semana cada.</p>
+  </div>
+
+  <div class="section">
+    <h2>📈 Escala — 2.000kg/semana</h2>
+    
+    <h3>Eixo 1: Grandes Churrascarias (400kg/semana)</h3>
+    <p>10 grandes churrascarias de Goiânia + Anápolis. Degustação premium: assar lado a lado com a concorrente para mostrar o encolhimento.</p>
+    <p><strong>Argumento financeiro:</strong> "O senhor cobra R$40 no buffet. Cada kg de linguiça rende 15 porções. Com a nossa, rende 17 porque não encolhe. R$80 a mais por kg vendido."</p>
+
+    <h3>Eixo 2: Redes de Supermercados (500kg/semana)</h3>
+    <p>Cross-sell com a PIMEL nas mesmas redes: Super Adega, Tático, Costa Atacado, Atacadão Dia a Dia.</p>
+    <p><strong>Checklist:</strong> CNPJ, NF-e, SIM/SISBI, embalagem a vácuo padronizada, código de barras EAN-13, tabela nutricional, lote/data/validade.</p>
+
+    <h3>Eixo 3: WhatsApp B2C (400kg/semana)</h3>
+    <p>Crescimento exponencial: 20 → 80 → 300 pessoas em 3 meses.</p>
+    <table>
+      <tr><th>Ação</th><th>Recompensa</th></tr>
+      <tr><td>Convidar 3 amigos</td><td>1kg grátis</td></tr>
+      <tr><td>Pedido >10kg</td><td>Frete grátis</td></tr>
+      <tr><td>Indicar casa de carne que vire cliente</td><td>5kg grátis</td></tr>
+      <tr><td>Top 3 compradores do mês</td><td>10kg sorteados</td></tr>
+    </table>
+
+    <h3>Eixo 4: Eventos Sazonais (300kg/sazonal)</h3>
+    <table>
+      <tr><th>Data</th><th>Potencial</th></tr>
+      <tr><td>Carnaval</td><td>+200kg</td></tr>
+      <tr><td>Festas Juninas</td><td>+300kg</td></tr>
+      <tr><td>Dia dos Pais</td><td>+100kg</td></tr>
+      <tr><td>Natal/Ano Novo</td><td>+400kg</td></tr>
+    </table>
+  </div>
+
+  <div class="section">
+    <h2>💬 Scripts de Abordagem</h2>
+    
+    <h3>WhatsApp — Restaurante / Churrascaria</h3>
+    <pre>Olá [nome], tudo bem? Aqui é [representante], da Linguiça Exata.
+
+Vou ser direto: seu restaurante vende espetinho de linguiça, certo?
+Quanto do peso que você compra vira porção no prato?
+
+A nossa perde só a gordura natural no fogo. Nada de encolher 30%
+igual as industrializadas. O que você paga é o que serve.
+
+Teste 5kg essa semana. Se não sentir diferença no rendimento E no
+feedback dos clientes, a gente não cobra.</pre>
+
+    <h3>WhatsApp — Supermercado / Casa de Carnes</h3>
+    <pre>Bom dia! Aqui é [representante], da Linguiça Exata.
+Somos a fábrica artesanal de Anápolis — 25 anos de mercado.
+
+A nossa tem três pontos que encaixam direto no seu negócio:
+1. Margem igual ou maior que Sadia/Seara — preço competitivo
+2. Produto que fideliza — o cliente prova e volta
+3. Sem devolução por qualidade — linguiça natural de verdade
+
+Tá aceitando uma amostra pra testar? Posso passar essa semana
+com 2kg degustação.</pre>
+
+    <h3>Instagram Post — Prova Social</h3>
+    <pre>🥩 A LINGUIÇA QUE NÃO ENCOLHE EXISTE
+
+Ela vem de Anápolis, de uma fábrica que tá de pé desde 2000.
+25 anos de receita de família, sem conservante, sem química,
+sem enchimento.
+
+Carne 100%. Tempero caseiro. Ponto na brasa.
+Seu churrasco de domingo nunca mais vai ser o mesmo.
+
+👇 Encomende agora pelo WhatsApp (link na bio)</pre>
+  </div>
+
+  <div class="section">
+    <h2>📅 Cronograma de Implementação</h2>
+    <table>
+      <tr><th>Período</th><th>Metas</th></tr>
+      <tr><td>Semana 1-2</td><td>Cartões, grupo WhatsApp (20), 3 posts Instagram, 30 abordagens → 50kg/semana</td></tr>
+      <tr><td>Semana 3-4</td><td>5 clientes fixos, 20 espetinhos, 40 membros grupo → 150kg/semana</td></tr>
+      <tr><td>Mês 2</td><td>15 clientes, 1 churrascaria, 2 grupos (~100), 3-4 posts/semana → 300kg/semana ✅</td></tr>
+      <tr><td>Mês 3</td><td>Goiânia, redes Super Adega/Tático, 3 grupos (~200), festas juninas → 800kg/semana</td></tr>
+      <tr><td>Mês 4</td><td>Rede supermercados, degustação Goiânia, 5 grupos (~400) → 1.400kg/semana</td></tr>
+      <tr><td>Mês 5</td><td>40-50 comerciais, 4-5 redes, 8-10 grupos (~800) → 2.000kg/semana ✅</td></tr>
+    </table>
+  </div>
+
+  <div class="section">
+    <h2>📊 Projeção Financeira</h2>
+    
+    <h3>Cenário 300kg/semana</h3>
+    <table>
+      <tr><th>Item</th><th>Valor</th></tr>
+      <tr><td>Kg vendidos/mês</td><td>1.200 kg</td></tr>
+      <tr><td>Receita bruta</td><td>R$ 26.400</td></tr>
+      <tr><td>Lucro líquido</td><td><strong>R$ 6.720/mês</strong></td></tr>
+    </table>
+
+    <h3>Cenário 2.000kg/semana</h3>
+    <table>
+      <tr><th>Item</th><th>Valor</th></tr>
+      <tr><td>Kg vendidos/mês</td><td>8.000 kg</td></tr>
+      <tr><td>Receita bruta</td><td>R$ 176.000</td></tr>
+      <tr><td>Lucro líquido</td><td><strong>R$ 44.800/mês</strong></td></tr>
+    </table>
+
+    <h3>KPIs Semanais</h3>
+    <table>
+      <tr><th>Indicador</th><th>Meta 300kg</th><th>Meta 2.000kg</th></tr>
+      <tr><td>Kg/semana</td><td>300</td><td>2.000</td></tr>
+      <tr><td>Clientes comerciais</td><td>15</td><td>50</td></tr>
+      <tr><td>Clientes B2C</td><td>20</td><td>200</td></tr>
+      <tr><td>Grupos WhatsApp</td><td>~100 membros</td><td>~800 membros</td></tr>
+      <tr><td>Conversão abordagem → teste</td><td>40%</td><td>40%</td></tr>
+      <tr><td>Conversão teste → cliente fixo</td><td>60%</td><td>60%</td></tr>
+      <tr><td>Churn semanal (comercial)</td><td>&lt;10%</td><td>&lt;5%</td></tr>
+      <tr><td>Instagram seguidores</td><td>200</td><td>2.000</td></tr>
+    </table>
+    <p><strong>Margem líquida target:</strong> 20-25%.</p>
+  </div>
+
+  <a href="index.html" class="back-link">← Voltar ao índice</a>
+</div>
+</body>
+</html>
