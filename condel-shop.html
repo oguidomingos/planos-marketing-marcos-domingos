@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Condel — Fios e Cabos Elétricos | Marcos Domingos</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Playfair+Display:wght@700;800&display=swap');
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    background: #0a0a12;
+    color: #e0e0e0;
+    line-height: 1.7;
+  }
+
+  .navbar {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: rgba(10,10,18,0.95);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgba(41,128,185,0.2);
+    padding: 1rem 2rem;
+  }
+  .navbar-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+  }
+  .navbar-brand {
+    font-size: 1.2rem;
+    font-weight: 800;
+    color: #3498db;
+  }
+  .navbar-back {
+    color: #999;
+    text-decoration: none;
+    font-size: 0.9rem;
+    transition: color 0.2s;
+  }
+  .navbar-back:hover {
+    color: #3498db;
+  }
+  .navbar-nav {
+    margin-left: auto;
+  }
+  .navbar-nav a {
+    color: #999;
+    text-decoration: none;
+    font-size: 0.9rem;
+    transition: color 0.2s;
+  }
+  .navbar-nav a:hover {
+    color: #3498db;
+  }
+
+  .container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 3rem 2rem;
+  }
+
+  .product-hero {
+    text-align: center;
+    margin-bottom: 4rem;
+  }
+  .product-hero-icon {
+    font-size: 4rem;
+    margin-bottom: 1rem;
+  }
+  .product-hero h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 3rem;
+    font-weight: 800;
+    margin-bottom: 0.5rem;
+    color: #3498db;
+  }
+  .product-hero-tag {
+    display: inline-block;
+    padding: 0.5rem 1.2rem;
+    background: rgba(41,128,185,0.1);
+    border: 1px solid rgba(41,128,185,0.3);
+    border-radius: 100px;
+    color: #3498db;
+    font-size: 0.85rem;
+    font-weight: 600;
+    margin-bottom: 1.5rem;
+  }
+  .product-hero p {
+    font-size: 1.1rem;
+    color: #999;
+    max-width: 600px;
+    margin: 0 auto 2rem;
+  }
+
+  .gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1.5rem;
+    margin: 3rem 0;
+  }
+  .gallery-item {
+    aspect-ratio: 1;
+    background: rgba(255,255,255,0.03);
+    border: 1px solid rgba(255,255,255,0.08);
+    border-radius: 8px;
+    overflow: hidden;
+  }
+  .gallery-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .section {
+    margin-bottom: 3rem;
+    padding: 2.5rem;
+    background: rgba(255,255,255,0.02);
+    border: 1px solid rgba(255,255,255,0.08);
+    border-radius: 12px;
+  }
+  .section h2 {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: #3498db;
+    margin-bottom: 1.5rem;
+  }
+  .section h3 {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: #ccc;
+    margin: 1.5rem 0 0.75rem;
+  }
+  .section p {
+    color: #aaa;
+    margin-bottom: 1rem;
+  }
+  .section ul {
+    margin: 1rem 0 1.5rem 1.5rem;
+    color: #aaa;
+  }
+  .section li {
+    margin-bottom: 0.5rem;
+  }
+
+  .features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+    margin: 2rem 0;
+  }
+  .feature-card {
+    padding: 1.5rem;
+    background: rgba(0,0,0,0.3);
+    border: 1px solid rgba(41,128,185,0.2);
+    border-radius: 8px;
+  }
+  .feature-card h4 {
+    color: #3498db;
+    margin-bottom: 0.75rem;
+    font-size: 1.1rem;
+  }
+  .feature-card p {
+    color: #999;
+    font-size: 0.9rem;
+  }
+
+  .pricing-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 2rem 0;
+    font-size: 0.95rem;
+  }
+  .pricing-table th,
+  .pricing-table td {
+    padding: 1rem;
+    border: 1px solid rgba(255,255,255,0.08);
+    text-align: left;
+  }
+  .pricing-table th {
+    background: rgba(41,128,185,0.1);
+    color: #3498db;
+    font-weight: 600;
+  }
+  .pricing-table td {
+    color: #aaa;
+  }
+
+  .cta-section {
+    background: rgba(41,128,185,0.1);
+    border: 2px solid rgba(41,128,185,0.3);
+    border-radius: 12px;
+    padding: 3rem 2rem;
+    text-align: center;
+    margin: 3rem 0;
+  }
+  .cta-section h2 {
+    color: #3498db;
+    font-size: 2rem;
+    margin-bottom: 1rem;
+  }
+  .cta-section p {
+    color: #999;
+    margin-bottom: 2rem;
+    font-size: 1.05rem;
+  }
+
+  .btn-large {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 1.2rem 3rem;
+    background: #3498db;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    font-weight: 700;
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: all 0.3s;
+    text-decoration: none;
+  }
+  .btn-large:hover {
+    background: #2980b9;
+    transform: translateY(-3px);
+    box-shadow: 0 12px 32px rgba(41,128,185,0.3);
+  }
+
+  .breadcrumb {
+    margin-bottom: 3rem;
+    color: #666;
+  }
+  .breadcrumb a {
+    color: #3498db;
+    text-decoration: none;
+  }
+  .breadcrumb a:hover {
+    text-decoration: underline;
+  }
+
+  @media (max-width: 768px) {
+    .container {
+      padding: 2rem 1rem;
+    }
+    .product-hero h1 {
+      font-size: 2rem;
+    }
+    .gallery {
+      grid-template-columns: repeat(2, 1fr);
+    }
+    .features-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>
+</head>
+<body>
+
+<div class="navbar">
+  <div class="navbar-content">
+    <a href="shop.html" class="navbar-back">← Voltar</a>
+    <div class="navbar-brand">Condel</div>
+    <div class="navbar-nav">
+      <a href="#produtos">Produtos</a>
+      <a href="#precos">Preços</a>
+    </div>
+  </div>
+</div>
+
+<div class="container">
+
+  <div class="breadcrumb">
+    <a href="shop.html">Início</a> / Condel
+  </div>
+
+  <div class="product-hero">
+    <div class="product-hero-icon">⚡</div>
+    <div class="product-hero-tag">CERTIFICAÇÃO INMETRO — 2 CERTIFICADOS VIGENTES</div>
+    <h1>Condel</h1>
+    <p>Fios e Cabos Elétricos Certificados com Entrega 24h no DF</p>
+  </div>
+
+  <div class="section">
+    <h2>Sobre Condel</h2>
+    <p><strong>Condel é uma distribuidora de fios e cabos elétricos com certificação INMETRO</strong> — a garantia que seus produtos estão dentro de padrões técnicos e de segurança nacionais. Com depósito próprio em Brasília, atualmente atende 150+ lojas de material de construção, lojas de bairro e construtoras no DF.</p>
+    <p style="margin-top: 1.5rem;"><strong>Diferenciais:</strong> Dois certificados INMETRO vigentes, entrega em 24h para Brasília, depósito próprio em Brasília, parceria com Marcos garante atendimento personalizado e prazos flexíveis.</p>
+  </div>
+
+  <div class="section" id="produtos">
+    <h2>Portfólio de Produtos</h2>
+    <div class="features-grid">
+      <div class="feature-card">
+        <h4>🔌 Fios de Cobre</h4>
+        <p>Fios de 1,5mm a 12mm em diferentes cores. Uso em fiação residencial, comercial e industrial. Rolos e metros.</p>
+      </div>
+      <div class="feature-card">
+        <h4>🔗 Cabos Profissionais</h4>
+        <p>Cabos PP (poliéster), alumínio, e bobinas para projetos maiores. Entrega customizada conforme necessidade.</p>
+      </div>
+      <div class="feature-card">
+        <h4>⚙️ Acessórios Elétricos</h4>
+        <p>Aterramento, fita isolante, conectores, e componentes para instalação completa.</p>
+      </div>
+      <div class="feature-card">
+        <h4>🎙️ Sonorização</h4>
+        <p>Cabos para áudio, sonorização profissional, e instalações de som de alta qualidade.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="section">
+    <h2>📸 Galeria de Produtos</h2>
+    <p style="margin-bottom: 2rem; color: #999;">Fotos dos principais produtos Condel — fios, cabos, e acessórios elétricos.</p>
+    <div class="gallery">
+      <div class="gallery-item">
+        <img src="./images/condel/AC0001.jpg" alt="Fios Condel 1">
+      </div>
+      <div class="gallery-item">
+        <img src="./images/condel/AC0002.jpg" alt="Fios Condel 2">
+      </div>
+      <div class="gallery-item">
+        <img src="./images/condel/AC0003.jpg" alt="Fios Condel 3">
+      </div>
+      <div class="gallery-item">
+        <img src="./images/condel/AC0004.jpg" alt="Fios Condel 4">
+      </div>
+      <div class="gallery-item">
+        <img src="./images/condel/AC0005.jpg" alt="Fios Condel 5">
+      </div>
+      <div class="gallery-item">
+        <img src="./images/condel/AC0006.jpg" alt="Fios Condel 6">
+      </div>
+      <div class="gallery-item">
+        <img src="./images/condel/AC0007.jpg" alt="Fios Condel 7">
+      </div>
+    </div>
+  </div>
+
+  <div class="section" id="precos">
+    <h2>💰 Tabela de Pagamento e Prazos</h2>
+    <table class="pricing-table">
+      <tr>
+        <th>Tipo de Pedido</th>
+        <th>Prazo de Entrega</th>
+        <th>Pagamento</th>
+      </tr>
+      <tr>
+        <td>Pequenos pedidos (até 10 rolos)</td>
+        <td>24h (mesma região)</td>
+        <td>PIX à vista</td>
+      </tr>
+      <tr>
+        <td>Médios (10-50 rolos)</td>
+        <td>24-48h</td>
+        <td>PIX ou 7 dias</td>
+      </tr>
+      <tr>
+        <td>Grandes (acima 50 rolos)</td>
+        <td>1-2 dias</td>
+        <td>7-30 dias (negociável)</td>
+      </tr>
+    </table>
+    <p style="margin-top: 1.5rem; color: #999;"><strong>Nota:</strong> Desconto por volume: 5% (10-50 rolos) | 10% (51+ rolos). Marcos coordena entrega direta do depósito em Brasília.</p>
+  </div>
+
+  <div class="section">
+    <h2>🎯 Para Quem</h2>
+    <ul>
+      <li><strong>Lojas de material de construção</strong> — fornecimento contínuo com prazos de entrega ágeis</li>
+      <li><strong>Lojas de bairro</strong> — pequenos pedidos, reposição rápida</li>
+      <li><strong>Eletricistas e construtoras</strong> — grandes volumes, condições especiais</li>
+      <li><strong>Empresas de sonorização</strong> — cabos profissionais para áudio e som</li>
+      <li><strong>Incorporadoras</strong> — fornecimento para condomínios e residências em construção</li>
+    </ul>
+  </div>
+
+  <div class="cta-section">
+    <h2>Pronto para Fazer Pedidos?</h2>
+    <p>Converse com Marcos no WhatsApp — ele enviará tabela completa de preços por tipo de fio/cabo, quantidade mínima para cada produto, e responde dúvidas sobre especificações técnicas.</p>
+    <button class="btn-large" onclick="openWhatsApp()">💬 Abrir WhatsApp</button>
+  </div>
+
+  <div class="section">
+    <h2>📞 Contato</h2>
+    <p><strong>Representante:</strong> Marcos Domingos</p>
+    <p><strong>WhatsApp:</strong> <a href="https://wa.me/5561999999999" style="color: #3498db; text-decoration: none;">(61) 99999-9999</a></p>
+    <p><strong>Cobertura:</strong> Brasília e Entorno (entrega em 24h para Brasília)</p>
+    <p style="margin-top: 1rem; color: #999;"><strong>Depósito:</strong> Brasília-DF | Certificação INMETRO em 2 certificados vigentes</p>
+  </div>
+
+</div>
+
+<script>
+function openWhatsApp() {
+  const message = `Olá Marcos! Tenho interesse em Condel. Gostaria de saber mais sobre fios/cabos, tabela de preços e prazos de entrega. Qual seria um bom horário para conversarmos?`;
+  const encoded = encodeURIComponent(message);
+  window.open(`https://wa.me/5561999999999?text=${encoded}`, '_blank');
+}
+</script>
+
+</body>
+</html>

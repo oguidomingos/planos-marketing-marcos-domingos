@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Linguiça Exata — Linguiças Artesanais | Marcos Domingos</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Playfair+Display:wght@700;800&display=swap');
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    background: #0a0a12;
+    color: #e0e0e0;
+    line-height: 1.7;
+  }
+
+  .navbar {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: rgba(10,10,18,0.95);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgba(192,57,43,0.2);
+    padding: 1rem 2rem;
+  }
+  .navbar-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+  }
+  .navbar-brand {
+    font-size: 1.2rem;
+    font-weight: 800;
+    color: #e74c3c;
+  }
+  .navbar-back {
+    color: #999;
+    text-decoration: none;
+    font-size: 0.9rem;
+    transition: color 0.2s;
+  }
+  .navbar-back:hover {
+    color: #e74c3c;
+  }
+  .navbar-nav {
+    margin-left: auto;
+  }
+  .navbar-nav a {
+    color: #999;
+    text-decoration: none;
+    font-size: 0.9rem;
+    transition: color 0.2s;
+  }
+  .navbar-nav a:hover {
+    color: #e74c3c;
+  }
+
+  .container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 3rem 2rem;
+  }
+
+  .product-hero {
+    text-align: center;
+    margin-bottom: 4rem;
+  }
+  .product-hero-icon {
+    font-size: 4rem;
+    margin-bottom: 1rem;
+  }
+  .product-hero h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 3rem;
+    font-weight: 800;
+    margin-bottom: 0.5rem;
+    color: #e74c3c;
+  }
+  .product-hero-tag {
+    display: inline-block;
+    padding: 0.5rem 1.2rem;
+    background: rgba(192,57,43,0.1);
+    border: 1px solid rgba(192,57,43,0.3);
+    border-radius: 100px;
+    color: #e74c3c;
+    font-size: 0.85rem;
+    font-weight: 600;
+    margin-bottom: 1.5rem;
+  }
+  .product-hero p {
+    font-size: 1.1rem;
+    color: #999;
+    max-width: 600px;
+    margin: 0 auto 2rem;
+  }
+
+  .gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1.5rem;
+    margin: 3rem 0;
+  }
+  .gallery-item {
+    aspect-ratio: 1;
+    background: rgba(255,255,255,0.03);
+    border: 1px solid rgba(255,255,255,0.08);
+    border-radius: 8px;
+    overflow: hidden;
+  }
+  .gallery-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .section {
+    margin-bottom: 3rem;
+    padding: 2.5rem;
+    background: rgba(255,255,255,0.02);
+    border: 1px solid rgba(255,255,255,0.08);
+    border-radius: 12px;
+  }
+  .section h2 {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: #e74c3c;
+    margin-bottom: 1.5rem;
+  }
+  .section h3 {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: #ccc;
+    margin: 1.5rem 0 0.75rem;
+  }
+  .section p {
+    color: #aaa;
+    margin-bottom: 1rem;
+  }
+  .section ul {
+    margin: 1rem 0 1.5rem 1.5rem;
+    color: #aaa;
+  }
+  .section li {
+    margin-bottom: 0.5rem;
+  }
+
+  .features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+    margin: 2rem 0;
+  }
+  .feature-card {
+    padding: 1.5rem;
+    background: rgba(0,0,0,0.3);
+    border: 1px solid rgba(192,57,43,0.2);
+    border-radius: 8px;
+  }
+  .feature-card h4 {
+    color: #e74c3c;
+    margin-bottom: 0.75rem;
+    font-size: 1.1rem;
+  }
+  .feature-card p {
+    color: #999;
+    font-size: 0.9rem;
+  }
+
+  .pricing-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 2rem 0;
+    font-size: 0.95rem;
+  }
+  .pricing-table th,
+  .pricing-table td {
+    padding: 1rem;
+    border: 1px solid rgba(255,255,255,0.08);
+    text-align: left;
+  }
+  .pricing-table th {
+    background: rgba(192,57,43,0.1);
+    color: #e74c3c;
+    font-weight: 600;
+  }
+  .pricing-table td {
+    color: #aaa;
+  }
+
+  .cta-section {
+    background: rgba(192,57,43,0.1);
+    border: 2px solid rgba(192,57,43,0.3);
+    border-radius: 12px;
+    padding: 3rem 2rem;
+    text-align: center;
+    margin: 3rem 0;
+  }
+  .cta-section h2 {
+    color: #e74c3c;
+    font-size: 2rem;
+    margin-bottom: 1rem;
+  }
+  .cta-section p {
+    color: #999;
+    margin-bottom: 2rem;
+    font-size: 1.05rem;
+  }
+
+  .btn-large {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 1.2rem 3rem;
+    background: #e74c3c;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    font-weight: 700;
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: all 0.3s;
+    text-decoration: none;
+  }
+  .btn-large:hover {
+    background: #c0392b;
+    transform: translateY(-3px);
+    box-shadow: 0 12px 32px rgba(192,57,43,0.3);
+  }
+
+  .breadcrumb {
+    margin-bottom: 3rem;
+    color: #666;
+  }
+  .breadcrumb a {
+    color: #e74c3c;
+    text-decoration: none;
+  }
+  .breadcrumb a:hover {
+    text-decoration: underline;
+  }
+
+  .highlight {
+    background: rgba(192,57,43,0.08);
+    border-left: 4px solid #e74c3c;
+    padding: 1.5rem;
+    border-radius: 0 8px 8px 0;
+    margin: 2rem 0;
+  }
+
+  @media (max-width: 768px) {
+    .container {
+      padding: 2rem 1rem;
+    }
+    .product-hero h1 {
+      font-size: 2rem;
+    }
+    .gallery {
+      grid-template-columns: repeat(2, 1fr);
+    }
+    .features-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>
+</head>
+<body>
+
+<div class="navbar">
+  <div class="navbar-content">
+    <a href="shop.html" class="navbar-back">← Voltar</a>
+    <div class="navbar-brand">Linguiça Exata</div>
+    <div class="navbar-nav">
+      <a href="#produtos">Produtos</a>
+      <a href="#precos">Preços</a>
+    </div>
+  </div>
+</div>
+
+<div class="container">
+
+  <div class="breadcrumb">
+    <a href="shop.html">Início</a> / Linguiça Exata
+  </div>
+
+  <div class="product-hero">
+    <div class="product-hero-icon">🥩</div>
+    <div class="product-hero-tag">ARTESANAL — 25 ANOS DE TRADIÇÃO</div>
+    <h1>Linguiça Exata</h1>
+    <p>Linguiças Artesanais Premium Fabricadas em Anápolis-GO</p>
+  </div>
+
+  <div class="section">
+    <h2>Sobre Linguiça Exata</h2>
+    <p><strong>Linguiça Exata é uma fabricante artesanal baseada em Anápolis-GO com 25 anos de mercado.</strong> Produzem linguiças de alta qualidade sem conservantes artificiais, com sabor autêntico e reconhecimento regional. Seu principal canal é a venda para supermercados, padarias, restaurantes, churrascarias e food service no DF.</p>
+    <p style="margin-top: 1.5rem;"><strong>Diferenciais:</strong> Sabor autêntico sem conservantes, fábrica certificada, variedade de tipos (fina, grossa, bacon, queijo coalho), embalagem vácuo 500g, e logística confiável (entrega todas as sextas em Brasília).</p>
+    <div class="highlight">
+      <strong>Meta de Crescimento:</strong> De 300kg/semana para 2.000kg/semana. Preço: R$20-24/kg progressivo conforme volume. Lucro líquido potencial: R$6.720 a R$44.800/mês.
+    </div>
+  </div>
+
+  <div class="section" id="produtos">
+    <h2>Portfólio de Produtos</h2>
+    <div class="features-grid">
+      <div class="feature-card">
+        <h4>🥩 Linguiça Fina</h4>
+        <p>Feita com frango ou porco, temperada delicadamente. Ideal para frituras e resgates. Vácuo 500g.</p>
+      </div>
+      <div class="feature-card">
+        <h4>🥓 Linguiça Grossa Suína</h4>
+        <p>Tradicional e robusta. Sabor intenso para churrasco e grelhados. Vácuo 500g.</p>
+      </div>
+      <div class="feature-card">
+        <h4>🥓 Bacon Premium</h4>
+        <p>Produção artesanal, fumado naturalmente. Alta rotatividade em restaurantes e bares.</p>
+      </div>
+      <div class="feature-card">
+        <h4>🧀 Queijo Coalho</h4>
+        <p>Especialidade de Anápolis. Produto de valor agregado para diferenciar portfólio.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="section">
+    <h2>📸 Galeria de Produtos</h2>
+    <p style="margin-bottom: 2rem; color: #999;">Fotos dos principais produtos Linguiça Exata — variedades artesanais.</p>
+    <div class="gallery">
+      <div class="gallery-item">
+        <img src="./images/linguica/calil_001.jpg" alt="Linguiça 1">
+      </div>
+      <div class="gallery-item">
+        <img src="./images/linguica/calil_002.jpg" alt="Linguiça 2">
+      </div>
+      <div class="gallery-item">
+        <img src="./images/linguica/calil_003.jpg" alt="Linguiça 3">
+      </div>
+      <div class="gallery-item">
+        <img src="./images/linguica/calil_004.jpg" alt="Linguiça 4">
+      </div>
+      <div class="gallery-item">
+        <img src="./images/linguica/calil_005.jpg" alt="Linguiça 5">
+      </div>
+      <div class="gallery-item">
+        <img src="./images/linguica/calil_006.jpg" alt="Linguiça 6">
+      </div>
+      <div class="gallery-item">
+        <img src="./images/linguica/calil_007.jpg" alt="Linguiça 7">
+      </div>
+      <div class="gallery-item">
+        <img src="./images/linguica/calil_008.jpg" alt="Linguiça 8">
+      </div>
+    </div>
+  </div>
+
+  <div class="section" id="precos">
+    <h2>💰 Tabela de Preços e Prazos</h2>
+    <table class="pricing-table">
+      <tr>
+        <th>Volume Semanal</th>
+        <th>Preço/kg</th>
+        <th>Entrega</th>
+        <th>Pagamento</th>
+      </tr>
+      <tr>
+        <td>Até 100kg</td>
+        <td>R$ 24,00</td>
+        <td>Sexta-feira (DF)</td>
+        <td>PIX obrigatório</td>
+      </tr>
+      <tr>
+        <td>100-300kg</td>
+        <td>R$ 22,00</td>
+        <td>Sexta-feira (DF)</td>
+        <td>PIX ou 7 dias</td>
+      </tr>
+      <tr>
+        <td>300-500kg</td>
+        <td>R$ 20,50</td>
+        <td>Sexta-feira (DF)</td>
+        <td>PIX, 7 dias ou parcelado</td>
+      </tr>
+      <tr>
+        <td>Acima de 500kg</td>
+        <td>R$ 20,00</td>
+        <td>Sexta-feira (DF)</td>
+        <td>Negociável</td>
+      </tr>
+    </table>
+    <p style="margin-top: 1.5rem; color: #999;"><strong>Embalagem:</strong> Vácuo 500g (bandeja). <strong>Mínimo de pedido:</strong> 50kg por semana. Marcos coordena com a fábrica em Anápolis e entrega pessoalmente toda sexta em Brasília.</p>
+  </div>
+
+  <div class="section">
+    <h2>🎯 Para Quem</h2>
+    <ul>
+      <li><strong>Supermercados e redes</strong> — reposição semanal, alta rotatividade em seções de frios</li>
+      <li><strong>Padarias</strong> — produtos de valor agregado, complemento ao portfólio de padaria</li>
+      <li><strong>Restaurantes</strong> — ingrediente premium para receitas, destaque em cardápios</li>
+      <li><strong>Churrascarias</strong> — principal diferencial, linguiça artesanal em evidência</li>
+      <li><strong>Food service</strong> — fornecimento contínuo para eventos, refeições coletivas</li>
+      <li><strong>Quitandas e mercearias</strong> — produtos especiais para clientes diferenciados</li>
+    </ul>
+  </div>
+
+  <div class="cta-section">
+    <h2>Quer Conhecer Linguiça Exata?</h2>
+    <p>Converse com Marcos no WhatsApp — ele pode enviar amostra grátis, esclarecer dúvidas sobre sabores, variedades, e estruturar um plano de fornecimento contínuo.</p>
+    <button class="btn-large" onclick="openWhatsApp()">💬 Abrir WhatsApp</button>
+  </div>
+
+  <div class="section">
+    <h2>📞 Contato</h2>
+    <p><strong>Representante:</strong> Marcos Domingos</p>
+    <p><strong>WhatsApp:</strong> <a href="https://wa.me/5561999999999" style="color: #e74c3c; text-decoration: none;">(61) 99999-9999</a></p>
+    <p><strong>Cobertura:</strong> Brasília-DF (entrega todas as sextas)</p>
+    <p style="margin-top: 1rem; color: #999;"><strong>Fábrica:</strong> Anápolis-GO | 25 anos de tradição | Produtos certificados | Sem conservantes</p>
+  </div>
+
+</div>
+
+<script>
+function openWhatsApp() {
+  const message = `Olá Marcos! Tenho interesse em Linguiça Exata. Gostaria de saber mais sobre produtos, preços, volumes mínimos e como fazer meu primeiro pedido. Quando posso conversar?`;
+  const encoded = encodeURIComponent(message);
+  window.open(`https://wa.me/5561999999999?text=${encoded}`, '_blank');
+}
+</script>
+
+</body>
+</html>
