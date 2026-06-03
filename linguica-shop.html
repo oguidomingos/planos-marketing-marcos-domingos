@@ -3,317 +3,337 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Linguiça Exata — Linguiças Artesanais | Marcos Domingos</title>
+<title>Linguiça Exata — Linguiças Artesanais Premium | Marcos Domingos</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
 <style>
-  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Playfair+Display:wght@700;800&display=swap');
-  * { margin: 0; padding: 0; box-sizing: border-box; }
-  body {
-    font-family: 'Inter', system-ui, -apple-system, sans-serif;
-    background: #0a0a12;
-    color: #e0e0e0;
-    line-height: 1.7;
+  :root {
+    --primary: #1C1917;
+    --accent: #A16207;
+    --accent-alt: #DC2626;
+    --background: #FAFAF9;
+    --card: #FFFFFF;
+    --foreground: #0C0A09;
+    --muted: #E8ECF0;
+    --muted-fg: #64748B;
+    --border: #D6D3D1;
+    --radius: 8px;
+    --transition: 250ms ease;
   }
 
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: 'Inter', system-ui, sans-serif;
+    background: var(--background);
+    color: var(--foreground);
+    line-height: 1.6;
+  }
+
+  h1, h2, h3 { font-family: 'Playfair Display', serif; font-weight: 700; }
+
   .navbar {
+    background: var(--card);
+    border-bottom: 1px solid var(--border);
+    padding: 1rem 2rem;
     position: sticky;
     top: 0;
     z-index: 100;
-    background: rgba(10,10,18,0.95);
-    backdrop-filter: blur(12px);
-    border-bottom: 1px solid rgba(192,57,43,0.2);
-    padding: 1rem 2rem;
   }
-  .navbar-content {
+
+  .navbar-inner {
     max-width: 1200px;
     margin: 0 auto;
     display: flex;
     align-items: center;
     gap: 2rem;
   }
-  .navbar-brand {
-    font-size: 1.2rem;
-    font-weight: 800;
-    color: #e74c3c;
-  }
+
   .navbar-back {
-    color: #999;
+    color: var(--muted-fg);
     text-decoration: none;
-    font-size: 0.9rem;
-    transition: color 0.2s;
-  }
-  .navbar-back:hover {
-    color: #e74c3c;
-  }
-  .navbar-nav {
-    margin-left: auto;
-  }
-  .navbar-nav a {
-    color: #999;
-    text-decoration: none;
-    font-size: 0.9rem;
-    transition: color 0.2s;
-  }
-  .navbar-nav a:hover {
-    color: #e74c3c;
+    font-weight: 500;
+    transition: color var(--transition);
   }
 
+  .navbar-back:hover { color: var(--accent-alt); }
+
+  .navbar-brand {
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: var(--accent-alt);
+  }
+
+  .navbar-nav {
+    margin-left: auto;
+    display: flex;
+    gap: 2rem;
+  }
+
+  .navbar-nav a {
+    color: var(--muted-fg);
+    text-decoration: none;
+    font-weight: 500;
+    transition: color var(--transition);
+  }
+
+  .navbar-nav a:hover { color: var(--accent-alt); }
+
   .container {
-    max-width: 1100px;
+    max-width: 1000px;
     margin: 0 auto;
     padding: 3rem 2rem;
   }
 
-  .product-hero {
+  .breadcrumb {
+    margin-bottom: 2rem;
+    color: var(--muted-fg);
+    font-size: 0.9rem;
+  }
+
+  .breadcrumb a {
+    color: var(--accent-alt);
+    text-decoration: none;
+  }
+
+  .hero {
     text-align: center;
     margin-bottom: 4rem;
   }
-  .product-hero-icon {
-    font-size: 4rem;
-    margin-bottom: 1rem;
-  }
-  .product-hero h1 {
-    font-family: 'Playfair Display', serif;
-    font-size: 3rem;
-    font-weight: 800;
-    margin-bottom: 0.5rem;
-    color: #e74c3c;
-  }
-  .product-hero-tag {
+
+  .hero-icon { font-size: 4rem; margin-bottom: 1rem; }
+
+  .hero-tag {
     display: inline-block;
-    padding: 0.5rem 1.2rem;
-    background: rgba(192,57,43,0.1);
-    border: 1px solid rgba(192,57,43,0.3);
+    padding: 0.5rem 1rem;
+    background: rgba(220, 38, 38, 0.1);
+    color: var(--accent-alt);
     border-radius: 100px;
-    color: #e74c3c;
-    font-size: 0.85rem;
+    font-size: 0.8rem;
     font-weight: 600;
+    text-transform: uppercase;
     margin-bottom: 1.5rem;
   }
-  .product-hero p {
-    font-size: 1.1rem;
-    color: #999;
+
+  .hero h1 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    color: var(--accent-alt);
+  }
+
+  .hero p {
+    color: var(--muted-fg);
+    font-size: 1.05rem;
     max-width: 600px;
-    margin: 0 auto 2rem;
+    margin: 0 auto;
+  }
+
+  .section {
+    margin-bottom: 3rem;
+    padding: 2rem;
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+  }
+
+  .section h2 {
+    font-size: 1.8rem;
+    color: var(--accent-alt);
+    margin-bottom: 1.5rem;
+  }
+
+  .section h3 {
+    font-size: 1.2rem;
+    color: var(--foreground);
+    margin: 1.5rem 0 0.75rem;
+  }
+
+  .section p {
+    color: var(--muted-fg);
+    margin-bottom: 1rem;
+  }
+
+  .section ul {
+    margin-left: 1.5rem;
+    color: var(--muted-fg);
+  }
+
+  .section li { margin-bottom: 0.5rem; }
+
+  .highlight {
+    background: rgba(220, 38, 38, 0.05);
+    border-left: 4px solid var(--accent-alt);
+    padding: 1.5rem;
+    border-radius: 0 var(--radius) var(--radius) 0;
+    margin: 1.5rem 0;
   }
 
   .gallery {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
     gap: 1.5rem;
-    margin: 3rem 0;
+    margin: 2rem 0;
   }
+
   .gallery-item {
     aspect-ratio: 1;
-    background: rgba(255,255,255,0.03);
-    border: 1px solid rgba(255,255,255,0.08);
-    border-radius: 8px;
+    background: var(--muted);
+    border-radius: var(--radius);
     overflow: hidden;
   }
+
   .gallery-item img {
     width: 100%;
     height: 100%;
     object-fit: cover;
   }
 
-  .section {
-    margin-bottom: 3rem;
-    padding: 2.5rem;
-    background: rgba(255,255,255,0.02);
-    border: 1px solid rgba(255,255,255,0.08);
-    border-radius: 12px;
-  }
-  .section h2 {
-    font-size: 1.8rem;
-    font-weight: 700;
-    color: #e74c3c;
-    margin-bottom: 1.5rem;
-  }
-  .section h3 {
-    font-size: 1.2rem;
-    font-weight: 600;
-    color: #ccc;
-    margin: 1.5rem 0 0.75rem;
-  }
-  .section p {
-    color: #aaa;
-    margin-bottom: 1rem;
-  }
-  .section ul {
-    margin: 1rem 0 1.5rem 1.5rem;
-    color: #aaa;
-  }
-  .section li {
-    margin-bottom: 0.5rem;
-  }
-
-  .features-grid {
+  .feature-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     gap: 1.5rem;
     margin: 2rem 0;
   }
+
   .feature-card {
     padding: 1.5rem;
-    background: rgba(0,0,0,0.3);
-    border: 1px solid rgba(192,57,43,0.2);
-    border-radius: 8px;
-  }
-  .feature-card h4 {
-    color: #e74c3c;
-    margin-bottom: 0.75rem;
-    font-size: 1.1rem;
-  }
-  .feature-card p {
-    color: #999;
-    font-size: 0.9rem;
+    background: linear-gradient(135deg, #F5F3F1 0%, var(--background) 100%);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
   }
 
-  .pricing-table {
+  .feature-card h4 {
+    color: var(--accent-alt);
+    margin-bottom: 0.75rem;
+    font-size: 1.05rem;
+  }
+
+  .feature-card p {
+    font-size: 0.9rem;
+    color: var(--muted-fg);
+  }
+
+  .table {
     width: 100%;
     border-collapse: collapse;
     margin: 2rem 0;
     font-size: 0.95rem;
   }
-  .pricing-table th,
-  .pricing-table td {
-    padding: 1rem;
-    border: 1px solid rgba(255,255,255,0.08);
+
+  .table th, .table td {
+    padding: 0.75rem 1rem;
+    border: 1px solid var(--border);
     text-align: left;
   }
-  .pricing-table th {
-    background: rgba(192,57,43,0.1);
-    color: #e74c3c;
+
+  .table th {
+    background: rgba(220, 38, 38, 0.08);
+    color: var(--accent-alt);
     font-weight: 600;
   }
-  .pricing-table td {
-    color: #aaa;
-  }
 
-  .cta-section {
-    background: rgba(192,57,43,0.1);
-    border: 2px solid rgba(192,57,43,0.3);
-    border-radius: 12px;
-    padding: 3rem 2rem;
+  .table td { color: var(--muted-fg); }
+
+  .cta-box {
+    padding: 2.5rem;
+    background: linear-gradient(135deg, rgba(220, 38, 38, 0.08) 0%, rgba(220, 38, 38, 0.04) 100%);
+    border: 2px solid var(--accent-alt);
+    border-radius: var(--radius);
     text-align: center;
     margin: 3rem 0;
   }
-  .cta-section h2 {
-    color: #e74c3c;
-    font-size: 2rem;
+
+  .cta-box h2 {
+    color: var(--accent-alt);
+    font-size: 1.8rem;
     margin-bottom: 1rem;
   }
-  .cta-section p {
-    color: #999;
-    margin-bottom: 2rem;
+
+  .cta-box p {
+    color: var(--muted-fg);
+    margin-bottom: 1.5rem;
     font-size: 1.05rem;
   }
 
-  .btn-large {
+  .btn {
     display: inline-flex;
     align-items: center;
-    gap: 0.75rem;
-    padding: 1.2rem 3rem;
-    background: #e74c3c;
+    gap: 0.5rem;
+    padding: 1rem 2rem;
+    background: var(--accent-alt);
     color: #fff;
     border: none;
-    border-radius: 8px;
-    font-weight: 700;
-    font-size: 1.1rem;
+    border-radius: var(--radius);
+    font-weight: 600;
+    font-size: 1rem;
     cursor: pointer;
-    transition: all 0.3s;
+    transition: all var(--transition);
     text-decoration: none;
   }
-  .btn-large:hover {
-    background: #c0392b;
-    transform: translateY(-3px);
-    box-shadow: 0 12px 32px rgba(192,57,43,0.3);
-  }
 
-  .breadcrumb {
-    margin-bottom: 3rem;
-    color: #666;
-  }
-  .breadcrumb a {
-    color: #e74c3c;
-    text-decoration: none;
-  }
-  .breadcrumb a:hover {
-    text-decoration: underline;
-  }
-
-  .highlight {
-    background: rgba(192,57,43,0.08);
-    border-left: 4px solid #e74c3c;
-    padding: 1.5rem;
-    border-radius: 0 8px 8px 0;
-    margin: 2rem 0;
+  .btn:hover {
+    background: #b91c1c;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 16px rgba(220, 38, 38, 0.15);
   }
 
   @media (max-width: 768px) {
-    .container {
-      padding: 2rem 1rem;
-    }
-    .product-hero h1 {
-      font-size: 2rem;
-    }
-    .gallery {
-      grid-template-columns: repeat(2, 1fr);
-    }
-    .features-grid {
-      grid-template-columns: 1fr;
-    }
+    .container { padding: 2rem 1rem; }
+    .hero h1 { font-size: 1.8rem; }
+    .feature-grid { grid-template-columns: 1fr; }
+    .gallery { grid-template-columns: repeat(2, 1fr); }
   }
 </style>
 </head>
 <body>
 
-<div class="navbar">
-  <div class="navbar-content">
+<nav class="navbar">
+  <div class="navbar-inner">
     <a href="shop.html" class="navbar-back">← Voltar</a>
     <div class="navbar-brand">Linguiça Exata</div>
     <div class="navbar-nav">
-      <a href="#produtos">Produtos</a>
+      <a href="#sobre">Sobre</a>
       <a href="#precos">Preços</a>
     </div>
   </div>
-</div>
+</nav>
 
 <div class="container">
-
   <div class="breadcrumb">
     <a href="shop.html">Início</a> / Linguiça Exata
   </div>
 
-  <div class="product-hero">
-    <div class="product-hero-icon">🥩</div>
-    <div class="product-hero-tag">ARTESANAL — 25 ANOS DE TRADIÇÃO</div>
+  <div class="hero">
+    <div class="hero-icon">🥩</div>
+    <div class="hero-tag">Artesanal — 25 Anos de Tradição</div>
     <h1>Linguiça Exata</h1>
     <p>Linguiças Artesanais Premium Fabricadas em Anápolis-GO</p>
   </div>
 
-  <div class="section">
+  <div class="section" id="sobre">
     <h2>Sobre Linguiça Exata</h2>
-    <p><strong>Linguiça Exata é uma fabricante artesanal baseada em Anápolis-GO com 25 anos de mercado.</strong> Produzem linguiças de alta qualidade sem conservantes artificiais, com sabor autêntico e reconhecimento regional. Seu principal canal é a venda para supermercados, padarias, restaurantes, churrascarias e food service no DF.</p>
-    <p style="margin-top: 1.5rem;"><strong>Diferenciais:</strong> Sabor autêntico sem conservantes, fábrica certificada, variedade de tipos (fina, grossa, bacon, queijo coalho), embalagem vácuo 500g, e logística confiável (entrega todas as sextas em Brasília).</p>
+    <p><strong>Linguiça Exata é fabricante artesanal com 25 anos de mercado em Anápolis-GO.</strong> Produzem linguiças de alta qualidade sem conservantes artificiais, com sabor autêntico e reconhecimento regional. Principal canal: venda para supermercados, restaurantes, churrascarias e food service do DF.</p>
+    <p style="margin-top: 1.5rem;"><strong>Diferenciais:</strong> Sabor autêntico, fábrica certificada, variedade de tipos, embalagem vácuo, entrega confiável (sextas em Brasília).</p>
     <div class="highlight">
-      <strong>Meta de Crescimento:</strong> De 300kg/semana para 2.000kg/semana. Preço: R$20-24/kg progressivo conforme volume. Lucro líquido potencial: R$6.720 a R$44.800/mês.
+      <strong>Meta de Crescimento:</strong> De 300kg/semana para 2.000kg/semana. Preço: R$20-24/kg progressivo. Lucro potencial: R$6.720 a R$44.800/mês.
     </div>
   </div>
 
-  <div class="section" id="produtos">
+  <div class="section">
     <h2>Portfólio de Produtos</h2>
-    <div class="features-grid">
+    <div class="feature-grid">
       <div class="feature-card">
         <h4>🥩 Linguiça Fina</h4>
-        <p>Feita com frango ou porco, temperada delicadamente. Ideal para frituras e resgates. Vácuo 500g.</p>
+        <p>Frango ou porco, temperada delicadamente. Ideal para frituras e pratos rápidos.</p>
       </div>
       <div class="feature-card">
-        <h4>🥓 Linguiça Grossa Suína</h4>
-        <p>Tradicional e robusta. Sabor intenso para churrasco e grelhados. Vácuo 500g.</p>
+        <h4>🥓 Linguiça Grossa</h4>
+        <p>Tradicional e robusta. Sabor intenso para churrasco e grelhados.</p>
       </div>
       <div class="feature-card">
         <h4>🥓 Bacon Premium</h4>
-        <p>Produção artesanal, fumado naturalmente. Alta rotatividade em restaurantes e bares.</p>
+        <p>Produção artesanal, fumado naturalmente. Alta rotatividade em restaurantes.</p>
       </div>
       <div class="feature-card">
         <h4>🧀 Queijo Coalho</h4>
@@ -323,39 +343,22 @@
   </div>
 
   <div class="section">
-    <h2>📸 Galeria de Produtos</h2>
-    <p style="margin-bottom: 2rem; color: #999;">Fotos dos principais produtos Linguiça Exata — variedades artesanais.</p>
+    <h2>Galeria de Produtos</h2>
     <div class="gallery">
-      <div class="gallery-item">
-        <img src="./images/linguica/calil_001.jpg" alt="Linguiça 1">
-      </div>
-      <div class="gallery-item">
-        <img src="./images/linguica/calil_002.jpg" alt="Linguiça 2">
-      </div>
-      <div class="gallery-item">
-        <img src="./images/linguica/calil_003.jpg" alt="Linguiça 3">
-      </div>
-      <div class="gallery-item">
-        <img src="./images/linguica/calil_004.jpg" alt="Linguiça 4">
-      </div>
-      <div class="gallery-item">
-        <img src="./images/linguica/calil_005.jpg" alt="Linguiça 5">
-      </div>
-      <div class="gallery-item">
-        <img src="./images/linguica/calil_006.jpg" alt="Linguiça 6">
-      </div>
-      <div class="gallery-item">
-        <img src="./images/linguica/calil_007.jpg" alt="Linguiça 7">
-      </div>
-      <div class="gallery-item">
-        <img src="./images/linguica/calil_008.jpg" alt="Linguiça 8">
-      </div>
+      <div class="gallery-item"><img src="./images/linguica/calil_001.jpg" alt="Linguiça"></div>
+      <div class="gallery-item"><img src="./images/linguica/calil_002.jpg" alt="Linguiça"></div>
+      <div class="gallery-item"><img src="./images/linguica/calil_003.jpg" alt="Linguiça"></div>
+      <div class="gallery-item"><img src="./images/linguica/calil_004.jpg" alt="Linguiça"></div>
+      <div class="gallery-item"><img src="./images/linguica/calil_005.jpg" alt="Linguiça"></div>
+      <div class="gallery-item"><img src="./images/linguica/calil_006.jpg" alt="Linguiça"></div>
+      <div class="gallery-item"><img src="./images/linguica/calil_007.jpg" alt="Linguiça"></div>
+      <div class="gallery-item"><img src="./images/linguica/calil_008.jpg" alt="Linguiça"></div>
     </div>
   </div>
 
   <div class="section" id="precos">
-    <h2>💰 Tabela de Preços e Prazos</h2>
-    <table class="pricing-table">
+    <h2>Tabela de Preços Escalonados</h2>
+    <table class="table">
       <tr>
         <th>Volume Semanal</th>
         <th>Preço/kg</th>
@@ -365,66 +368,57 @@
       <tr>
         <td>Até 100kg</td>
         <td>R$ 24,00</td>
-        <td>Sexta-feira (DF)</td>
+        <td>Sexta-feira</td>
         <td>PIX obrigatório</td>
       </tr>
       <tr>
         <td>100-300kg</td>
         <td>R$ 22,00</td>
-        <td>Sexta-feira (DF)</td>
+        <td>Sexta-feira</td>
         <td>PIX ou 7 dias</td>
       </tr>
       <tr>
         <td>300-500kg</td>
         <td>R$ 20,50</td>
-        <td>Sexta-feira (DF)</td>
+        <td>Sexta-feira</td>
         <td>PIX, 7 dias ou parcelado</td>
       </tr>
       <tr>
         <td>Acima de 500kg</td>
         <td>R$ 20,00</td>
-        <td>Sexta-feira (DF)</td>
+        <td>Sexta-feira</td>
         <td>Negociável</td>
       </tr>
     </table>
-    <p style="margin-top: 1.5rem; color: #999;"><strong>Embalagem:</strong> Vácuo 500g (bandeja). <strong>Mínimo de pedido:</strong> 50kg por semana. Marcos coordena com a fábrica em Anápolis e entrega pessoalmente toda sexta em Brasília.</p>
+    <p style="color: var(--muted-fg); margin-top: 1rem; font-size: 0.9rem;"><strong>Embalagem:</strong> Vácuo 500g (bandeja) | <strong>Mínimo:</strong> 50kg/semana | Marcos coordena com fábrica e entrega pessoalmente</p>
   </div>
 
   <div class="section">
-    <h2>🎯 Para Quem</h2>
+    <h2>Para Quem</h2>
     <ul>
-      <li><strong>Supermercados e redes</strong> — reposição semanal, alta rotatividade em seções de frios</li>
-      <li><strong>Padarias</strong> — produtos de valor agregado, complemento ao portfólio de padaria</li>
-      <li><strong>Restaurantes</strong> — ingrediente premium para receitas, destaque em cardápios</li>
-      <li><strong>Churrascarias</strong> — principal diferencial, linguiça artesanal em evidência</li>
-      <li><strong>Food service</strong> — fornecimento contínuo para eventos, refeições coletivas</li>
-      <li><strong>Quitandas e mercearias</strong> — produtos especiais para clientes diferenciados</li>
+      <li><strong>Supermercados:</strong> Reposição semanal, alta rotatividade em frios</li>
+      <li><strong>Padarias:</strong> Produtos valor agregado, complemento de portfólio</li>
+      <li><strong>Restaurantes:</strong> Ingrediente premium para receitas diferenciadas</li>
+      <li><strong>Churrascarias:</strong> Principal diferencial, linguiça em evidência</li>
+      <li><strong>Food service:</strong> Fornecimento contínuo para eventos e refeições</li>
+      <li><strong>Quitandas:</strong> Produtos especiais para clientes diferenciados</li>
     </ul>
   </div>
 
-  <div class="cta-section">
+  <div class="cta-box">
     <h2>Quer Conhecer Linguiça Exata?</h2>
-    <p>Converse com Marcos no WhatsApp — ele pode enviar amostra grátis, esclarecer dúvidas sobre sabores, variedades, e estruturar um plano de fornecimento contínuo.</p>
-    <button class="btn-large" onclick="openWhatsApp()">💬 Abrir WhatsApp</button>
+    <p>Converse com Marcos no WhatsApp — ele pode enviar amostra grátis e estruturar um plano de fornecimento contínuo.</p>
+    <a href="https://wa.me/5561999999999?text=Olá%20Marcos!%20Tenho%20interesse%20em%20Linguiça%20Exata.%20Gostaria%20de%20um%20orçamento%20e%20conhecer%20os%20sabores." class="btn">Conversar no WhatsApp</a>
   </div>
 
   <div class="section">
-    <h2>📞 Contato</h2>
+    <h2>Contato</h2>
     <p><strong>Representante:</strong> Marcos Domingos</p>
-    <p><strong>WhatsApp:</strong> <a href="https://wa.me/5561999999999" style="color: #e74c3c; text-decoration: none;">(61) 99999-9999</a></p>
-    <p><strong>Cobertura:</strong> Brasília-DF (entrega todas as sextas)</p>
-    <p style="margin-top: 1rem; color: #999;"><strong>Fábrica:</strong> Anápolis-GO | 25 anos de tradição | Produtos certificados | Sem conservantes</p>
+    <p><strong>WhatsApp:</strong> <a href="https://wa.me/5561999999999" style="color: var(--accent-alt); text-decoration: none; font-weight: 600;">(61) 99999-9999</a></p>
+    <p><strong>Cobertura:</strong> Brasília-DF (entrega toda sexta-feira)</p>
+    <p style="margin-top: 1rem; font-size: 0.9rem; color: var(--muted-fg);"><strong>Fábrica:</strong> Anápolis-GO | 25 anos | Certificada | Sem conservantes</p>
   </div>
-
 </div>
-
-<script>
-function openWhatsApp() {
-  const message = `Olá Marcos! Tenho interesse em Linguiça Exata. Gostaria de saber mais sobre produtos, preços, volumes mínimos e como fazer meu primeiro pedido. Quando posso conversar?`;
-  const encoded = encodeURIComponent(message);
-  window.open(`https://wa.me/5561999999999?text=${encoded}`, '_blank');
-}
-</script>
 
 </body>
 </html>
