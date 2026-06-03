@@ -1,0 +1,548 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Plano de Marketing | Representação Comercial Marcos Domingos</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    background: #0f0f1a;
+    color: #e0e0e0;
+    line-height: 1.7;
+  }
+  .topbar {
+    position: sticky; top: 0; z-index: 100;
+    background: rgba(15,15,26,0.92);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgba(255,255,255,0.06);
+    padding: 1rem 2rem;
+    display: flex; align-items: center; gap: 1rem;
+  }
+  .topbar a {
+    color: #666; text-decoration: none; font-size: 0.9rem; font-weight: 500;
+    display: flex; align-items: center; gap: 0.4rem;
+  }
+  .topbar a:hover { color: #D47B2A; }
+  .topbar .brand { margin-left: auto; font-weight: 600; color: #D47B2A; font-size: 0.9rem; }
+  .container { max-width: 900px; margin: 0 auto; padding: 3rem 2rem 6rem; }
+  .hero {
+    text-align: center;
+    padding: 3rem 0;
+    margin-bottom: 3rem;
+  }
+  .hero .icon { font-size: 3.5rem; margin-bottom: 0.5rem; }
+  .hero h1 {
+    font-size: clamp(2rem, 4vw, 3rem);
+    font-weight: 800;
+    color: #D47B2A;
+    margin-bottom: 0.5rem;
+  }
+  .hero .tagline {
+    color: #888;
+    font-size: 1.1rem;
+    max-width: 600px;
+    margin: 0 auto;
+  }
+  .hero .subtitle {
+    display: inline-block;
+    margin-top: 1rem;
+    padding: 0.4rem 1.2rem;
+    background: rgba(212,123,42,0.12);
+    border: 1px solid rgba(212,123,42,0.25);
+    border-radius: 100px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: #D47B2A;
+  }
+  .section {
+    margin-bottom: 3rem;
+    padding: 2.5rem;
+    background: rgba(255,255,255,0.02);
+    border: 1px solid rgba(255,255,255,0.06);
+    border-radius: 1.2rem;
+  }
+  .section h2 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #D47B2A;
+    margin-bottom: 1.5rem;
+    display: flex; align-items: center; gap: 0.75rem;
+  }
+  .section h3 {
+    font-size: 1.15rem;
+    font-weight: 600;
+    color: #ccc;
+    margin: 1.5rem 0 0.75rem;
+  }
+  .section h3:first-child { margin-top: 0; }
+  .section p { margin-bottom: 1rem; color: #aaa; }
+  .section ul, .section ol { margin: 0.5rem 0 1rem 1.5rem; color: #aaa; }
+  .section li { margin-bottom: 0.4rem; }
+  .highlight-box {
+    background: rgba(212,123,42,0.06);
+    border-left: 3px solid #D47B2A;
+    padding: 1.2rem 1.5rem;
+    border-radius: 0 0.8rem 0.8rem 0;
+    margin: 1.5rem 0;
+    color: #bbb;
+  }
+  .grid-2 {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    margin: 1rem 0;
+  }
+  .stat-card {
+    background: rgba(255,255,255,0.03);
+    border: 1px solid rgba(255,255,255,0.06);
+    border-radius: 0.8rem;
+    padding: 1.2rem;
+    text-align: center;
+  }
+  .stat-card .value { font-size: 1.8rem; font-weight: 800; color: #D47B2A; }
+  .stat-card .label { font-size: 0.85rem; color: #666; margin-top: 0.25rem; }
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 1rem 0;
+    font-size: 0.9rem;
+  }
+  th, td {
+    border: 1px solid rgba(255,255,255,0.08);
+    padding: 0.7rem 1rem;
+    text-align: left;
+  }
+  th { background: rgba(212,123,42,0.1); color: #D47B2A; font-weight: 600; }
+  td { color: #aaa; }
+  .badge {
+    display: inline-block;
+    padding: 0.3rem 0.8rem;
+    border-radius: 100px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    margin: 0.15rem;
+  }
+  .badge-orange { background: rgba(212,123,42,0.15); color: #D47B2A; }
+  .badge-blue { background: rgba(41,128,185,0.15); color: #3498db; }
+  .badge-red { background: rgba(192,57,43,0.15); color: #e74c3c; }
+  .badge-green { background: rgba(39,174,96,0.15); color: #2ecc71; }
+  .badge-purple { background: rgba(142,68,173,0.15); color: #9b59b6; }
+  .timeline {
+    position: relative;
+    padding-left: 2rem;
+    margin: 1rem 0;
+  }
+  .timeline::before {
+    content: '';
+    position: absolute;
+    left: 0.5rem;
+    top: 0;
+    bottom: 0;
+    width: 2px;
+    background: rgba(212,123,42,0.3);
+  }
+  .timeline-item {
+    position: relative;
+    margin-bottom: 1.5rem;
+    padding-left: 1.5rem;
+  }
+  .timeline-item::before {
+    content: '';
+    position: absolute;
+    left: -1.65rem;
+    top: 0.5rem;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: #D47B2A;
+  }
+  .timeline-item h4 {
+    color: #D47B2A;
+    font-size: 1rem;
+    margin-bottom: 0.3rem;
+  }
+  .timeline-item p {
+    color: #999;
+    font-size: 0.9rem;
+    margin-bottom: 0.3rem;
+  }
+  .op-card {
+    background: rgba(255,255,255,0.03);
+    border: 1px solid rgba(255,255,255,0.08);
+    border-radius: 1rem;
+    padding: 1.5rem;
+    margin-bottom: 1rem;
+  }
+  .op-card h4 {
+    color: #D47B2A;
+    font-size: 1.1rem;
+    margin-bottom: 0.5rem;
+  }
+  .footer {
+    text-align: center;
+    padding: 3rem 0;
+    color: #444;
+    font-size: 0.85rem;
+    border-top: 1px solid rgba(255,255,255,0.06);
+    margin-top: 4rem;
+  }
+  .footer a { color: #666; text-decoration: none; }
+  .footer a:hover { color: #999; }
+  @media (max-width: 600px) {
+    .container { padding: 2rem 1rem; }
+    .grid-2 { grid-template-columns: 1fr; }
+    .section { padding: 1.5rem; }
+  }
+  html { scroll-behavior: smooth; }
+  .nav-links {
+    display: flex; flex-wrap: wrap; gap: 0.5rem; justify-content: center;
+    margin-top: 1.5rem;
+  }
+  .nav-links a {
+    color: #666; text-decoration: none; font-size: 0.8rem; font-weight: 500;
+    padding: 0.3rem 0.7rem; border: 1px solid rgba(255,255,255,0.08); border-radius: 100px;
+    transition: all 0.2s;
+  }
+  .nav-links a:hover { color: #D47B2A; border-color: rgba(212,123,42,0.3); }
+</style>
+</head>
+<body>
+<div class="topbar">
+  <a href="index.html">← Planos</a>
+  <span class="brand">Marcos Domingos</span>
+</div>
+
+<div class="container">
+
+  <!-- HERO -->
+  <div class="hero">
+    <div class="icon">📊</div>
+    <h1>Plano de Marketing</h1>
+    <p class="tagline">Representação Comercial Marcos Domingos — Distrito Federal</p>
+    <span class="subtitle">Junho 2026</span>
+    <div class="nav-links">
+      <a href="#resumo">Resumo</a>
+      <a href="#contexto">Contexto</a>
+      <a href="#operacoes">Operações</a>
+      <a href="#mercado">Mercado</a>
+      <a href="#posicionamento">Posicionamento</a>
+      <a href="#canais">Canais</a>
+      <a href="#precificacao">Preços</a>
+      <a href="#digital">Digital</a>
+      <a href="#cronograma">Cronograma</a>
+      <a href="#metricas">Métricas</a>
+      <a href="#riscos">Riscos</a>
+      <a href="#orcamento">Orçamento</a>
+      <a href="#conclusao">Conclusão</a>
+    </div>
+  </div>
+
+  <!-- 1. RESUMO EXECUTIVO -->
+  <div class="section" id="resumo">
+    <h2>📋 1. Resumo Executivo</h2>
+    <p>Este plano de marketing estabelece estratégias práticas para a representação comercial de Marcos Domingos no Distrito Federal. Considerando que Marcos atua como representante solo, todas as ações foram desenhadas para serem executadas por uma única pessoa, com foco em maximizar resultados com recursos limitados.</p>
+    <div class="grid-2">
+      <div class="stat-card">
+        <div class="value">5</div>
+        <div class="label">Linhas de Produto</div>
+      </div>
+      <div class="stat-card">
+        <div class="value">9</div>
+        <div class="label">Regiões Administrativas</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 2. CONTEXTO E SITUAÇÃO ATUAL -->
+  <div class="section" id="contexto">
+    <h2>🔍 2. Contexto e Situação Atual</h2>
+    <p>Atualmente, Marcos Domingos opera como representante comercial autônomo no DF, sem presença digital estabelecida, vendendo produtos door-to-door e via WhatsApp pessoal. Atua em 9 regiões administrativas.</p>
+    <div class="highlight-box">
+      <strong>Desafio principal:</strong> Sem presença digital profissional, a escalabilidade das vendas é limitada ao alcance pessoal do representante.
+    </div>
+  </div>
+
+  <!-- 3. OPERAÇÕES COMERCIAIS -->
+  <div class="section" id="operacoes">
+    <h2>🏭 3. Operações Comerciais</h2>
+
+    <div class="op-card">
+      <h4>⚡ PIMEL — Fios e Cabos Elétricos</h4>
+      <p><strong>Produtos:</strong> cabos flexíveis e paralelos certificados INMETRO</p>
+      <p><strong>Diferencial:</strong> certificação INMETRO (14 marcas multadas em 2024)</p>
+      <p><strong>Público:</strong> lojas de materiais elétricos, eletricistas, reformas</p>
+      <span class="badge badge-orange">INMETRO Certificado</span>
+      <span class="badge badge-blue">Material Elétrico</span>
+    </div>
+
+    <div class="op-card">
+      <h4>🔌 Condel — Condutores Elétricos</h4>
+      <p><strong>Produtos:</strong> fios paralelo e flexível com certificação INMETRO</p>
+      <p><strong>Diferencial:</strong> 2 certificados vigentes</p>
+      <p><strong>Público:</strong> mesmos que PIMEL, foco em pequenos comércios</p>
+      <span class="badge badge-orange">INMETRO Certificado</span>
+      <span class="badge badge-blue">Condutores</span>
+    </div>
+
+    <div class="op-card">
+      <h4>🥩 Linguiça Artesanal</h4>
+      <p><strong>Produtos:</strong> linguiça artesanal fabricada em Anápolis/GO</p>
+      <p><strong>Diferencial:</strong> entrega sexta-feira em Brasília, sabor autêntico</p>
+      <p><strong>Público:</strong> padarias, restaurantes, churrasqueiros</p>
+      <span class="badge badge-red">Artesanal</span>
+      <span class="badge badge-green">Entrega Sexta</span>
+    </div>
+
+    <div class="op-card">
+      <h4>🍯 Mel e Derivados</h4>
+      <p><strong>Produtos:</strong> mel do Cerrado, qualidade superior</p>
+      <p><strong>Diferencial:</strong> entreposto no DF, qualidade Cerrado reconhecida nacionalmente</p>
+      <p><strong>Público:</strong> consumidores finais, merenda escolar, varejo alimentar</p>
+      <span class="badge badge-green">Cerrado</span>
+      <span class="badge badge-orange">Qualidade Nacional</span>
+    </div>
+
+    <div class="op-card">
+      <h4>🧀 Delícia Mineira</h4>
+      <p><strong>Produtos:</strong> alimentos de Minas Gerais</p>
+      <p><strong>Diferencial:</strong> procedência regional</p>
+      <p><strong>Público:</strong> varejo alimentar, consumidores que valorizam produtos mineiros</p>
+      <span class="badge badge-purple">Minas Gerais</span>
+      <span class="badge badge-red">Regional</span>
+    </div>
+  </div>
+
+  <!-- 4. ANÁLISE DE MERCADO -->
+  <div class="section" id="mercado">
+    <h2>📈 4. Análise de Mercado</h2>
+
+    <h3>4.1 Fios e Cabos Elétricos</h3>
+    <div class="grid-2">
+      <div class="stat-card">
+        <div class="value">USD 8.86B</div>
+        <div class="label">Mercado LATAM 2024</div>
+      </div>
+      <div class="stat-card">
+        <div class="value">5.5%</div>
+        <div class="label">CAGR até 2029</div>
+      </div>
+    </div>
+    <p><em>Fonte: Mordor Intelligence. Projeção 2029: USD 11.60 bilhões.</em></p>
+    <p><strong>Concorrentes no DF:</strong></p>
+    <ul>
+      <li>Sarkis Material Elétrico (QSA 14, Taguatinga)</li>
+      <li>Eletrogomes (SIA Quadra 5C 55)</li>
+      <li>DF Atacadista (SIA Trecho 2)</li>
+      <li>WL Atacadista (SIA Trecho 3)</li>
+      <li>V&M Materiais de Construção (Rua 01)</li>
+    </ul>
+
+    <h3>4.2 Linguiça Artesanal</h3>
+    <p>Fabricação em Anápolis/GO (150 km de Brasília). Diferenciais: sabor autêntico, sem conservantes artificiais. Entrega sexta-feira validada.</p>
+    <p><strong>Plataformas identificadas:</strong> A Casa do Produtor, Queijaria Campana — oportunidade de parcerias.</p>
+
+    <h3>4.3 Mel e Derivados</h3>
+    <div class="grid-2">
+      <div class="stat-card">
+        <div class="value">326</div>
+        <div class="label">Apicultores registrados no DF (2025)</div>
+      </div>
+      <div class="stat-card">
+        <div class="value">R$ 21,13/kg</div>
+        <div class="label">Preço referência FIPMEL</div>
+      </div>
+    </div>
+    <p>Demanda institucional: mel do DF incorporado à merenda escolar. Qualidade Cerrado é referência nacional.</p>
+
+    <h3>4.4 Ambiente de Representação Comercial</h3>
+    <p>Regulação: Lei 4.886/65, registro CORE obrigatório. 70% das empresas usam WhatsApp Business — oportunidade imediata de implementação.</p>
+  </div>
+
+  <!-- 5. POSICIONAMENTO E PÚBLICO-ALVO -->
+  <div class="section" id="posicionamento">
+    <h2>🎯 5. Posicionamento e Público-Alvo</h2>
+
+    <div class="highlight-box">
+      <strong>Posicionamento Geral:</strong> "Representante de confiança com produtos certificados e entrega garantida"
+    </div>
+
+    <h3>Diferenciais competitivos</h3>
+    <ul>
+      <li>Certificação INMETRO (diferencial competitivo em fios/cabos)</li>
+      <li>Qualidade Cerrado (mel)</li>
+      <li>Sabor autêntico (linguiça artesanal)</li>
+      <li>Entrega confiável (sexta-feira para linguiça, 1-4 dias para outros produtos)</li>
+    </ul>
+  </div>
+
+  <!-- 6. CANAIS DE VENDA -->
+  <div class="section" id="canais">
+    <h2>🛣️ 6. Canais de Venda</h2>
+
+    <h3>6.1 Canais Atuais</h3>
+    <ul>
+      <li>Door-to-door (visitas presenciais)</li>
+      <li>WhatsApp pessoal</li>
+    </ul>
+    <div class="highlight-box">
+      <strong>Limitação:</strong> sem presença digital profissional, baixa escalabilidade
+    </div>
+
+    <h3>6.2 Canais Recomendados</h3>
+    <p>Implementar em ordem de prioridade: WhatsApp Business → Catálogos digitais → Plataformas B2B → Landing page profissional.</p>
+  </div>
+
+  <!-- 7. ESTRATÉGIA DE PREÇOS -->
+  <div class="section" id="precificacao">
+    <h2>💰 7. Estratégia de Preços</h2>
+
+    <h3>7.1 PIMEL / Condel</h3>
+    <p>Competir com base em valor (certificação INMETRO), qualidade e serviço.</p>
+    <table>
+      <thead>
+        <tr><th>Volume</th><th>Desconto</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>1-10 rolos</td><td>Preço de tabela</td></tr>
+        <tr><td>11-50 rolos</td><td>5% desconto</td></tr>
+        <tr><td>51+ rolos</td><td>10% desconto</td></tr>
+      </tbody>
+    </table>
+
+    <h3>7.2 Linguiça Artesanal</h3>
+    <p>Posicionamento premium. Preço justo, competitivo com industrial. Valor percebido: qualidade superior, sem conservantes. Desconto para restaurantes de alta rotatividade.</p>
+
+    <h3>7.3 Mel</h3>
+    <p>Preço de referência: R$ 21-25/kg. Diferencial qualidade Cerrado. Pacotes promocionais (compre 2 kg, ganhe 10%). Merenda escolar: negociação em lote com governo DF.</p>
+  </div>
+
+  <!-- 8. AÇÕES DIGITAIS -->
+  <div class="section" id="digital">
+    <h2>📱 8. Ações Digitais</h2>
+
+    <h3>8.1 WhatsApp Business — IMPLEMENTAÇÃO IMEDIATA</h3>
+    <div class="highlight-box">
+      <strong>Prioridade CRÍTICA</strong> — implementar em 0-7 dias
+    </div>
+
+    <h3>8.2 Catálogos Digitais</h3>
+    <ul>
+      <li><strong>Catálogo PIMEL</strong> — já existe (Catálogo 2025 Pimel Final.pdf), verificar atualização de preços, adicionar certificados INMETRO</li>
+      <li><strong>Catálogo Condel</strong> — reutilizar design PIMEL, incluir 2 certificados INMETRO</li>
+      <li><strong>Catálogo Linguiça</strong> — fotos de produtos, fábrica em Anápolis, diferenciais</li>
+      <li><strong>Catálogo Mel</strong> — fotos de mel/derivados, diferencial Cerrado, preço por kg</li>
+    </ul>
+
+    <h3>8.3 Plataformas B2B</h3>
+    <ul>
+      <li><strong>MF Rural</strong> (PIMEL/mel): cadastro gratuito, produtos com fotos, leads via WhatsApp</li>
+      <li><strong>A Casa do Produtor</strong> (linguiça): parceria, amostras, comissão por venda</li>
+    </ul>
+  </div>
+
+  <!-- 9. CRONOGRAMA 90 DIAS -->
+  <div class="section" id="cronograma">
+    <h2>📅 9. Cronograma 90 Dias</h2>
+
+    <div class="timeline">
+      <div class="timeline-item">
+        <h4>Dias 1-14: Fundação Digital</h4>
+        <p>WhatsApp Business, catálogos digitais, presença digital básica</p>
+      </div>
+      <div class="timeline-item">
+        <h4>Dias 15-30: Expansão de Canais</h4>
+        <p>Plataformas B2B, MF Rural, A Casa do Produtor, primeiras parcerias</p>
+      </div>
+      <div class="timeline-item">
+        <h4>Dias 31-60: Consolidação e Otimização</h4>
+        <p>Ajuste de preços, otimização de canais, métricas iniciais</p>
+      </div>
+      <div class="timeline-item">
+        <h4>Dias 61-90: Escalabilidade e Avaliação</h4>
+        <p>Avaliação de resultados, expansão de operações, planejamento próximo ciclo</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- 10. MÉTRICAS DE SUCESSO -->
+  <div class="section" id="metricas">
+    <h2>📊 10. Métricas de Sucesso</h2>
+
+    <h3>10.1 Métricas de Vendas</h3>
+    <ul>
+      <li>Receita mensal por linha de produto</li>
+      <li>Número de clientes ativos</li>
+      <li>Ticket médio por cliente</li>
+      <li>Taxa de recorrência</li>
+    </ul>
+
+    <h3>10.2 Métricas Digitais</h3>
+    <ul>
+      <li>Contatos via WhatsApp Business</li>
+      <li>Downloads de catálogos</li>
+      <li>Leads de plataformas B2B</li>
+      <li>Taxa de conversão digital → venda</li>
+    </ul>
+  </div>
+
+  <!-- 11. RISCOS E MITIGAÇÃO -->
+  <div class="section" id="riscos">
+    <h2>⚠️ 11. Riscos e Mitigação</h2>
+    <table>
+      <thead>
+        <tr><th>Risco</th><th>Mitigação</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Sem presença digital</td><td>Implementar WhatsApp Business imediatamente</td></tr>
+        <tr><td>Concorrência de grandes redes</td><td>Foco em certificação INMETRO e serviço personalizado</td></tr>
+        <tr><td>Capacidade limitada (solo)</td><td>Priorizar canais digitais com menor demanda operacional</td></tr>
+        <tr><td>Sazonalidade de produtos</td><td>Diversificar linhas de produto (fios + alimentos)</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- 12. ORÇAMENTO ESTIMADO -->
+  <div class="section" id="orcamento">
+    <h2>💵 12. Orçamento Estimado</h2>
+    <p>Plano desenhado para representante solo com orçamento mínimo.</p>
+    <div class="grid-2">
+      <div class="stat-card">
+        <div class="value">R$ 350</div>
+        <div class="label">Custo fixo total (único)</div>
+      </div>
+      <div class="stat-card">
+        <div class="value">R$ 0-50/mês</div>
+        <div class="label">Custo recorrente</div>
+      </div>
+    </div>
+    <div class="highlight-box">
+      Investimento mínimo para executar este plano completo.
+    </div>
+  </div>
+
+  <!-- 13. CONCLUSÃO -->
+  <div class="section" id="conclusao">
+    <h2>✅ 13. Conclusão</h2>
+    <p>Este plano de marketing estabelece um caminho claro e executável para Marcos Domingos profissionalizar sua representação comercial no Distrito Federal. Considerando que Marcos atua como representante solo, todas as ações foram desenhadas para serem implementadas por uma única pessoa, com orçamento mínimo.</p>
+    <div class="highlight-box">
+      <strong>Principais destaques estratégicos:</strong>
+      <ul style="margin-top: 0.5rem;">
+        <li>Certificação INMETRO como diferencial competitivo em fios e cabos</li>
+        <li>Qualidade Cerrado para mel e derivados</li>
+        <li>Logística validada para linguiça artesanal</li>
+        <li>Implementação digital gradual com foco em WhatsApp Business</li>
+        <li>Cronograma de 90 dias com metas claras</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="footer">
+    Gerado por CMO Agent — Paperclip<br>
+    <a href="index.html">Planos de Marketing • Marcos Domingos</a>
+  </div>
+</div>
+</body>
+</html>
