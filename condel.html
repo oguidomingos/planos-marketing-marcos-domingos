@@ -89,7 +89,8 @@ section{padding:5rem 0}
 
 /* TABLE */
 .portfolio-section{background:var(--bg-3)}
-.portfolio-table{width:100%;border-collapse:collapse;margin-top:2.5rem;font-size:.88rem}
+.table-scroll{overflow-x:auto;-webkit-overflow-scrolling:touch;margin-top:2.5rem}
+.portfolio-table{width:100%;border-collapse:collapse;font-size:.88rem;min-width:520px}
 .portfolio-table th{text-align:left;padding:.875rem 1.25rem;font-family:var(--font-mono);font-size:.68rem;letter-spacing:.12em;text-transform:uppercase;color:var(--accent);border-bottom:1px solid oklch(25% .02 248)}
 .portfolio-table td{padding:.875rem 1.25rem;border-bottom:1px solid oklch(20% .02 248);color:var(--text-dim);vertical-align:middle}
 .portfolio-table td:first-child{color:var(--white);font-weight:500}
@@ -156,15 +157,19 @@ footer p{color:var(--text-dim);font-size:.78rem}
   .product-grid{grid-template-columns:1fr 1fr}
   .cert-inner{grid-template-columns:1fr}
   .cert-tag{left:0}
+  .cert-image-wrap img{aspect-ratio:16/9}
   .regions-wrap{grid-template-columns:repeat(2,1fr)}
   .steps{grid-template-columns:1fr}
   .steps::before{display:none}
   .cta-inner{flex-direction:column;align-items:flex-start}
-  .portfolio-table th,.portfolio-table td{padding:.7rem .75rem}
+  .portfolio-table{font-size:.78rem}
+  .portfolio-table th,.portfolio-table td{padding:.6rem .625rem}
   section{padding:3.5rem 0}
+  .container{padding:0 1.5rem}
 }
 @media(max-width:414px){
   .product-grid{grid-template-columns:1fr}
+  .regions-wrap{grid-template-columns:1fr 1fr}
 }
 </style>
 </head>
@@ -278,7 +283,7 @@ footer p{color:var(--text-dim);font-size:.78rem}
   <div class="container">
     <p class="section-eyebrow">Linha Completa</p>
     <h2 class="section-title">PORTFÓLIO</h2>
-    <table class="portfolio-table">
+    <div class="table-scroll"><table class="portfolio-table">
       <thead>
         <tr>
           <th>Produto</th>
@@ -295,7 +300,7 @@ footer p{color:var(--text-dim);font-size:.78rem}
         <tr><td>Aterramento</td><td>4mm a 25mm</td><td>Proteção elétrica</td><td>Verde/amarelo ABNT</td></tr>
         <tr><td>Sonorização</td><td>1 a 4 pares</td><td>Sistemas de áudio</td><td>Blindado</td></tr>
       </tbody>
-    </table>
+    </table></div>
   </div>
 </section>
 

@@ -74,13 +74,18 @@ footer p{color:var(--text-dim);font-size:.78rem;font-weight:300;text-align:cente
 
 @media(max-width:768px){
   nav{padding:1rem 1.5rem}
-  .hero{padding:8rem 1.5rem 4rem}
+  nav p{display:none}
+  .hero{padding:7rem 1.5rem 3.5rem}
   .products{padding:1.5rem 1.5rem 4rem}
   .internal-section{padding:0 1.5rem 4rem}
   .card-grid{grid-template-columns:1fr}
-  .product-card{aspect-ratio:4/3}
-  .internal-card{grid-template-columns:1fr}
+  .product-card{aspect-ratio:16/9}
+  .card-content{padding:1.25rem}
+  .internal-card{grid-template-columns:1fr;padding:1.75rem 1.5rem}
   .internal-arrow{display:none}
+}
+@media(max-width:414px){
+  .product-card{aspect-ratio:4/3}
 }
 </style>
 </head>

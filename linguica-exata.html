@@ -138,18 +138,23 @@ footer p{color:var(--text-dim);font-size:.78rem;font-weight:300}
 @media(max-width:768px){
   nav ul{display:none}
   nav{padding:1rem 1.5rem}
-  .hero-content{padding:2rem 1.5rem 4rem}
+  .hero-content{padding:7rem 1.5rem 4rem}
+  .story-section{padding:4rem 0}
   .story-inner{grid-template-columns:1fr}
-  .story-image-label{bottom:0;right:0}
+  .story-image img{aspect-ratio:16/9}
+  .story-image-label{bottom:0;right:0;font-size:.9rem;padding:.625rem .875rem}
   .story-facts{grid-template-columns:1fr 1fr}
   .products-grid{grid-template-columns:1fr}
   .price-grid{grid-template-columns:1fr}
+  .price-badge{position:static;transform:none;display:inline-block;margin-bottom:.625rem}
+  .price-card{padding:1.5rem 1.25rem}
   .logistics-inner{grid-template-columns:1fr}
   .cta-inner{grid-template-columns:1fr}
-  .cta-photo{height:300px}
+  .cta-photo{height:280px}
   .cta-photo::after{background:linear-gradient(to top,var(--bg-3) 0%,transparent)}
   .cta-text-panel{padding:2.5rem 1.5rem}
   footer .container{flex-direction:column;align-items:flex-start}
+  .container{padding:0 1.5rem}
 }
 </style>
 </head>
@@ -169,7 +174,6 @@ footer p{color:var(--text-dim);font-size:.78rem;font-weight:300}
 <section class="hero">
   <div class="hero-bg">
     <img src="./images/linguica/linguica-extra-pura.jpg" alt="Linguiça Exata Extra Pura artesanal" fetchpriority="high">
-    <div></div>
   </div>
   <div class="hero-content">
     <div class="hero-badge">Fábrica Própria · 25 Anos · Anápolis/GO</div>
