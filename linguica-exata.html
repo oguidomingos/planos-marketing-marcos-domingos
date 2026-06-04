@@ -3,321 +3,368 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Linguiça Exata — Plano de Marketing | Marcos Domingos</title>
+<title>Linguiça Exata — Artesanal de Anápolis · Representação Brasília/DF</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=Source+Serif+4:wght@300;400;600&display=swap" rel="stylesheet">
 <style>
-  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
-  * { margin: 0; padding: 0; box-sizing: border-box; }
-  body {
-    font-family: 'Inter', system-ui, -apple-system, sans-serif;
-    background: #0f0f1a;
-    color: #e0e0e0;
-    line-height: 1.7;
-  }
-  .topbar {
-    position: sticky; top: 0; z-index: 100;
-    background: rgba(15,15,26,0.92);
-    backdrop-filter: blur(12px);
-    border-bottom: 1px solid rgba(255,255,255,0.06);
-    padding: 1rem 2rem;
-    display: flex; align-items: center; gap: 1rem;
-  }
-  .topbar a {
-    color: #666; text-decoration: none; font-size: 0.9rem; font-weight: 500;
-    display: flex; align-items: center; gap: 0.4rem;
-  }
-  .topbar a:hover { color: #e74c3c; }
-  .topbar .brand { margin-left: auto; font-weight: 600; color: #e74c3c; font-size: 0.9rem; }
-  .container { max-width: 900px; margin: 0 auto; padding: 3rem 2rem 6rem; }
-  .hero {
-    text-align: center;
-    padding: 3rem 0;
-    margin-bottom: 3rem;
-  }
-  .hero .icon { font-size: 3.5rem; margin-bottom: 0.5rem; }
-  .hero h1 {
-    font-size: clamp(2rem, 4vw, 3rem);
-    font-weight: 800;
-    color: #e74c3c;
-    margin-bottom: 0.5rem;
-  }
-  .hero .tagline {
-    color: #888;
-    font-size: 1.1rem;
-    max-width: 600px;
-    margin: 0 auto;
-  }
-  .hero .meta {
-    display: inline-flex; gap: 1.5rem; margin-top: 1.5rem; flex-wrap: wrap; justify-content: center;
-  }
-  .hero .meta-item { text-align: center; }
-  .hero .meta-item .val { font-size: 1.6rem; font-weight: 800; color: #e74c3c; }
-  .hero .meta-item .lbl { font-size: 0.8rem; color: #666; }
-  .section {
-    margin-bottom: 3rem;
-    padding: 2.5rem;
-    background: rgba(255,255,255,0.02);
-    border: 1px solid rgba(255,255,255,0.06);
-    border-radius: 1.2rem;
-  }
-  .section h2 {
-    font-size: 1.5rem;
-    font-weight: 700;
-    color: #e74c3c;
-    margin-bottom: 1.5rem;
-    display: flex; align-items: center; gap: 0.75rem;
-  }
-  .section h3 {
-    font-size: 1.15rem;
-    font-weight: 600;
-    color: #ccc;
-    margin: 1.5rem 0 0.75rem;
-  }
-  .section h3:first-child { margin-top: 0; }
-  .section p { margin-bottom: 1rem; color: #aaa; }
-  .section ul, .section ol { margin: 0.5rem 0 1rem 1.5rem; color: #aaa; }
-  .section li { margin-bottom: 0.4rem; }
-  .highlight-box {
-    background: rgba(192,57,43,0.06);
-    border-left: 3px solid #e74c3c;
-    padding: 1.2rem 1.5rem;
-    border-radius: 0 0.8rem 0.8rem 0;
-    margin: 1.5rem 0;
-    color: #bbb;
-  }
-  table {
-    width: 100%;
-    border-collapse: collapse;
-    margin: 1rem 0;
-    font-size: 0.9rem;
-  }
-  th, td {
-    border: 1px solid rgba(255,255,255,0.08);
-    padding: 0.7rem 1rem;
-    text-align: left;
-  }
-  th { background: rgba(192,57,43,0.1); color: #e74c3c; font-weight: 600; }
-  td { color: #aaa; }
-  pre {
-    font-family: 'JetBrains Mono', 'Fira Code', monospace;
-    font-size: 0.85rem;
-    background: rgba(0,0,0,0.35);
-    border: 1px solid rgba(255,255,255,0.06);
-    border-radius: 0.8rem;
-    padding: 1.2rem 1.5rem;
-    overflow-x: auto;
-    margin: 1rem 0;
-    color: #ccc;
-    white-space: pre-wrap;
-  }
-  .tag-list { display: flex; flex-wrap: wrap; gap: 0.5rem; margin: 1rem 0; }
-  .tag-list span {
-    padding: 0.3rem 0.8rem;
-    background: rgba(192,57,43,0.08);
-    border: 1px solid rgba(192,57,43,0.15);
-    border-radius: 100px;
-    font-size: 0.8rem;
-    color: #e74c3c;
-  }
-  .back-link {
-    display: inline-flex; align-items: center; gap: 0.4rem;
-    color: #666; text-decoration: none; font-weight: 500; padding: 0.5rem 0;
-  }
-  .back-link:hover { color: #e74c3c; }
-  @media (max-width: 600px) {
-    .container { padding: 2rem 1rem; }
-    .section { padding: 1.5rem; }
-  }
+:root {
+  --bg: oklch(13% 0.042 22);
+  --bg-2: oklch(17% 0.048 22);
+  --bg-3: oklch(21% 0.052 22);
+  --accent: oklch(72% 0.16 72);
+  --accent-2: oklch(60% 0.14 30);
+  --accent-ink: oklch(13% 0.042 22);
+  --text: oklch(92% 0.012 72);
+  --text-dim: oklch(66% 0.022 50);
+  --cream: oklch(95% 0.018 90);
+  --font-display: 'Playfair Display', Georgia, serif;
+  --font-body: 'Source Serif 4', Georgia, serif;
+}
+
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html,body{overflow-x:clip}
+body{background:var(--bg);color:var(--text);font-family:var(--font-body);font-size:16px;line-height:1.65}
+
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:.01ms!important;transition-duration:.01ms!important}}
+
+/* NAV */
+nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:1.25rem 2.5rem;display:flex;align-items:center;justify-content:space-between;background:oklch(13% .042 22 / .92);backdrop-filter:blur(12px);border-bottom:1px solid oklch(22% .04 22)}
+.nav-brand{font-family:var(--font-display);font-size:1.3rem;font-weight:700;color:var(--cream);text-decoration:none;letter-spacing:.02em}
+.nav-brand span{color:var(--accent)}
+nav ul{display:flex;gap:2.5rem;list-style:none}
+nav a{color:var(--text-dim);text-decoration:none;font-size:.82rem;font-weight:300;letter-spacing:.06em;font-family:'Source Serif 4',serif;font-style:italic;transition:color .2s}
+nav a:hover,nav a:focus-visible{color:var(--accent)}
+nav a:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+
+/* HERO: full-bleed photo, editorial overlay */
+.hero{position:relative;min-height:100svh;display:flex;align-items:flex-end;overflow:hidden}
+.hero-bg{position:absolute;inset:0}
+.hero-bg img{width:100%;height:100%;object-fit:cover;object-position:center 30%;display:block}
+.hero-bg::after{content:'';position:absolute;inset:0;background:linear-gradient(160deg, oklch(13% .042 22 / .3) 0%, oklch(13% .042 22 / .95) 70%)}
+.hero-content{position:relative;z-index:2;padding:2.5rem 3.5rem 5rem;max-width:720px}
+.hero-badge{display:inline-flex;align-items:center;gap:.6rem;background:var(--accent);color:var(--accent-ink);padding:.4rem 1rem .4rem .7rem;font-family:var(--font-body);font-size:.72rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;margin-bottom:2rem}
+.hero-badge::before{content:'★';font-size:.9em}
+.hero-title{font-family:var(--font-display);font-size:clamp(4rem,9vw,8rem);line-height:.92;font-weight:900;color:var(--cream);margin-bottom:.75rem;overflow-wrap:anywhere}
+.hero-title span{display:block;color:var(--accent);font-style:italic;font-size:.55em;line-height:1.1;margin-bottom:.2rem}
+.hero-desc{font-size:1.05rem;color:var(--text-dim);max-width:50ch;line-height:1.7;margin-bottom:2.5rem;font-weight:300}
+.hero-cta{display:flex;gap:1rem;flex-wrap:wrap}
+
+.btn-primary{background:var(--accent);color:var(--accent-ink);padding:.9rem 2.2rem;font-family:var(--font-body);font-size:.85rem;font-weight:600;letter-spacing:.06em;text-transform:uppercase;text-decoration:none;border:none;cursor:pointer;transition:background .2s,transform .15s;display:inline-flex;align-items:center;gap:.5rem;min-height:44px}
+.btn-primary:hover{background:oklch(76% .16 72);transform:translateY(-1px)}
+.btn-primary:focus-visible{outline:2px solid var(--cream);outline-offset:2px}
+.btn-primary:active{transform:translateY(0)}
+
+.btn-ghost{background:transparent;color:var(--text-dim);padding:.9rem 2.2rem;font-family:var(--font-body);font-size:.85rem;font-weight:400;letter-spacing:.06em;text-transform:uppercase;text-decoration:none;border:1px solid oklch(35% .04 22);cursor:pointer;transition:border-color .2s,color .2s;min-height:44px;display:inline-flex;align-items:center}
+.btn-ghost:hover{border-color:var(--accent);color:var(--accent)}
+.btn-ghost:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+
+/* STORY SECTION */
+.story-section{background:var(--bg-2);padding:6rem 0}
+.story-inner{display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:center}
+.story-image{position:relative}
+.story-image img{width:100%;aspect-ratio:3/4;object-fit:cover;display:block}
+.story-image-label{position:absolute;bottom:-1.5rem;right:-1.5rem;background:var(--accent);color:var(--accent-ink);padding:1rem 1.5rem;font-family:var(--font-display);font-weight:700;font-style:italic;font-size:1.1rem;line-height:1.2}
+.story-text .section-eyebrow{font-family:var(--font-body);font-size:.72rem;letter-spacing:.18em;text-transform:uppercase;color:var(--accent);margin-bottom:.6rem;font-weight:600}
+.story-text .section-title{font-family:var(--font-display);font-size:clamp(2.2rem,4vw,3.5rem);line-height:.95;color:var(--cream);margin-bottom:1.5rem;overflow-wrap:anywhere}
+.story-text p{color:var(--text-dim);line-height:1.75;margin-bottom:1rem;font-weight:300;font-size:1rem}
+.story-facts{display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-top:2rem}
+.fact-card{background:var(--bg-3);padding:1.25rem;border-left:3px solid var(--accent)}
+.fact-val{font-family:var(--font-display);font-size:2rem;font-weight:900;color:var(--accent);line-height:1;display:block;margin-bottom:.2rem}
+.fact-label{font-size:.78rem;color:var(--text-dim);line-height:1.4;font-weight:300}
+
+/* PRODUCTS */
+.products-section{background:var(--bg);padding:6rem 0}
+.section-eyebrow{font-family:var(--font-body);font-size:.72rem;letter-spacing:.18em;text-transform:uppercase;color:var(--accent);margin-bottom:.6rem;font-weight:600}
+.section-title{font-family:var(--font-display);font-size:clamp(2.5rem,5vw,4.5rem);line-height:.94;color:var(--cream);margin-bottom:1.5rem;overflow-wrap:anywhere}
+.products-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1.5rem;margin-top:3rem}
+.product-card{background:var(--bg-2);border:1px solid oklch(22% .04 22);overflow:hidden;transition:border-color .2s,transform .2s}
+.product-card:hover{border-color:var(--accent);transform:translateY(-2px)}
+.product-card-inner{padding:2rem}
+.product-icon{font-family:var(--font-display);font-size:2.5rem;font-weight:900;color:oklch(25% .04 22);line-height:1;margin-bottom:1rem}
+.product-name{font-family:var(--font-display);font-size:1.3rem;font-weight:700;color:var(--cream);margin-bottom:.5rem}
+.product-desc{font-size:.88rem;color:var(--text-dim);line-height:1.6;margin-bottom:1rem;font-weight:300}
+.product-tag{display:inline-block;background:oklch(22% .05 22);color:var(--accent);padding:.25rem .75rem;font-size:.7rem;letter-spacing:.1em;text-transform:uppercase;font-weight:600}
+
+/* PRICE TABLE */
+.price-section{background:var(--bg-2);padding:6rem 0}
+.price-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5px;background:oklch(22% .04 22);margin-top:3rem}
+.price-card{background:var(--bg);padding:2.5rem 2rem;text-align:center;transition:background .2s;position:relative}
+.price-card:hover,.price-card.featured{background:var(--bg-3)}
+.price-card.featured{background:var(--bg-3);border-top:3px solid var(--accent)}
+.price-tier{font-size:.72rem;letter-spacing:.16em;text-transform:uppercase;color:var(--text-dim);margin-bottom:.75rem;font-weight:600}
+.price-val{font-family:var(--font-display);font-size:3rem;font-weight:900;color:var(--cream);line-height:1;margin-bottom:.25rem}
+.price-unit{font-size:.8rem;color:var(--text-dim);margin-bottom:1rem;font-weight:300}
+.price-range{font-size:.85rem;color:var(--accent);font-weight:600;margin-bottom:.5rem}
+.price-note{font-size:.78rem;color:var(--text-dim);line-height:1.5;font-weight:300}
+.price-badge{position:absolute;top:-1px;left:50%;transform:translateX(-50%);background:var(--accent);color:var(--accent-ink);padding:.25rem 1rem;font-size:.68rem;letter-spacing:.1em;text-transform:uppercase;font-weight:700;white-space:nowrap}
+
+/* LOGISTICS */
+.logistics-section{background:var(--bg);padding:6rem 0}
+.logistics-inner{display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:start;margin-top:3rem}
+.logistics-block h3{font-family:var(--font-display);font-size:1.4rem;font-weight:700;color:var(--cream);margin-bottom:1.25rem;padding-bottom:.75rem;border-bottom:1px solid oklch(24% .04 22)}
+.logistics-list{list-style:none;display:flex;flex-direction:column;gap:.75rem}
+.logistics-item{display:flex;align-items:center;gap:.875rem;font-size:.9rem;color:var(--text-dim);padding:.625rem 0;border-bottom:1px solid oklch(20% .04 22 / .5);font-weight:300}
+.logistics-dot{width:.6rem;height:.6rem;background:var(--accent);border-radius:50%;flex-shrink:0}
+.logistics-day{font-weight:600;color:var(--cream);font-family:var(--font-display);font-size:1rem}
+
+/* CLIENTS */
+.clients-section{background:var(--bg-2);padding:5rem 0}
+.clients-grid{display:flex;flex-wrap:wrap;gap:1rem;margin-top:2.5rem}
+.client-tag{background:var(--bg-3);border:1px solid oklch(25% .04 22);padding:.75rem 1.25rem;font-size:.85rem;font-weight:300;color:var(--text-dim);font-family:var(--font-body);transition:border-color .2s,color .2s}
+.client-tag:hover{border-color:var(--accent);color:var(--accent)}
+
+/* CTA */
+.cta-section{position:relative;overflow:hidden;padding:0}
+.cta-inner{display:grid;grid-template-columns:1fr 1fr;min-height:520px}
+.cta-photo{position:relative;overflow:hidden}
+.cta-photo img{width:100%;height:100%;object-fit:cover;object-position:center 20%;display:block;filter:brightness(.6)}
+.cta-photo::after{content:'';position:absolute;inset:0;background:linear-gradient(to right,transparent 60%,var(--bg-3))}
+.cta-text-panel{background:var(--bg-3);padding:4rem 3.5rem;display:flex;flex-direction:column;justify-content:center}
+.cta-text-panel h2{font-family:var(--font-display);font-size:clamp(2rem,4vw,3rem);font-weight:900;color:var(--cream);line-height:.95;margin-bottom:1rem;font-style:italic}
+.cta-text-panel p{color:var(--text-dim);font-weight:300;line-height:1.7;margin-bottom:2rem}
+.cta-contacts{display:flex;flex-direction:column;gap:.625rem;margin-top:1.5rem}
+.cta-contact-item{font-size:.88rem;color:var(--text-dim);font-weight:300}
+.cta-contact-item strong{color:var(--cream);font-weight:600}
+
+/* FOOTER */
+footer{background:oklch(9% .03 22);padding:2rem 0;border-top:1px solid oklch(20% .04 22)}
+footer .container{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:1rem}
+footer p{color:var(--text-dim);font-size:.78rem;font-weight:300}
+.footer-brand{font-family:var(--font-display);font-size:1.2rem;color:var(--accent);font-weight:700;font-style:italic}
+
+.container{max-width:1200px;margin:0 auto;padding:0 2.5rem}
+
+/* RESPONSIVE */
+@media(max-width:768px){
+  nav ul{display:none}
+  nav{padding:1rem 1.5rem}
+  .hero-content{padding:2rem 1.5rem 4rem}
+  .story-inner{grid-template-columns:1fr}
+  .story-image-label{bottom:0;right:0}
+  .story-facts{grid-template-columns:1fr 1fr}
+  .products-grid{grid-template-columns:1fr}
+  .price-grid{grid-template-columns:1fr}
+  .logistics-inner{grid-template-columns:1fr}
+  .cta-inner{grid-template-columns:1fr}
+  .cta-photo{height:300px}
+  .cta-photo::after{background:linear-gradient(to top,var(--bg-3) 0%,transparent)}
+  .cta-text-panel{padding:2.5rem 1.5rem}
+  footer .container{flex-direction:column;align-items:flex-start}
+}
 </style>
 </head>
 <body>
-<div class="topbar">
-  <a href="index.html">← Voltar ao índice</a>
-  <span class="brand">Linguiça Exata</span>
-</div>
-<div class="container">
-  
-  <div class="hero">
-    <div class="icon">🥩</div>
-    <h1>Linguiça Exata</h1>
-    <div class="tagline">Linguiças Artesanais — 25 anos de mercado</div>
-    <div class="meta">
-      <div class="meta-item"><div class="val">10%</div><div class="lbl">Comissão</div></div>
-      <div class="meta-item"><div class="val">300kg → 2.000kg</div><div class="lbl">Meta/semana</div></div>
-      <div class="meta-item"><div class="val">R$20-24</div><div class="lbl">Preço/kg</div></div>
+
+<nav>
+  <a href="index.html" class="nav-brand">MARCOS<span>.</span></a>
+  <ul>
+    <li><a href="#historia">Nossa História</a></li>
+    <li><a href="#produtos">Produtos</a></li>
+    <li><a href="#precos">Preços</a></li>
+    <li><a href="#contato">Contato</a></li>
+  </ul>
+</nav>
+
+<!-- HERO: Full-bleed editorial -->
+<section class="hero">
+  <div class="hero-bg">
+    <img src="./images/linguica/linguica-extra-pura.jpg" alt="Linguiça Exata Extra Pura artesanal" fetchpriority="high">
+    <div></div>
+  </div>
+  <div class="hero-content">
+    <div class="hero-badge">Fábrica Própria · 25 Anos · Anápolis/GO</div>
+    <h1 class="hero-title"><span>Artesanal de Verdade</span>LINGUIÇA EXATA</h1>
+    <p class="hero-desc">Produzida em Anápolis há mais de 25 anos com receita própria. Entrega toda sexta-feira em Brasília. Qualidade garantida para supermercados, padarias e churrascarias.</p>
+    <div class="hero-cta">
+      <a href="#contato" class="btn-primary">Fazer Pedido</a>
+      <a href="#precos" class="btn-ghost">Ver Preços</a>
     </div>
   </div>
+</section>
 
-  <div class="section">
-    <h2>📋 Posicionamento</h2>
-    <p><strong>Comissão:</strong> 10% | <strong>Origem:</strong> Fábrica Anápolis-GO (25 anos) | <strong>Logística:</strong> Prospecção seg-qua Brasília, entrega sexta-feira</p>
-    <p>Linguiça artesanal de Anápolis-GO — 25 anos de receita de família. Sem conservantes, sem enchimento, sem química. A linguiça que não encolhe no fogo: perde só a gordura natural, nada de desperdiçar 30% em água e soro como as industrializadas.</p>
-    <div class="highlight-box">
-      <strong>Portfólio:</strong> Fina Frango, Fina Porco, Grossa Suína, Premium (calabresa, bacon, queijo coalho) — vácuo, 500g bandeja. <strong>Preço:</strong> R$24/kg (até 50kg) • R$22 (50-150kg) • R$20 (150-500kg)
+<!-- STORY -->
+<section class="story-section" id="historia">
+  <div class="container">
+    <div class="story-inner">
+      <div class="story-image">
+        <img src="./images/linguica/linguica-vitrine.jpg" alt="Linguiça Exata fresca em vitrine de açougue" loading="lazy">
+        <div class="story-image-label">Desde 2000<br>em Anápolis</div>
+      </div>
+      <div class="story-text">
+        <p class="section-eyebrow">Nossa História</p>
+        <h2 class="section-title">25 Anos de Tradição Artesanal</h2>
+        <p>A Linguiça Exata nasceu em Anápolis, Goiás, com um propósito simples: produzir linguiça de verdade, com ingredientes selecionados e receita própria. Mais de duas décadas depois, o sabor continua o mesmo.</p>
+        <p>Hoje chegamos em Brasília toda sexta-feira, fresquinha, direto da fábrica. Para supermercados, padarias, churrascarias e restaurantes que exigem qualidade sem abrir mão do preço justo.</p>
+        <div class="story-facts">
+          <div class="fact-card">
+            <span class="fact-val">25+</span>
+            <span class="fact-label">Anos de mercado em Anápolis/GO</span>
+          </div>
+          <div class="fact-card">
+            <span class="fact-val">5+</span>
+            <span class="fact-label">Variedades no portfólio</span>
+          </div>
+          <div class="fact-card">
+            <span class="fact-val">R$20</span>
+            <span class="fact-label">A partir de /kg (volume)</span>
+          </div>
+          <div class="fact-card">
+            <span class="fact-val">Sex.</span>
+            <span class="fact-label">Entrega em Brasília todo sábado</span>
+          </div>
+        </div>
+      </div>
     </div>
-    <div class="highlight-box">
-      <strong>🚀 Diferencial decisivo:</strong> "O que você compra é o que você assa." Enquanto a concorrência industrial entrega 700g de carne útil por kg, a Linguiça Exata entrega 950g+. Isso rende mais porções, mais satisfação e mais margem para o revendedor.
+  </div>
+</section>
+
+<!-- PRODUCTS -->
+<section class="products-section" id="produtos">
+  <div class="container">
+    <p class="section-eyebrow">Portfólio Completo</p>
+    <h2 class="section-title">Nossas Linguiças</h2>
+    <div class="products-grid">
+      <div class="product-card">
+        <div class="product-card-inner">
+          <div class="product-icon">L</div>
+          <h3 class="product-name">Linguiça Fina — Frango/Porco</h3>
+          <p class="product-desc">5kg · Embalagem a vácuo ou bandeja 500g. Ideal para padarias e mercados de bairro. Sabor suave, tempero equilibrado.</p>
+          <span class="product-tag">Mais Vendida</span>
+        </div>
+      </div>
+      <div class="product-card">
+        <div class="product-card-inner">
+          <div class="product-icon">G</div>
+          <h3 class="product-name">Linguiça Grossa Suína</h3>
+          <p class="product-desc">5kg a granel · A preferida de churrascarias e restaurantes. Carne selecionada, textura firme, defumação artesanal.</p>
+          <span class="product-tag">Churrascaria</span>
+        </div>
+      </div>
+      <div class="product-card">
+        <div class="product-card-inner">
+          <div class="product-icon">B</div>
+          <h3 class="product-name">Bacon Artesanal</h3>
+          <p class="product-desc">Produzido com barriga suína de qualidade, defumado no processo tradicional. Disponível a granel e em bandeja.</p>
+          <span class="product-tag">Premium</span>
+        </div>
+      </div>
+      <div class="product-card">
+        <div class="product-card-inner">
+          <div class="product-icon">Q</div>
+          <h3 class="product-name">Linguiça com Queijo Coalho</h3>
+          <p class="product-desc">Combinação exclusiva de linguiça suína com queijo coalho nordestino. Produto diferenciado, alta aceitação no varejo.</p>
+          <span class="product-tag">Exclusivo</span>
+        </div>
+      </div>
     </div>
   </div>
+</section>
 
-  <div class="section">
-    <h2>🗺️ Área de Atuação — Marcos Domingos</h2>
-    <p>Foco: <strong>Brasília/DF federal</strong>. Prospecção ativa segunda-quarta, entrega sexta-feira vindas de Anápolis. Atua em 8 regiões do DF com clientes confirmados: Reino Pão (padarias), restaurantes, churrascarias.</p>
-    <div class="tag-list">
-      <span>Samambaia</span><span>Taguatinga</span><span>Ceilândia</span><span>Vicente Pires</span>
-      <span>Águas Claras</span><span>Riacho Fundo I/II</span><span>Recanto das Emas</span><span>Gama</span>
+<!-- PRICE TABLE -->
+<section class="price-section" id="precos">
+  <div class="container">
+    <p class="section-eyebrow">Tabela de Preços</p>
+    <h2 class="section-title">Preço Progressivo por Volume</h2>
+    <p style="color:var(--text-dim);max-width:50ch;margin-top:.5rem;font-weight:300">Quanto maior o pedido, menor o custo por quilo. Pagamento PIX ou 7/14/30 dias para clientes estabelecidos.</p>
+    <div class="price-grid">
+      <div class="price-card">
+        <p class="price-tier">Pequeno Varejo</p>
+        <span class="price-val">R$24</span>
+        <p class="price-unit">/kg</p>
+        <p class="price-range">Até 50 kg</p>
+        <p class="price-note">Padarias, mercadinhos, restaurantes pequenos. Mínimo de pedido negociável.</p>
+      </div>
+      <div class="price-card featured">
+        <div class="price-badge">Mais Popular</div>
+        <p class="price-tier">Médio Volume</p>
+        <span class="price-val">R$22</span>
+        <p class="price-unit">/kg</p>
+        <p class="price-range">50 a 150 kg</p>
+        <p class="price-note">Supermercados e redes de padaria. Ótimo custo-benefício com volume garantido.</p>
+      </div>
+      <div class="price-card">
+        <p class="price-tier">Grande Volume</p>
+        <span class="price-val">R$20</span>
+        <p class="price-unit">/kg</p>
+        <p class="price-range">150 a 500 kg</p>
+        <p class="price-note">Para distribuidores e grandes redes. Melhor preço do mercado com qualidade artesanal.</p>
+      </div>
     </div>
   </div>
+</section>
 
-  <div class="section">
-    <h2>📸 Galeria de Produtos</h2>
-    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1.5rem; margin: 2rem 0;">
-      <img src="./images/linguica/calil_2A8CD97721E0.jpg" alt="Linguica Exata" style="width: 100%; height: 200px; object-fit: cover; border-radius: 0.8rem; border: 1px solid rgba(255,255,255,0.06);">
-      <img src="./images/linguica/calil_3A0A28E89A60.jpg" alt="Linguica Exata" style="width: 100%; height: 200px; object-fit: cover; border-radius: 0.8rem; border: 1px solid rgba(255,255,255,0.06);">
-      <img src="./images/linguica/calil_3A0E5A626D8B.jpg" alt="Linguica Exata" style="width: 100%; height: 200px; object-fit: cover; border-radius: 0.8rem; border: 1px solid rgba(255,255,255,0.06);">
-      <img src="./images/linguica/calil_3A2A9955161E.jpg" alt="Linguica Exata" style="width: 100%; height: 200px; object-fit: cover; border-radius: 0.8rem; border: 1px solid rgba(255,255,255,0.06);">
-      <img src="./images/linguica/calil_3A35FADB442D.jpg" alt="Linguica Exata" style="width: 100%; height: 200px; object-fit: cover; border-radius: 0.8rem; border: 1px solid rgba(255,255,255,0.06);">
-      <img src="./images/linguica/calil_3A464E4472EB.jpg" alt="Linguica Exata" style="width: 100%; height: 200px; object-fit: cover; border-radius: 0.8rem; border: 1px solid rgba(255,255,255,0.06);">
-      <img src="./images/linguica/calil_3A4DDF7A57E4.jpg" alt="Linguica Exata" style="width: 100%; height: 200px; object-fit: cover; border-radius: 0.8rem; border: 1px solid rgba(255,255,255,0.06);">
-      <img src="./images/linguica/calil_3A50E428F8E3.jpg" alt="Linguica Exata" style="width: 100%; height: 200px; object-fit: cover; border-radius: 0.8rem; border: 1px solid rgba(255,255,255,0.06);">
+<!-- LOGISTICS -->
+<section class="logistics-section">
+  <div class="container">
+    <p class="section-eyebrow">Logística e Entrega</p>
+    <h2 class="section-title">Como Funcionamos</h2>
+    <div class="logistics-inner">
+      <div class="logistics-block">
+        <h3>Calendário de Atendimento</h3>
+        <ul class="logistics-list">
+          <li class="logistics-item"><span class="logistics-dot"></span><span><span class="logistics-day">Segunda, Terça e Quarta</span> — Prospecção ativa em Brasília/DF</span></li>
+          <li class="logistics-item"><span class="logistics-dot"></span><span><span class="logistics-day">Sexta-feira</span> — Entrega semanal, direto de Anápolis/GO</span></li>
+          <li class="logistics-item"><span class="logistics-dot"></span><span>Prazo mínimo: pedido até quinta para entrega na sexta</span></li>
+          <li class="logistics-item"><span class="logistics-dot"></span><span>Pedidos grandes: prazo de até 1 semana conforme estoque</span></li>
+        </ul>
+      </div>
+      <div class="logistics-block">
+        <h3>Condições de Pagamento</h3>
+        <ul class="logistics-list">
+          <li class="logistics-item"><span class="logistics-dot"></span><span>PIX — pagamento na entrega (padrão)</span></li>
+          <li class="logistics-item"><span class="logistics-dot"></span><span>7 dias — para clientes com relacionamento estabelecido</span></li>
+          <li class="logistics-item"><span class="logistics-dot"></span><span>14 a 30 dias — grandes compras, análise de carteira</span></li>
+          <li class="logistics-item"><span class="logistics-dot"></span><span>Nota fiscal em toda entrega</span></li>
+        </ul>
+      </div>
     </div>
   </div>
+</section>
 
-  <div class="section">
-    <h2>🎯 Estratégia por Fase</h2>
-    
-    <h3>FASE 1 — Varejo Local (150kg/semana)</h3>
-    <p>Abordagem presencial em mercados, casas de carne, padarias e mercearias de Anápolis. Oferta loss leader: 5kg grátis da linha grossa suína para teste de vendas (R$110 de investimento).</p>
-    <p><strong>Conversão:</strong> 3 em cada 10 abordagens. 50 abordagens/semana = 15 novos clientes, média 10kg/semana cada = 150kg.</p>
-
-    <h3>FASE 2 — Food Service (100kg/semana)</h3>
-    <p>Churrascarias, restaurantes por kg, espetinhos de rua, hamburguerias artesanais. Degustação in loco: levar 1kg já assada da fina + 1kg da grossa.</p>
-    <div class="highlight-box">
-      <strong>Argumento decisivo para espetinhos:</strong> "Sua linguiça encolhe 30% no fogo? A nossa perde só a gordura. O que você compra é o que você vende. Rende mais, cliente gosta mais, margem igual."
+<!-- CLIENTS -->
+<section class="clients-section">
+  <div class="container">
+    <p class="section-eyebrow">Clientes em Brasília</p>
+    <h2 class="section-title" style="font-size:clamp(1.8rem,3vw,2.5rem)">Quem já confia na Linguiça Exata</h2>
+    <div class="clients-grid">
+      <span class="client-tag">Reino Pão</span>
+      <span class="client-tag">Delícia Mineira</span>
+      <span class="client-tag">Restaurantes em Samambaia</span>
+      <span class="client-tag">Churrascarias em Taguatinga</span>
+      <span class="client-tag">Padarias em Ceilândia</span>
+      <span class="client-tag">Mercados em Águas Claras</span>
+      <span class="client-tag">Supermercados no Gama</span>
     </div>
-
-    <h3>FASE 3 — WhatsApp B2C (50kg/semana)</h3>
-    <p>Grupo "Linguiça Exata — Encomendas Anápolis". Mecânica: Segunda cardápio, Quarta fechamento, Sexta retirada/entrega. Meta: 20 membros ativos, média 2,5kg/semana cada.</p>
   </div>
+</section>
 
-  <div class="section">
-    <h2>📈 Escala — 2.000kg/semana</h2>
-    
-    <h3>Eixo 1: Grandes Churrascarias (400kg/semana)</h3>
-    <p>10 grandes churrascarias de Goiânia + Anápolis. Degustação premium: assar lado a lado com a concorrente para mostrar o encolhimento.</p>
-    <p><strong>Argumento financeiro:</strong> "O senhor cobra R$40 no buffet. Cada kg de linguiça rende 15 porções. Com a nossa, rende 17 porque não encolhe. R$80 a mais por kg vendido."</p>
-
-    <h3>Eixo 2: Redes de Supermercados (500kg/semana)</h3>
-    <p>Cross-sell com a PIMEL nas mesmas redes: Super Adega, Tático, Costa Atacado, Atacadão Dia a Dia.</p>
-    <p><strong>Checklist:</strong> CNPJ, NF-e, SIM/SISBI, embalagem a vácuo padronizada, código de barras EAN-13, tabela nutricional, lote/data/validade.</p>
-
-    <h3>Eixo 3: WhatsApp B2C (400kg/semana)</h3>
-    <p>Crescimento exponencial: 20 → 80 → 300 pessoas em 3 meses.</p>
-    <table>
-      <tr><th>Ação</th><th>Recompensa</th></tr>
-      <tr><td>Convidar 3 amigos</td><td>1kg grátis</td></tr>
-      <tr><td>Pedido >10kg</td><td>Frete grátis</td></tr>
-      <tr><td>Indicar casa de carne que vire cliente</td><td>5kg grátis</td></tr>
-      <tr><td>Top 3 compradores do mês</td><td>10kg sorteados</td></tr>
-    </table>
-
-    <h3>Eixo 4: Eventos Sazonais (300kg/sazonal)</h3>
-    <table>
-      <tr><th>Data</th><th>Potencial</th></tr>
-      <tr><td>Carnaval</td><td>+200kg</td></tr>
-      <tr><td>Festas Juninas</td><td>+300kg</td></tr>
-      <tr><td>Dia dos Pais</td><td>+100kg</td></tr>
-      <tr><td>Natal/Ano Novo</td><td>+400kg</td></tr>
-    </table>
+<!-- CTA -->
+<section class="cta-section" id="contato">
+  <div class="cta-inner">
+    <div class="cta-photo">
+      <img src="./images/linguica/linguica-exata-promo.jpg" alt="Linguiça Exata — sabor que é tradição" loading="lazy">
+    </div>
+    <div class="cta-text-panel">
+      <h2>Quer Vender Linguiça Exata?</h2>
+      <p>Entre em contato com Marcos Domingos, representante comercial em Brasília/DF. Atendimento personalizado, entrega na sexta-feira, produto direto da fábrica.</p>
+      <a href="https://wa.me/556192966199" class="btn-primary" target="_blank" rel="noopener" style="width:fit-content">Falar no WhatsApp →</a>
+      <div class="cta-contacts">
+        <p class="cta-contact-item"><strong>Marcos Domingos</strong> — Representante</p>
+        <p class="cta-contact-item"><strong>(61) 9296-6199</strong> — WhatsApp</p>
+        <p class="cta-contact-item">Entregas: Brasília/DF e Entorno · Toda Sexta</p>
+        <p class="cta-contact-item">Fábrica: Anápolis/GO · Desde 2000</p>
+      </div>
+    </div>
   </div>
+</section>
 
-  <div class="section">
-    <h2>💬 Scripts de Abordagem</h2>
-    
-    <h3>WhatsApp — Restaurante / Churrascaria</h3>
-    <pre>Olá [nome], tudo bem? Aqui é [representante], da Linguiça Exata.
-
-Vou ser direto: seu restaurante vende espetinho de linguiça, certo?
-Quanto do peso que você compra vira porção no prato?
-
-A nossa perde só a gordura natural no fogo. Nada de encolher 30%
-igual as industrializadas. O que você paga é o que serve.
-
-Teste 5kg essa semana. Se não sentir diferença no rendimento E no
-feedback dos clientes, a gente não cobra.</pre>
-
-    <h3>WhatsApp — Supermercado / Casa de Carnes</h3>
-    <pre>Bom dia! Aqui é [representante], da Linguiça Exata.
-Somos a fábrica artesanal de Anápolis — 25 anos de mercado.
-
-A nossa tem três pontos que encaixam direto no seu negócio:
-1. Margem igual ou maior que Sadia/Seara — preço competitivo
-2. Produto que fideliza — o cliente prova e volta
-3. Sem devolução por qualidade — linguiça natural de verdade
-
-Tá aceitando uma amostra pra testar? Posso passar essa semana
-com 2kg degustação.</pre>
-
-    <h3>Instagram Post — Prova Social</h3>
-    <pre>🥩 A LINGUIÇA QUE NÃO ENCOLHE EXISTE
-
-Ela vem de Anápolis, de uma fábrica que tá de pé desde 2000.
-25 anos de receita de família, sem conservante, sem química,
-sem enchimento.
-
-Carne 100%. Tempero caseiro. Ponto na brasa.
-Seu churrasco de domingo nunca mais vai ser o mesmo.
-
-👇 Encomende agora pelo WhatsApp (link na bio)</pre>
+<footer>
+  <div class="container">
+    <span class="footer-brand">Linguiça Exata</span>
+    <p>Representação Comercial Marcos Domingos · Brasília/DF · (61) 9296-6199</p>
+    <p>Fabricação própria · Anápolis/GO · Entrega toda sexta em Brasília</p>
   </div>
+</footer>
 
-  <div class="section">
-    <h2>📅 Cronograma de Implementação</h2>
-    <table>
-      <tr><th>Período</th><th>Metas</th></tr>
-      <tr><td>Semana 1-2</td><td>Cartões, grupo WhatsApp (20), 3 posts Instagram, 30 abordagens → 50kg/semana</td></tr>
-      <tr><td>Semana 3-4</td><td>5 clientes fixos, 20 espetinhos, 40 membros grupo → 150kg/semana</td></tr>
-      <tr><td>Mês 2</td><td>15 clientes, 1 churrascaria, 2 grupos (~100), 3-4 posts/semana → 300kg/semana ✅</td></tr>
-      <tr><td>Mês 3</td><td>Goiânia, redes Super Adega/Tático, 3 grupos (~200), festas juninas → 800kg/semana</td></tr>
-      <tr><td>Mês 4</td><td>Rede supermercados, degustação Goiânia, 5 grupos (~400) → 1.400kg/semana</td></tr>
-      <tr><td>Mês 5</td><td>40-50 comerciais, 4-5 redes, 8-10 grupos (~800) → 2.000kg/semana ✅</td></tr>
-    </table>
-  </div>
-
-  <div class="section">
-    <h2>📊 Projeção Financeira</h2>
-    
-    <h3>Cenário 300kg/semana</h3>
-    <table>
-      <tr><th>Item</th><th>Valor</th></tr>
-      <tr><td>Kg vendidos/mês</td><td>1.200 kg</td></tr>
-      <tr><td>Receita bruta</td><td>R$ 26.400</td></tr>
-      <tr><td>Lucro líquido</td><td><strong>R$ 6.720/mês</strong></td></tr>
-    </table>
-
-    <h3>Cenário 2.000kg/semana</h3>
-    <table>
-      <tr><th>Item</th><th>Valor</th></tr>
-      <tr><td>Kg vendidos/mês</td><td>8.000 kg</td></tr>
-      <tr><td>Receita bruta</td><td>R$ 176.000</td></tr>
-      <tr><td>Lucro líquido</td><td><strong>R$ 44.800/mês</strong></td></tr>
-    </table>
-
-    <h3>KPIs Semanais</h3>
-    <table>
-      <tr><th>Indicador</th><th>Meta 300kg</th><th>Meta 2.000kg</th></tr>
-      <tr><td>Kg/semana</td><td>300</td><td>2.000</td></tr>
-      <tr><td>Clientes comerciais</td><td>15</td><td>50</td></tr>
-      <tr><td>Clientes B2C</td><td>20</td><td>200</td></tr>
-      <tr><td>Grupos WhatsApp</td><td>~100 membros</td><td>~800 membros</td></tr>
-      <tr><td>Conversão abordagem → teste</td><td>40%</td><td>40%</td></tr>
-      <tr><td>Conversão teste → cliente fixo</td><td>60%</td><td>60%</td></tr>
-      <tr><td>Churn semanal (comercial)</td><td>&lt;10%</td><td>&lt;5%</td></tr>
-      <tr><td>Instagram seguidores</td><td>200</td><td>2.000</td></tr>
-    </table>
-    <p><strong>Margem líquida target:</strong> 20-25%.</p>
-  </div>
-
-  <a href="index.html" class="back-link">← Voltar ao índice</a>
-</div>
 </body>
 </html>

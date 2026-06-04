@@ -3,352 +3,358 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>PIMEL — Plano de Marketing | Marcos Domingos</title>
+<title>Pimel — Mel e Derivados do Cerrado · Representação Brasília/DF</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,700&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500&display=swap" rel="stylesheet">
 <style>
-  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
-  * { margin: 0; padding: 0; box-sizing: border-box; }
-  body {
-    font-family: 'Inter', system-ui, -apple-system, sans-serif;
-    background: #0f0f1a;
-    color: #e0e0e0;
-    line-height: 1.7;
-  }
-  .topbar {
-    position: sticky; top: 0; z-index: 100;
-    background: rgba(15,15,26,0.92);
-    backdrop-filter: blur(12px);
-    border-bottom: 1px solid rgba(255,255,255,0.06);
-    padding: 1rem 2rem;
-    display: flex; align-items: center; gap: 1rem;
-  }
-  .topbar a {
-    color: #666; text-decoration: none; font-size: 0.9rem; font-weight: 500;
-    display: flex; align-items: center; gap: 0.4rem;
-  }
-  .topbar a:hover { color: #D47B2A; }
-  .topbar .brand { margin-left: auto; font-weight: 600; color: #D47B2A; font-size: 0.9rem; }
-  .container { max-width: 900px; margin: 0 auto; padding: 3rem 2rem 6rem; }
-  .hero {
-    text-align: center;
-    padding: 3rem 0;
-    margin-bottom: 3rem;
-  }
-  .hero .icon { font-size: 3.5rem; margin-bottom: 0.5rem; }
-  .hero h1 {
-    font-size: clamp(2rem, 4vw, 3rem);
-    font-weight: 800;
-    color: #D47B2A;
-    margin-bottom: 0.5rem;
-  }
-  .hero .tagline {
-    color: #888;
-    font-size: 1.1rem;
-    max-width: 600px;
-    margin: 0 auto;
-  }
-  .hero .cert {
-    display: inline-block;
-    margin-top: 1rem;
-    padding: 0.4rem 1.2rem;
-    background: rgba(212,123,42,0.12);
-    border: 1px solid rgba(212,123,42,0.25);
-    border-radius: 100px;
-    font-size: 0.85rem;
-    font-weight: 600;
-    color: #D47B2A;
-  }
-  .section {
-    margin-bottom: 3rem;
-    padding: 2.5rem;
-    background: rgba(255,255,255,0.02);
-    border: 1px solid rgba(255,255,255,0.06);
-    border-radius: 1.2rem;
-  }
-  .section h2 {
-    font-size: 1.5rem;
-    font-weight: 700;
-    color: #D47B2A;
-    margin-bottom: 1.5rem;
-    display: flex; align-items: center; gap: 0.75rem;
-  }
-  .section h3 {
-    font-size: 1.15rem;
-    font-weight: 600;
-    color: #ccc;
-    margin: 1.5rem 0 0.75rem;
-  }
-  .section h3:first-child { margin-top: 0; }
-  .section p { margin-bottom: 1rem; color: #aaa; }
-  .section ul, .section ol { margin: 0.5rem 0 1rem 1.5rem; color: #aaa; }
-  .section li { margin-bottom: 0.4rem; }
-  .highlight-box {
-    background: rgba(212,123,42,0.06);
-    border-left: 3px solid #D47B2A;
-    padding: 1.2rem 1.5rem;
-    border-radius: 0 0.8rem 0.8rem 0;
-    margin: 1.5rem 0;
-    color: #bbb;
-  }
-  .grid-2 {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 1rem;
-    margin: 1rem 0;
-  }
-  .stat-card {
-    background: rgba(255,255,255,0.03);
-    border: 1px solid rgba(255,255,255,0.06);
-    border-radius: 0.8rem;
-    padding: 1.2rem;
-    text-align: center;
-  }
-  .stat-card .value { font-size: 1.8rem; font-weight: 800; color: #D47B2A; }
-  .stat-card .label { font-size: 0.85rem; color: #666; margin-top: 0.25rem; }
-  table {
-    width: 100%;
-    border-collapse: collapse;
-    margin: 1rem 0;
-    font-size: 0.9rem;
-  }
-  th, td {
-    border: 1px solid rgba(255,255,255,0.08);
-    padding: 0.7rem 1rem;
-    text-align: left;
-  }
-  th { background: rgba(212,123,42,0.1); color: #D47B2A; font-weight: 600; }
-  td { color: #aaa; }
-  code, pre {
-    font-family: 'JetBrains Mono', 'Fira Code', monospace;
-    font-size: 0.85rem;
-  }
-  pre {
-    background: rgba(0,0,0,0.35);
-    border: 1px solid rgba(255,255,255,0.06);
-    border-radius: 0.8rem;
-    padding: 1.2rem 1.5rem;
-    overflow-x: auto;
-    margin: 1rem 0;
-    color: #ccc;
-    white-space: pre-wrap;
-  }
-  .tag-list { display: flex; flex-wrap: wrap; gap: 0.5rem; margin: 1rem 0; }
-  .tag-list span {
-    padding: 0.3rem 0.8rem;
-    background: rgba(212,123,42,0.08);
-    border: 1px solid rgba(212,123,42,0.15);
-    border-radius: 100px;
-    font-size: 0.8rem;
-    color: #D47B2A;
-  }
-  .back-link {
-    display: inline-flex; align-items: center; gap: 0.4rem;
-    color: #666; text-decoration: none; font-weight: 500; padding: 0.5rem 0;
-  }
-  .back-link:hover { color: #D47B2A; }
-  @media (max-width: 600px) {
-    .container { padding: 2rem 1rem; }
-    .section { padding: 1.5rem; }
-    .grid-2 { grid-template-columns: 1fr; }
-  }
+:root {
+  --bg: oklch(10% 0.028 68);
+  --bg-2: oklch(14% 0.034 68);
+  --bg-3: oklch(18% 0.038 68);
+  --gold: oklch(78% 0.18 82);
+  --gold-dim: oklch(60% 0.14 80);
+  --gold-deep: oklch(55% 0.16 75);
+  --gold-ink: oklch(10% 0.028 68);
+  --text: oklch(94% 0.016 86);
+  --text-dim: oklch(66% 0.022 76);
+  --cream: oklch(96% 0.018 90);
+  --font-display: 'Cormorant Garamond', Georgia, serif;
+  --font-body: 'DM Sans', sans-serif;
+}
+
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html,body{overflow-x:clip}
+body{background:var(--bg);color:var(--text);font-family:var(--font-body);font-size:16px;line-height:1.65}
+
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:.01ms!important;transition-duration:.01ms!important}}
+
+/* NAV */
+nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:1.25rem 2.5rem;display:flex;align-items:center;justify-content:space-between;background:oklch(10% .028 68 / .92);backdrop-filter:blur(12px);border-bottom:1px solid oklch(20% .03 68)}
+.nav-brand{font-family:var(--font-display);font-size:1.6rem;font-weight:600;color:var(--cream);text-decoration:none;letter-spacing:.04em}
+.nav-brand em{color:var(--gold);font-style:italic}
+nav ul{display:flex;gap:2.5rem;list-style:none}
+nav a{color:var(--text-dim);text-decoration:none;font-size:.82rem;font-weight:400;letter-spacing:.06em;transition:color .2s}
+nav a:hover,nav a:focus-visible{color:var(--gold)}
+nav a:focus-visible{outline:2px solid var(--gold);outline-offset:2px}
+
+/* HERO: Luxury centred layout with gradient honey bg */
+.hero{min-height:100svh;display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden;padding:8rem 2rem 5rem}
+.hero-bg{position:absolute;inset:0;background:radial-gradient(ellipse 80% 70% at 50% 40%, oklch(22% .055 72) 0%, oklch(12% .034 68) 60%, var(--bg) 100%)}
+.hero-bg::before{content:'';position:absolute;inset:0;background:radial-gradient(circle 600px at 30% 70%,oklch(28% .06 78 / .4),transparent)}
+.hero-bg::after{content:'';position:absolute;inset:0;background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='60' height='60'%3E%3Ccircle cx='1' cy='1' r='1' fill='%23a0600010'/%3E%3C/svg%3E")}
+
+.hero-content{position:relative;z-index:2;text-align:center;max-width:820px}
+.hero-badge{display:inline-flex;align-items:center;gap:.5rem;background:oklch(22% .04 72 / .8);color:var(--gold);padding:.45rem 1.25rem;font-size:.72rem;font-weight:500;letter-spacing:.14em;text-transform:uppercase;border:1px solid oklch(30% .04 72);margin-bottom:2rem;backdrop-filter:blur(8px)}
+.hero-title{font-family:var(--font-display);font-size:clamp(5rem,12vw,10rem);line-height:.85;font-weight:700;color:var(--cream);margin-bottom:1rem;letter-spacing:-.01em;overflow-wrap:anywhere}
+.hero-title em{display:block;font-style:italic;color:var(--gold);font-size:.5em;line-height:1.2;margin-bottom:.3rem}
+.hero-subtitle{font-family:var(--font-display);font-size:clamp(1rem,2vw,1.5rem);font-style:italic;color:var(--text-dim);margin-bottom:2rem;letter-spacing:.02em;font-weight:400}
+.hero-desc{font-size:1rem;color:var(--text-dim);max-width:55ch;margin:0 auto 3rem;line-height:1.75;font-weight:300}
+.hero-cta{display:flex;gap:1.25rem;justify-content:center;flex-wrap:wrap}
+
+.btn-gold{background:var(--gold);color:var(--gold-ink);padding:.9rem 2.4rem;font-family:var(--font-body);font-size:.82rem;font-weight:500;letter-spacing:.08em;text-transform:uppercase;text-decoration:none;border:none;cursor:pointer;transition:background .2s,transform .15s;display:inline-flex;align-items:center;gap:.5rem;min-height:44px}
+.btn-gold:hover{background:oklch(82% .18 82);transform:translateY(-1px)}
+.btn-gold:focus-visible{outline:2px solid var(--cream);outline-offset:2px}
+.btn-gold:active{transform:translateY(0)}
+
+.btn-outline{background:transparent;color:var(--gold);padding:.9rem 2.4rem;font-family:var(--font-body);font-size:.82rem;font-weight:400;letter-spacing:.06em;text-transform:uppercase;text-decoration:none;border:1px solid var(--gold-deep);cursor:pointer;transition:border-color .2s,background .2s;min-height:44px;display:inline-flex;align-items:center}
+.btn-outline:hover{border-color:var(--gold);background:oklch(14% .034 68)}
+.btn-outline:focus-visible{outline:2px solid var(--gold);outline-offset:2px}
+
+/* DIVIDER with honeycomb motif */
+.divider{padding:2rem 0;display:flex;align-items:center;justify-content:center;gap:1.5rem}
+.divider-line{flex:1;height:1px;background:linear-gradient(to right,transparent,oklch(30% .04 72),transparent)}
+.divider-icon{color:var(--gold-dim);font-size:1.2rem;font-family:var(--font-display)}
+
+/* CERTIFICATIONS / ABOUT */
+.about-section{background:var(--bg-2);padding:6rem 0}
+.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:start;margin-top:3rem}
+.about-lead{font-family:var(--font-display);font-size:clamp(1.4rem,3vw,2.2rem);font-weight:700;color:var(--cream);line-height:1.2;margin-bottom:1.5rem}
+.about-lead em{color:var(--gold);font-style:italic}
+.about-body{color:var(--text-dim);line-height:1.75;font-weight:300}
+.cert-cards{display:flex;flex-direction:column;gap:1rem}
+.cert-card{background:var(--bg-3);border:1px solid oklch(24% .03 68);padding:1.5rem;display:flex;align-items:flex-start;gap:1.25rem;border-left:3px solid var(--gold)}
+.cert-icon{font-family:var(--font-display);font-size:1.75rem;color:var(--gold);line-height:1;flex-shrink:0;font-weight:700}
+.cert-body h4{font-size:.9rem;font-weight:500;color:var(--cream);margin-bottom:.3rem}
+.cert-body p{font-size:.82rem;color:var(--text-dim);line-height:1.55;font-weight:300}
+
+/* PRODUCTS */
+.products-section{background:var(--bg);padding:6rem 0}
+.section-eyebrow{font-size:.7rem;letter-spacing:.18em;text-transform:uppercase;color:var(--gold);margin-bottom:.6rem;font-weight:500}
+.section-title{font-family:var(--font-display);font-size:clamp(2.5rem,5vw,4.5rem);line-height:.94;color:var(--cream);margin-bottom:1.5rem;overflow-wrap:anywhere;font-weight:700}
+
+/* Asymmetric product layout */
+.product-list{display:flex;flex-direction:column;gap:0;margin-top:3rem;border-top:1px solid oklch(20% .03 68)}
+.product-row{display:grid;grid-template-columns:3rem 1fr auto;gap:1.5rem;align-items:center;padding:1.75rem 0;border-bottom:1px solid oklch(18% .028 68);transition:background .2s;cursor:default}
+.product-row:hover{background:oklch(12% .03 68)}
+.product-row:hover{padding-left:1rem;padding-right:1rem;margin:0 -1rem}
+.product-num{font-family:var(--font-display);font-size:1.8rem;color:oklch(22% .03 68);line-height:1;font-weight:700}
+.product-info{}
+.product-name{font-family:var(--font-display);font-size:1.2rem;font-weight:600;color:var(--cream);margin-bottom:.25rem}
+.product-desc{font-size:.85rem;color:var(--text-dim);font-weight:300;line-height:1.5}
+.product-tag{font-size:.68rem;letter-spacing:.12em;text-transform:uppercase;color:var(--gold);background:oklch(18% .03 68);padding:.3rem .8rem;font-weight:500;white-space:nowrap;border:1px solid oklch(24% .03 68)}
+
+/* CLIENTS */
+.clients-section{background:var(--bg-2);padding:5rem 0}
+.clients-heading{font-family:var(--font-display);font-size:clamp(1.2rem,2.5vw,1.8rem);color:var(--text-dim);font-style:italic;margin-bottom:2.5rem;font-weight:400}
+.clients-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:oklch(20% .03 68);margin-top:2rem}
+.client-card{background:var(--bg);padding:1.25rem 1rem;text-align:center;font-family:var(--font-display);font-size:1rem;color:var(--text-dim);font-style:italic;transition:background .2s,color .2s}
+.client-card:hover{background:var(--bg-3);color:var(--gold)}
+
+/* PAYMENT */
+.payment-section{background:var(--bg);padding:5rem 0}
+.payment-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;margin-top:2.5rem}
+.payment-card{background:var(--bg-2);border:1px solid oklch(22% .03 68);padding:2rem 1.5rem;text-align:center;transition:border-color .2s}
+.payment-card:hover{border-color:var(--gold-dim)}
+.payment-title{font-family:var(--font-display);font-size:1.4rem;font-weight:600;color:var(--cream);margin-bottom:.5rem}
+.payment-desc{font-size:.85rem;color:var(--text-dim);line-height:1.6;font-weight:300}
+.payment-badge{display:inline-block;margin-bottom:1rem;font-size:.68rem;letter-spacing:.1em;text-transform:uppercase;color:var(--gold);border:1px solid oklch(28% .03 72);padding:.25rem .75rem}
+
+/* CTA */
+.cta-section{background:linear-gradient(135deg,oklch(18% .05 72) 0%,oklch(12% .035 68) 100%);padding:7rem 0;text-align:center;position:relative;overflow:hidden}
+.cta-section::before{content:'';position:absolute;inset:-50%;background:radial-gradient(circle 500px at 50% 50%,oklch(30% .06 78 / .2),transparent);pointer-events:none}
+.cta-section .container{position:relative;z-index:1}
+.cta-section h2{font-family:var(--font-display);font-size:clamp(2.5rem,6vw,5rem);font-weight:700;color:var(--cream);line-height:.92;margin-bottom:.75rem}
+.cta-section h2 em{color:var(--gold);font-style:italic}
+.cta-section p{color:var(--text-dim);max-width:50ch;margin:1rem auto 2.5rem;font-weight:300;line-height:1.7}
+.cta-details{display:flex;align-items:center;justify-content:center;gap:3rem;flex-wrap:wrap;margin-top:2.5rem}
+.cta-detail{text-align:center}
+.cta-detail-val{font-family:var(--font-display);font-size:1.6rem;color:var(--gold);display:block;font-weight:700}
+.cta-detail-label{font-size:.72rem;color:var(--text-dim);letter-spacing:.1em;text-transform:uppercase;font-weight:400}
+
+/* FOOTER */
+footer{background:oklch(7% .02 68);padding:2.5rem 0;border-top:1px solid oklch(18% .03 68)}
+footer .container{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:1rem}
+footer p{color:var(--text-dim);font-size:.78rem;font-weight:300}
+.footer-brand{font-family:var(--font-display);font-size:1.4rem;color:var(--gold);font-weight:600;font-style:italic}
+
+.container{max-width:1200px;margin:0 auto;padding:0 2.5rem}
+
+/* RESPONSIVE */
+@media(max-width:768px){
+  nav ul{display:none}
+  nav{padding:1rem 1.5rem}
+  .hero{padding:7rem 1.5rem 4rem}
+  .about-grid{grid-template-columns:1fr}
+  .clients-grid{grid-template-columns:repeat(2,1fr)}
+  .payment-grid{grid-template-columns:1fr}
+  .cta-details{gap:2rem}
+  .product-row{grid-template-columns:2.5rem 1fr}
+  .product-tag{display:none}
+  section{padding:3.5rem 0}
+  footer .container{flex-direction:column;align-items:flex-start}
+}
+@media(max-width:414px){
+  .clients-grid{grid-template-columns:1fr 1fr}
+}
 </style>
 </head>
 <body>
-<div class="topbar">
-  <a href="index.html">← Voltar ao índice</a>
-  <span class="brand">PIMEL</span>
+
+<nav>
+  <a href="index.html" class="nav-brand">MARCOS<em>.</em></a>
+  <ul>
+    <li><a href="#sobre">Sobre</a></li>
+    <li><a href="#produtos">Produtos</a></li>
+    <li><a href="#clientes">Clientes</a></li>
+    <li><a href="#contato">Contato</a></li>
+  </ul>
+</nav>
+
+<!-- HERO: Luxury centred -->
+<section class="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-content">
+    <div class="hero-badge">Certificação SISBI · Entreposto DF</div>
+    <h1 class="hero-title"><em>Mel &amp; Derivados</em>PIMEL</h1>
+    <p class="hero-subtitle">Do Cerrado para o seu estabelecimento</p>
+    <p class="hero-desc">Mel natural, orgânico e premium com certificação SISBI para venda nacional. Própolis, pólen e compostos de qualidade superior, entregues diretamente no Distrito Federal.</p>
+    <div class="hero-cta">
+      <a href="#contato" class="btn-gold">Solicitar Amostra</a>
+      <a href="#produtos" class="btn-outline">Ver Portfólio</a>
+    </div>
+  </div>
+</section>
+
+<div class="divider container">
+  <div class="divider-line"></div>
+  <span class="divider-icon">✦</span>
+  <div class="divider-line"></div>
 </div>
-<div class="container">
-  
-  <div class="hero">
-    <div class="icon">🍯</div>
-    <h1>PIMEL</h1>
-    <div class="tagline">Plano de Marketing e Expansão — Mel e Cera de Abelha</div>
-    <div class="cert">✅ Certificação SISBI — Venda Nacional</div>
-  </div>
 
-  <div class="section">
-    <h2>📋 Diagnóstico e Posicionamento</h2>
-    <p><strong>Comissão:</strong> 5% | <strong>Certificação:</strong> SISBI (venda nacional) | <strong>Base:</strong> Entreposto DF</p>
-    <p>A PIMEL é um entreposto de mel e cera de abelha com certificação SISBI — barreira de entrada que permite venda em todo território nacional. Já atende clientes reais confirmados: Dia a Dia, Costa Atacado, Super Adega, Tático, Castelo Forte, Casa Forte, Reino Pão, Pão Flocos.</p>
-    <div class="highlight-box">
-      <strong>Portfólio de Produtos:</strong> Mel natural, mel orgânico, linha premium (3 floradas), própolis, pólen, compostos, sachês. Prazos: até 2 dias (pequenas), 2-4 dias (planejamento com fábrica).
-    </div>
-    <div class="highlight-box">
-      <strong>Diferenciais:</strong> Certificação SISBI (barreira), qualidade Cerrado (referência nacional), capacidade produtiva, entrega própria, preço sem intermediação.
-    </div>
-  </div>
-
-  <div class="section">
-    <h2>🗺️ Área de Atuação — Marcos Domingos</h2>
-    <p>Atua em 8 regiões do Distrito Federal com estratégia de rota diversificada:</p>
-    <p style="display: flex; flex-wrap: wrap; gap: 1rem; margin-top: 1rem;">
-      <span class="tag-list"><span>Samambaia</span><span>Taguatinga</span><span>Ceilândia</span><span>Vicente Pires</span></span>
-    </p>
-    <p style="display: flex; flex-wrap: wrap; gap: 1rem;">
-      <span class="tag-list"><span>Águas Claras</span><span>Riacho Fundo I/II</span><span>Recanto das Emas</span><span>Gama</span></span>
-    </p>
-    <div class="highlight-box">
-      <strong>Metodologia:</strong> Enquanto se desloca por uma região, para em lojas de material de construção, padarias, farmácias, mercados. Aborda cada estabelecimento com produto adequado ao perfil, diversificando prospecções num único deslocamento.
-    </div>
-  </div>
-
-  <div class="section">
-    <h2>📊 Prazos de Pagamento e Entrega</h2>
-    <table>
-      <tr><th>Pagamento</th><th>Prazos</th></tr>
-      <tr><td>À vista (PIX)</td><td>Imediato</td></tr>
-      <tr><td>Crediário</td><td>7 dias (clientes estabelecidos)</td></tr>
-      <tr><td>Parcelado</td><td>14-30 dias (redes maiores, dependendo do tamanho da compra)</td></tr>
-    </table>
-    <table style="margin-top: 2rem;">
-      <tr><th>Tipo de Pedido</th><th>Prazo</th></tr>
-      <tr><td>Encomendas pequenas</td><td>Até 2 dias</td></tr>
-      <tr><td>Planejamento com fábrica</td><td>2-4 dias (dependendo do tamanho)</td></tr>
-    </table>
-  </div>
-
-  <div class="section">
-    <h2>📸 Galeria de Produtos</h2>
-    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1.5rem; margin: 2rem 0;">
-      <img src="./images/pimel/gui_2A00A6FA627D.jpg" alt="Mel PIMEL" style="width: 100%; height: 200px; object-fit: cover; border-radius: 0.8rem; border: 1px solid rgba(255,255,255,0.06);">
-      <img src="./images/pimel/gui_2A05C5F9435C.jpg" alt="Mel PIMEL" style="width: 100%; height: 200px; object-fit: cover; border-radius: 0.8rem; border: 1px solid rgba(255,255,255,0.06);">
-      <img src="./images/pimel/gui_2A0A3C4A119F.jpg" alt="Mel PIMEL" style="width: 100%; height: 200px; object-fit: cover; border-radius: 0.8rem; border: 1px solid rgba(255,255,255,0.06);">
-      <img src="./images/pimel/gui_2A10984E5F4A.jpg" alt="Mel PIMEL" style="width: 100%; height: 200px; object-fit: cover; border-radius: 0.8rem; border: 1px solid rgba(255,255,255,0.06);">
-      <img src="./images/pimel/gui_2A4A0A4F081B.jpg" alt="Mel PIMEL" style="width: 100%; height: 200px; object-fit: cover; border-radius: 0.8rem; border: 1px solid rgba(255,255,255,0.06);">
-      <img src="./images/pimel/gui_2A4EBC8BFE5A.jpg" alt="Mel PIMEL" style="width: 100%; height: 200px; object-fit: cover; border-radius: 0.8rem; border: 1px solid rgba(255,255,255,0.06);">
+<!-- ABOUT / CERT -->
+<section class="about-section" id="sobre">
+  <div class="container">
+    <div class="about-grid">
+      <div>
+        <p class="section-eyebrow">Por Que a Pimel?</p>
+        <h2 class="section-title" style="font-size:clamp(2rem,4vw,3.5rem)">Mel do Cerrado com <em style="color:var(--gold);font-style:italic">Certificação Nacional</em></h2>
+        <p class="about-lead">A <em>Pimel</em> é a escolha certa para estabelecimentos que valorizam qualidade comprovada e origem rastreável.</p>
+        <p class="about-body" style="margin-top:1rem">Com base em entreposto próprio no DF e certificação SISBI vigente, a Pimel pode vender para todo o território nacional. Isso significa que você recebe um produto com documentação completa, pronto para o varejo.</p>
+      </div>
+      <div class="cert-cards">
+        <div class="cert-card">
+          <div class="cert-icon">S</div>
+          <div class="cert-body">
+            <h4>Certificação SISBI</h4>
+            <p>Sistema Brasileiro de Inspeção de Produtos de Origem Animal. Autoriza comercialização em todo o Brasil.</p>
+          </div>
+        </div>
+        <div class="cert-card">
+          <div class="cert-icon">✓</div>
+          <div class="cert-body">
+            <h4>Entreposto no DF</h4>
+            <p>Base local no Distrito Federal. Entrega ágil para toda a região, sem intermediários.</p>
+          </div>
+        </div>
+        <div class="cert-card">
+          <div class="cert-icon">🌿</div>
+          <div class="cert-body">
+            <h4>Origem Rastreável</h4>
+            <p>Mel natural do Cerrado, com origem documentada e processo de produção transparente.</p>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
+</section>
 
-  <div class="section">
-    <h2>🗺️ Estratégia de Prospecção</h2>
-    <p><strong>Mapa de Quadrantes do DF:</strong> divisão da cidade em 4 regiões + 1 dia digital, com metas diárias claras.</p>
-    <table>
-      <tr><th>Dia</th><th>Quadrante</th><th>Foco</th><th>Meta</th></tr>
-      <tr><td>Segunda</td><td>Norte</td><td>Visitas presenciais</td><td>10 leads</td></tr>
-      <tr><td>Terça</td><td>Sul</td><td>Visitas presenciais</td><td>10 leads</td></tr>
-      <tr><td>Quarta</td><td>Oeste</td><td>Visitas presenciais</td><td>10 leads</td></tr>
-      <tr><td>Quinta</td><td>Entorno</td><td>Visitas presenciais</td><td>10 leads</td></tr>
-      <tr><td>Sexta</td><td>Digital</td><td>Follow-ups + GMaps + DMs + LinkedIn</td><td>Métricas</td></tr>
-    </table>
-    <p><strong>Busca avançada por segmento no Google Maps:</strong> mercados, padarias, lojas naturais, restaurantes, empórios, distribuidoras, quitandas — cada quadrante tem seu foco semanal.</p>
-    <p><strong>Metas:</strong> 10 novos leads/dia → 50/semana → 200/mês.</p>
-  </div>
-
-  <div class="section">
-    <h2>📱 Canais de Abordagem</h2>
-    <div class="tag-list">
-      <span>WhatsApp Business</span>
-      <span>Instagram Direct</span>
-      <span>LinkedIn</span>
-      <span>Google Maps</span>
-      <span>Visita presencial</span>
+<!-- PRODUCTS -->
+<section class="products-section" id="produtos">
+  <div class="container">
+    <p class="section-eyebrow">Portfólio Completo</p>
+    <h2 class="section-title">Linha Pimel</h2>
+    <div class="product-list">
+      <div class="product-row">
+        <span class="product-num">01</span>
+        <div class="product-info">
+          <h3 class="product-name">Mel Natural</h3>
+          <p class="product-desc">Mel puro do Cerrado, sabor intenso e aroma floral característico da vegetação nativa do planalto central.</p>
+        </div>
+        <span class="product-tag">Carro-chefe</span>
+      </div>
+      <div class="product-row">
+        <span class="product-num">02</span>
+        <div class="product-info">
+          <h3 class="product-name">Mel Orgânico</h3>
+          <p class="product-desc">Produzido sem agrotóxicos, certificado. Para mercados e empórios que buscam linha premium diferenciada.</p>
+        </div>
+        <span class="product-tag">Premium</span>
+      </div>
+      <div class="product-row">
+        <span class="product-num">03</span>
+        <div class="product-info">
+          <h3 class="product-name">Linha Premium 3 Floradas</h3>
+          <p class="product-desc">Mel trifloral com notas únicas de cada floração. Embalagem diferenciada para o segmento premium de mercado.</p>
+        </div>
+        <span class="product-tag">Alta Margem</span>
+      </div>
+      <div class="product-row">
+        <span class="product-num">04</span>
+        <div class="product-info">
+          <h3 class="product-name">Própolis</h3>
+          <p class="product-desc">Extrato de própolis com alta concentração de flavonoides. Produto com forte demanda em farmácias e empórios naturais.</p>
+        </div>
+        <span class="product-tag">Alta Demanda</span>
+      </div>
+      <div class="product-row">
+        <span class="product-num">05</span>
+        <div class="product-info">
+          <h3 class="product-name">Pólen e Compostos</h3>
+          <p class="product-desc">Pólen apícola e compostos naturais com propriedades nutritivas reconhecidas. Linha completa para varejo especializado.</p>
+        </div>
+        <span class="product-tag">Complementar</span>
+      </div>
+      <div class="product-row">
+        <span class="product-num">06</span>
+        <div class="product-info">
+          <h3 class="product-name">Sachês Individuais</h3>
+          <p class="product-desc">Sachês de mel porcionado, ideais para padarias, hotéis, cafés e food service. Embalagem prática, apresentação elegante.</p>
+        </div>
+        <span class="product-tag">Food Service</span>
+      </div>
     </div>
-    <p><strong>WhatsApp Business:</strong> Catálogo completo de produtos, etiquetas de lead, listas de transmissão por quadrante.</p>
-    <p><strong>Instagram:</strong> Perfil comercial, conteúdo de bastidores, DMs para restaurantes e lojas naturais com tom leve e visual.</p>
-    <p><strong>LinkedIn:</strong> Perfil comercial do Marcos, conexões com gerentes de compras, conteúdo técnico sobre SISBI.</p>
   </div>
+</section>
 
-  <div class="section">
-    <h2>💬 Scripts de Abordagem</h2>
-    <h3>WhatsApp — Primeiro Contato (Frio)</h3>
-    <pre>Olá, [nome/estabelecimento]! Aqui é Marcos, da PIMEL Mel.
-
-Somos um entreposto de mel com certificação SISBI — produzimos e
-distribuímos mel puro direto para o varejo. Já atendemos Atacadão
-Dia a Dia, Tático, Superbom e outras redes do DF.
-
-Gostaria de saber: vocês trabalham com mel? Posso mandar nossa
-tabela de preços e condições para avaliação?</pre>
-    
-    <h3>Instagram DM — Restaurantes e Lojas Naturais</h3>
-    <pre>Olá! Acompanho o trabalho de vocês aqui no Instagram e achei super
-alinhado com o que fazemos na PIMEL.
-
-Somos produtores de mel com SISBI (venda nacional) e temos uma
-linha que combina super com o perfil do estabelecimento de vocês
-— mel orgânico, própolis, pólen.
-
-Posso mandar mais informações? 😊</pre>
-
-    <h3>E-mail / LinkedIn — Redes Grandes</h3>
-    <pre>Assunto: PIMEL SISBI — Parceria Mel
-
-Olá [Nome], tudo bem?
-
-Meu nome é Marcos Domingos, sou representante da PIMEL,
-entreposto de mel e cera de abelha com certificação SISBI
-— o que significa que podemos vender em todo território
-nacional com rastreabilidade total.
-
-Hoje atendemos redes como Atacadão Dia a Dia, Tático,
-Costa Atacado e Superbom no DF. Estamos estruturando
-expansão para outros estados.</pre>
+<!-- CLIENTS -->
+<section class="clients-section" id="clientes">
+  <div class="container">
+    <p class="section-eyebrow">Quem Já Compra</p>
+    <h2 class="section-title" style="font-size:clamp(2rem,4vw,3.5rem)">Clientes em Brasília</h2>
+    <div class="clients-grid">
+      <div class="client-card">Dia a Dia</div>
+      <div class="client-card">Costa Atacado</div>
+      <div class="client-card">Super Adega</div>
+      <div class="client-card">Tático</div>
+      <div class="client-card">Castelo Forte</div>
+      <div class="client-card">Casa Forte</div>
+      <div class="client-card">Reino Pão</div>
+      <div class="client-card">Pão Flocos</div>
+    </div>
   </div>
+</section>
 
-  <div class="section">
-    <h2>📅 Fluxo de Follow-up e Cadência</h2>
-    <table>
-      <tr><th>Dia</th><th>Canal</th><th>Ação</th><th>Gatilho</th></tr>
-      <tr><td>D0</td><td>WhatsApp/DM</td><td>Primeiro contato com tabela</td><td>—</td></tr>
-      <tr><td>D2</td><td>WhatsApp</td><td>Reforço: oferta de amostra grátis</td><td>Não respondeu</td></tr>
-      <tr><td>D5</td><td>WhatsApp</td><td>Follow-up consultivo</td><td>Respondeu mas não fechou</td></tr>
-      <tr><td>D10</td><td>WhatsApp/Visita</td><td>Último contato + amostra</td><td>Neutro/morno</td></tr>
-      <tr><td>D30</td><td>WhatsApp</td><td>Reativação: novidades</td><td>Sem resposta desde D10</td></tr>
-    </table>
-    <p><strong>Regras de negócio:</strong> Lead que fecha → cadência de recorrência. "Não agora" → neutro D5. Nunca abriu → 1 ligação extra. Parou de comprar → reativação D30.</p>
+<!-- PAYMENT -->
+<section class="payment-section">
+  <div class="container">
+    <p class="section-eyebrow">Condições Comerciais</p>
+    <h2 class="section-title" style="font-size:clamp(2rem,4vw,3rem)">Prazos de Pagamento</h2>
+    <div class="payment-grid">
+      <div class="payment-card">
+        <span class="payment-badge">Padrão</span>
+        <h3 class="payment-title">À Vista</h3>
+        <p class="payment-desc">PIX na entrega. Disponível para todos os clientes, inclusive novos pedidos.</p>
+      </div>
+      <div class="payment-card">
+        <span class="payment-badge">Estabelecido</span>
+        <h3 class="payment-title">7 Dias</h3>
+        <p class="payment-desc">Para clientes com histórico de compra. Pedidos entregues com boleto ou Pix programado.</p>
+      </div>
+      <div class="payment-card">
+        <span class="payment-badge">Redes</span>
+        <h3 class="payment-title">14 a 30 Dias</h3>
+        <p class="payment-desc">Para redes maiores dependendo do volume da compra e perfil do cliente.</p>
+      </div>
+    </div>
   </div>
+</section>
 
-  <div class="section">
-    <h2>🔄 Estratégia de Recorrência e Fidelização</h2>
-    <h3>Frequência de Recompra por Tipo de Cliente</h3>
-    <table>
-      <tr><th>Tipo</th><th>Ticket Médio</th><th>Frequência</th></tr>
-      <tr><td>Supermercado médio</td><td>50-200 un/mês</td><td>Quinzenal</td></tr>
-      <tr><td>Padaria</td><td>10-30 un/mês</td><td>Semanal</td></tr>
-      <tr><td>Loja Natural</td><td>20-60 un/mês</td><td>Quinzenal</td></tr>
-      <tr><td>Farmácia</td><td>30-100 un/mês</td><td>Mensal</td></tr>
-      <tr><td>Restaurante</td><td>5-15 un/mês</td><td>Quinzenal</td></tr>
-      <tr><td>Indústria (balde 25kg)</td><td>200-1000kg/mês</td><td>Mensal</td></tr>
-    </table>
-    
-    <h3>Programa de Fidelidade</h3>
-    <p><strong>Bronze</strong> (3 meses): Prioridade na entrega + 10 unidades de mel 200g para degustação.<br>
-    <strong>Prata</strong> (6 meses): Preço diferenciado em linha orgânica + material de PDV.<br>
-    <strong>Ouro</strong> (12 meses): Condição especial em balde 25kg + visita mensal exclusiva + Cesta de Mel no fim do ano.</p>
-    
-    <p><strong>Cross-sell:</strong> Mel → Própolis → Pólen → Balde 25kg. Script de reposição automática incluso.</p>
+<!-- CTA -->
+<section class="cta-section" id="contato">
+  <div class="container">
+    <h2>Quer Vender <em>Pimel?</em></h2>
+    <p>Solicite amostras grátis ou faça seu primeiro pedido. Representante em Brasília com entrega rápida diretamente do entreposto do DF.</p>
+    <div style="display:flex;gap:1rem;justify-content:center;flex-wrap:wrap">
+      <a href="https://wa.me/556192966199" class="btn-gold" target="_blank" rel="noopener">Falar com Marcos no WhatsApp →</a>
+    </div>
+    <div class="cta-details">
+      <div class="cta-detail">
+        <span class="cta-detail-val">SISBI</span>
+        <span class="cta-detail-label">Certificação Nacional</span>
+      </div>
+      <div class="cta-detail">
+        <span class="cta-detail-val">2 dias</span>
+        <span class="cta-detail-label">Prazo de Entrega</span>
+      </div>
+      <div class="cta-detail">
+        <span class="cta-detail-val">(61) 9296-6199</span>
+        <span class="cta-detail-label">WhatsApp Marcos</span>
+      </div>
+      <div class="cta-detail">
+        <span class="cta-detail-val">DF e Entorno</span>
+        <span class="cta-detail-label">Área de Cobertura</span>
+      </div>
+    </div>
   </div>
+</section>
 
-  <div class="section">
-    <h2>🌎 Estratégia de Escala Nacional</h2>
-    <table>
-      <tr><th>Fase</th><th>Prazo</th><th>Foco</th></tr>
-      <tr><td>Fase 1</td><td>Mês 1-3</td><td>DF consolidado + GO</td></tr>
-      <tr><td>Fase 2</td><td>Mês 4-6</td><td>GO + MG (Triângulo)</td></tr>
-      <tr><td>Fase 3</td><td>Mês 7-9</td><td>SP interior (distribuidor)</td></tr>
-      <tr><td>Fase 4</td><td>Mês 10-12</td><td>SP capital + RJ (redes nacionais)</td></tr>
-    </table>
-    <p><strong>Estados prioritários:</strong> GO, MG, SP, RJ, BA.</p>
-    <p><strong>Documentos necessários:</strong> Portfólio digital, apresentação corporativa (5 slides), tabela nacional, laudos por lote, certificado SISBI, kit executivo.</p>
+<footer>
+  <div class="container">
+    <span class="footer-brand">Pimel</span>
+    <p>Representação Comercial Marcos Domingos · Brasília/DF · (61) 9296-6199</p>
+    <p>Mel e Derivados do Cerrado · Certificação SISBI · Entreposto DF</p>
   </div>
+</footer>
 
-  <div class="section">
-    <h2>📆 Calendário Semanal Tipo</h2>
-    <table>
-      <tr><th>Horário</th><th>Seg (Norte)</th><th>Ter (Sul)</th><th>Qua (Oeste)</th><th>Qui (Entorno)</th><th>Sex (Digital)</th></tr>
-      <tr><td>08-09</td><td>Preparação</td><td>Preparação</td><td>Preparação</td><td>Preparação</td><td>Planejamento</td></tr>
-      <tr><td>09-12</td><td>3 visitas</td><td>3 visitas</td><td>3 visitas</td><td>3 visitas</td><td>Follow-ups</td></tr>
-      <tr><td>13-15</td><td>Porta-a-porta</td><td>Porta-a-porta</td><td>Porta-a-porta</td><td>Porta-a-porta</td><td>GMaps + DMs</td></tr>
-      <tr><td>15-17</td><td>Fechamento</td><td>Fechamento</td><td>Fechamento</td><td>Fechamento</td><td>LinkedIn + métricas</td></tr>
-    </table>
-    
-    <h3>Checklist Semana 1</h3>
-    <p>Dias 1-2: Configurar WhatsApp Business, etiquetas, Instagram, portfólio digital, kit amostras.<br>
-    Dias 3-5: Mapear 50 leads GMaps (Norte), enviar 20 contatos WhatsApp, agendar 5 visitas.<br>
-    Dias 6-7: Avaliar taxa de resposta, ajustar scripts, planejar Semana 2 (Sul).</p>
-  </div>
-
-  <a href="index.html" class="back-link">← Voltar ao índice</a>
-</div>
 </body>
 </html>

@@ -3,229 +3,151 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Planos de Marketing — Marcos Domingos</title>
+<title>Marcos Domingos — Representação Comercial Brasília/DF</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500&display=swap" rel="stylesheet">
 <style>
-  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
-  * { margin: 0; padding: 0; box-sizing: border-box; }
-  body {
-    font-family: 'Inter', system-ui, -apple-system, sans-serif;
-    background: #0f0f1a;
-    color: #e0e0e0;
-    line-height: 1.6;
-    min-height: 100vh;
-  }
-  .bg-ambient {
-    position: fixed;
-    inset: 0;
-    z-index: 0;
-    background: radial-gradient(ellipse at 20% 30%, rgba(212,123,42,0.08) 0%, transparent 50%),
-                radial-gradient(ellipse at 80% 20%, rgba(192,57,43,0.08) 0%, transparent 50%),
-                radial-gradient(ellipse at 50% 80%, rgba(41,128,185,0.08) 0%, transparent 50%);
-    pointer-events: none;
-  }
-  .container { position: relative; z-index: 1; max-width: 1100px; margin: 0 auto; padding: 4rem 2rem; }
-  header {
-    text-align: center;
-    padding: 3rem 0 4rem;
-    border-bottom: 1px solid rgba(255,255,255,0.06);
-    margin-bottom: 4rem;
-  }
-  header h1 {
-    font-size: clamp(2rem, 5vw, 3.5rem);
-    font-weight: 800;
-    background: linear-gradient(135deg, #e0e0e0 0%, #888 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-    margin-bottom: 0.5rem;
-  }
-  header p {
-    font-size: 1.2rem;
-    color: #666;
-    font-weight: 400;
-  }
-  header .date {
-    font-size: 0.9rem;
-    color: #444;
-    margin-top: 0.5rem;
-  }
-  .subtitle {
-    text-align: center;
-    color: #888;
-    font-size: 1.1rem;
-    margin-bottom: 3rem;
-    max-width: 700px;
-    margin-left: auto;
-    margin-right: auto;
-  }
-  .cards {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-    gap: 2rem;
-    margin-top: 2rem;
-  }
-  .card {
-    background: rgba(255,255,255,0.03);
-    border: 1px solid rgba(255,255,255,0.08);
-    border-radius: 1.5rem;
-    padding: 2.5rem 2rem;
-    transition: all 0.3s ease;
-    position: relative;
-    overflow: hidden;
-    text-decoration: none;
-    color: inherit;
-    display: block;
-  }
-  .card:hover {
-    transform: translateY(-4px);
-    border-color: rgba(255,255,255,0.15);
-    background: rgba(255,255,255,0.05);
-    box-shadow: 0 20px 60px rgba(0,0,0,0.4);
-  }
-  .card .accent {
-    width: 60px; height: 4px;
-    border-radius: 2px;
-    margin-bottom: 1.5rem;
-  }
-  .card h2 {
-    font-size: 1.6rem;
-    font-weight: 700;
-    margin-bottom: 0.75rem;
-  }
-  .card p {
-    color: #999;
-    font-size: 0.95rem;
-    line-height: 1.7;
-    margin-bottom: 1.5rem;
-  }
-  .card .tag {
-    display: inline-block;
-    padding: 0.35rem 1rem;
-    border-radius: 100px;
-    font-size: 0.8rem;
-    font-weight: 600;
-    margin-right: 0.5rem;
-    margin-bottom: 0.5rem;
-    background: rgba(255,255,255,0.06);
-    color: #aaa;
-  }
-  .card .cta {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.5rem;
-    font-weight: 600;
-    font-size: 0.95rem;
-    margin-top: 0.5rem;
-  }
-  .card .cta .arrow { transition: transform 0.2s; }
-  .card:hover .cta .arrow { transform: translateX(4px); }
-  .card .icon { font-size: 2.5rem; margin-bottom: 1rem; }
-  .pimel .accent { background: linear-gradient(90deg, #D47B2A, #f0a050); }
-  .pimel .cta { color: #D47B2A; }
-  .linguica .accent { background: linear-gradient(90deg, #C0392B, #e74c3c); }
-  .linguica .cta { color: #e74c3c; }
-  .condel .accent { background: linear-gradient(90deg, #2980B9, #3498db); }
-  .condel .cta { color: #3498db; }
-  .footer {
-    text-align: center;
-    padding: 3rem 0;
-    color: #444;
-    font-size: 0.85rem;
-    border-top: 1px solid rgba(255,255,255,0.06);
-    margin-top: 4rem;
-  }
-  .footer a { color: #666; text-decoration: none; }
-  .footer a:hover { color: #999; }
-  @media (max-width: 600px) {
-    .container { padding: 2rem 1rem; }
-    header { padding: 2rem 0 3rem; }
-    .cards { grid-template-columns: 1fr; }
-    .card { padding: 2rem 1.5rem; }
-  }
+:root {
+  --bg: oklch(10% 0.01 240);
+  --bg-2: oklch(14% 0.012 240);
+  --text: oklch(90% 0.008 240);
+  --text-dim: oklch(58% 0.01 240);
+  --font-display: 'Syne', sans-serif;
+  --font-body: 'DM Sans', sans-serif;
+  --gold: oklch(78% 0.18 82);
+  --orange: oklch(67% 0.19 48);
+  --red: oklch(55% 0.16 28);
+  --cream: oklch(96% 0.008 80);
+}
+
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html,body{overflow-x:clip}
+body{background:var(--bg);color:var(--text);font-family:var(--font-body);font-size:16px;line-height:1.6}
+
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:.01ms!important;transition-duration:.01ms!important}}
+
+nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:1.25rem 2.5rem;display:flex;align-items:center;justify-content:space-between;background:oklch(10% .01 240 / .92);backdrop-filter:blur(12px);border-bottom:1px solid oklch(20% .012 240)}
+.nav-brand{font-family:var(--font-display);font-size:1.3rem;font-weight:800;color:var(--cream);text-decoration:none;letter-spacing:-.02em}
+nav p{font-size:.78rem;color:var(--text-dim);font-weight:300}
+
+.hero{padding:10rem 2.5rem 6rem;max-width:900px;margin:0 auto}
+.hero-label{font-size:.72rem;letter-spacing:.2em;text-transform:uppercase;color:var(--text-dim);margin-bottom:1.5rem;font-weight:500}
+.hero-title{font-family:var(--font-display);font-size:clamp(3rem,7vw,6rem);line-height:.9;font-weight:800;color:var(--cream);margin-bottom:1.5rem;letter-spacing:-.02em;overflow-wrap:anywhere}
+.hero-desc{font-size:1.05rem;color:var(--text-dim);max-width:55ch;line-height:1.75;font-weight:300;margin-bottom:3rem}
+
+/* PRODUCT CARDS — large asymmetric */
+.products{padding:2rem 2.5rem 6rem;max-width:1400px;margin:0 auto}
+.products-label{font-size:.72rem;letter-spacing:.2em;text-transform:uppercase;color:var(--text-dim);margin-bottom:2rem;font-weight:500;padding-left:.25rem}
+.card-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:1.5px;background:oklch(18% .012 240)}
+
+.product-card{position:relative;overflow:hidden;aspect-ratio:3/4;display:flex;flex-direction:column;justify-content:flex-end;background:var(--bg-2);text-decoration:none;transition:background .2s}
+.product-card:focus-visible{outline:2px solid var(--cream);outline-offset:-2px}
+
+.card-bg{position:absolute;inset:0;background:var(--gradient);opacity:.9}
+.card-content{position:relative;z-index:2;padding:2rem}
+.card-tag{font-size:.65rem;letter-spacing:.16em;text-transform:uppercase;color:oklch(80% .01 240 / .7);margin-bottom:.75rem;font-weight:500}
+.card-name{font-family:var(--font-display);font-size:clamp(2rem,4vw,3rem);font-weight:800;color:var(--cream);line-height:.9;margin-bottom:.75rem;letter-spacing:-.02em}
+.card-desc{font-size:.82rem;color:oklch(70% .01 240 / .8);line-height:1.55;font-weight:300;margin-bottom:1.5rem}
+.card-link{display:inline-flex;align-items:center;gap:.5rem;font-size:.8rem;font-weight:500;color:var(--card-accent);letter-spacing:.06em;text-transform:uppercase;padding-bottom:.25rem;border-bottom:1px solid var(--card-accent);transition:gap .2s}
+.product-card:hover .card-link{gap:.75rem}
+
+.card-honey{--gradient:linear-gradient(160deg,oklch(16% .04 68),oklch(10% .028 68));--card-accent:var(--gold)}
+.card-honey .card-bg{background:radial-gradient(ellipse 80% 80% at 30% 20%,oklch(26% .06 75 / .6),transparent)}
+.card-condel{--gradient:linear-gradient(160deg,oklch(14% .02 248),oklch(10% .018 248));--card-accent:var(--orange)}
+.card-condel .card-bg{background:radial-gradient(ellipse 80% 60% at 70% 30%,oklch(22% .03 50 / .5),transparent)}
+.card-linguica{--gradient:linear-gradient(160deg,oklch(14% .04 22),oklch(10% .03 15));--card-accent:oklch(72% .16 72)}
+.card-linguica .card-bg{background:radial-gradient(ellipse 80% 60% at 50% 20%,oklch(22% .055 28 / .5),transparent)}
+
+/* Internal doc card */
+.internal-section{padding:0 2.5rem 6rem;max-width:1400px;margin:0 auto}
+.internal-card{background:var(--bg-2);border:1px solid oklch(22% .012 240);padding:2.5rem 3rem;display:grid;grid-template-columns:1fr auto;gap:2rem;align-items:center;text-decoration:none;transition:border-color .2s,background .2s}
+.internal-card:hover{border-color:oklch(38% .012 240);background:oklch(16% .012 240)}
+.internal-card:focus-visible{outline:2px solid var(--cream);outline-offset:2px}
+.internal-badge{font-size:.68rem;letter-spacing:.14em;text-transform:uppercase;color:var(--text-dim);background:oklch(18% .012 240);padding:.3rem .8rem;border:1px solid oklch(22% .012 240);display:inline-block;margin-bottom:1rem;font-weight:500}
+.internal-title{font-family:var(--font-display);font-size:1.5rem;font-weight:700;color:var(--cream);margin-bottom:.5rem;letter-spacing:-.01em}
+.internal-desc{font-size:.88rem;color:var(--text-dim);line-height:1.6;font-weight:300}
+.internal-arrow{font-size:2rem;color:var(--text-dim);transition:transform .2s,color .2s}
+.internal-card:hover .internal-arrow{transform:translateX(4px);color:var(--cream)}
+
+footer{background:oklch(8% .008 240);padding:2rem 2.5rem;border-top:1px solid oklch(16% .01 240)}
+footer p{color:var(--text-dim);font-size:.78rem;font-weight:300;text-align:center}
+
+@media(max-width:768px){
+  nav{padding:1rem 1.5rem}
+  .hero{padding:8rem 1.5rem 4rem}
+  .products{padding:1.5rem 1.5rem 4rem}
+  .internal-section{padding:0 1.5rem 4rem}
+  .card-grid{grid-template-columns:1fr}
+  .product-card{aspect-ratio:4/3}
+  .internal-card{grid-template-columns:1fr}
+  .internal-arrow{display:none}
+}
 </style>
 </head>
 <body>
-<div class="bg-ambient"></div>
-<div class="container">
-  <header>
-    <h1>Planos de Marketing</h1>
-    <p>Consolidado Comercial</p>
-    <div class="date">Marcos Domingos • Maio 2026</div>
-  </header>
-  
-  <div class="subtitle">
-    Três planos estratégicos completos de marketing e vendas para os negócios da família Domingos. Cada plano contém estratégia de prospecção, scripts comerciais, régua de follow-up, cronograma de implementação e KPIs.
-  </div>
-  
-  <div class="cards">
-    <a href="pimel.html" class="card pimel">
-      <div class="icon">🍯</div>
-      <div class="accent"></div>
-      <h2>PIMEL</h2>
-      <p>Mel e Cera de Abelha — Entreposto com certificação SISBI. Expansão nacional a partir do DF. Atende redes como Atacadão Dia a Dia, Tático e Superbom.</p>
-      <div>
-        <span class="tag">Prospecção 4 quadrantes</span>
-        <span class="tag">WhatsApp Business</span>
-        <span class="tag">Recorrência</span>
-        <span class="tag">Escala Nacional</span>
+
+<nav>
+  <a href="index.html" class="nav-brand">Marcos Domingos</a>
+  <p>Representação Comercial · Brasília/DF</p>
+</nav>
+
+<header class="hero">
+  <p class="hero-label">Representação Comercial</p>
+  <h1 class="hero-title">Três Produtos.<br>Um Representante.</h1>
+  <p class="hero-desc">Marcos Domingos representa três marcas de qualidade no Distrito Federal e entorno. Mel certificado, cabos elétricos INMETRO e linguiça artesanal direto da fábrica.</p>
+</header>
+
+<section class="products">
+  <p class="products-label">Portfólio de Produtos</p>
+  <div class="card-grid">
+
+    <a href="pimel.html" class="product-card card-honey">
+      <div class="card-bg"></div>
+      <div class="card-content">
+        <p class="card-tag">Mel · Certificação SISBI · Brasília/DF</p>
+        <h2 class="card-name">PIMEL</h2>
+        <p class="card-desc">Mel natural e orgânico do Cerrado. Própolis, pólen e derivados com certificação nacional para supermercados e empórios.</p>
+        <span class="card-link">Conhecer Pimel →</span>
       </div>
-      <div class="cta">Ver plano completo <span class="arrow">→</span></div>
     </a>
 
-    <a href="linguica-exata.html" class="card linguica">
-      <div class="icon">🥩</div>
-      <div class="accent"></div>
-      <h2>Linguiça Exata</h2>
-      <p>Linguiças Artesanais — 25 anos de mercado em Anápolis-GO. Meta de 300kg a 2.000kg/semana. R$6.720 a R$44.800/mês de lucro líquido.</p>
-      <div>
-        <span class="tag">Varejo local</span>
-        <span class="tag">Food Service</span>
-        <span class="tag">WhatsApp B2C</span>
-        <span class="tag">Eventos sazonais</span>
+    <a href="condel.html" class="product-card card-condel">
+      <div class="card-bg"></div>
+      <div class="card-content">
+        <p class="card-tag">Fios &amp; Cabos · INMETRO · 150+ Lojas</p>
+        <h2 class="card-name">CONDEL</h2>
+        <p class="card-desc">Condutores elétricos certificados com dupla homologação INMETRO. Linha completa do 1,5mm ao 185mm para o varejo de material elétrico.</p>
+        <span class="card-link">Conhecer Condel →</span>
       </div>
-      <div class="cta">Ver plano completo <span class="arrow">→</span></div>
     </a>
 
-    <a href="condel.html" class="card condel">
-      <div class="icon">⚡</div>
-      <div class="accent"></div>
-      <h2>Condel</h2>
-      <p>Condutores Elétricos — Distribuidora em Brasília. Meta R$25k no 1º mês, R$65k/mês até o 5º mês. Lojas de material + construtoras + grandes obras.</p>
-      <div>
-        <span class="tag">Lojas de bairro</span>
-        <span class="tag">Construtoras</span>
-        <span class="tag">Prospecção presencial</span>
-        <span class="tag">R$25k → R$65k</span>
+    <a href="linguica-exata.html" class="product-card card-linguica">
+      <div class="card-bg"></div>
+      <div class="card-content">
+        <p class="card-tag">Artesanal · Anápolis/GO · Entrega Sexta</p>
+        <h2 class="card-name">LINGUIÇA EXATA</h2>
+        <p class="card-desc">25 anos de tradição em Anápolis. Linguiça fina, grossa, bacon e queijo coalho — entregues toda sexta-feira em Brasília.</p>
+        <span class="card-link">Conhecer Linguiça Exata →</span>
       </div>
-      <div class="cta">Ver plano completo <span class="arrow">→</span></div>
     </a>
 
-    <a href="plano-marketing.html" class="card" style="grid-column: 1 / -1;">
-      <div class="icon">📊</div>
-      <div class="accent" style="background: linear-gradient(90deg, #2ecc71, #27ae60);"></div>
-      <h2 style="color: #2ecc71;">Plano de Marketing Completo</h2>
-      <p>Estratégia completa de marketing para todas as operações comerciais — PIMEL, Condel, Linguiça Artesanal, Mel e Delícia Mineira. Inclui análise de mercado, posicionamento, canais de venda, cronograma 90 dias, métricas e orçamento.</p>
-      <div>
-        <span class="tag">5 Linhas de Produto</span>
-        <span class="tag">Análise de Mercado</span>
-        <span class="tag">Cronograma 90 Dias</span>
-        <span class="tag">Orçamento R$350</span>
-        <span class="tag">Ações Digitais</span>
-      </div>
-      <div class="cta" style="color: #2ecc71;">Ver plano completo <span class="arrow">→</span></div>
-    </a>
   </div>
-  
-  <div style="text-align:center;margin-top:4rem;">
-    <a href="Planos-de-Marketing-Consolidado.docx" style="display:inline-flex;align-items:center;gap:0.5rem;padding:0.8rem 2rem;background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);border-radius:100px;color:#ccc;text-decoration:none;font-weight:500;transition:all 0.2s;">
-      📄 Baixar DOCX para impressão
-    </a>
-  </div>
-  
-  <div class="footer">
-    Gerado por CMO Agent — Paperclip<br>
-    <a href="#">Planos de Marketing • Marcos Domingos</a>
-  </div>
-</div>
+</section>
+
+<section class="internal-section">
+  <a href="plano-marketing.html" class="internal-card">
+    <div>
+      <span class="internal-badge">Documento Interno · Equipe</span>
+      <h3 class="internal-title">Plano de Marketing — Estratégia Completa</h3>
+      <p class="internal-desc">Estratégia primordial completa: comissões, áreas de atuação, concorrentes, metas, roteiro de abordagem e análise de dados. Acesso restrito à equipe.</p>
+    </div>
+    <span class="internal-arrow">→</span>
+  </a>
+</section>
+
+<footer>
+  <p>Marcos Domingos · Representação Comercial · Brasília/DF · (61) 9296-6199</p>
+</footer>
+
 </body>
 </html>

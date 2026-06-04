@@ -3,378 +3,412 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Condel — Plano de Marketing | Marcos Domingos</title>
+<title>Condel Fios e Cabos Elétricos — Representação Brasília/DF</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>
-  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
-  * { margin: 0; padding: 0; box-sizing: border-box; }
-  body {
-    font-family: 'Inter', system-ui, -apple-system, sans-serif;
-    background: #0f0f1a;
-    color: #e0e0e0;
-    line-height: 1.7;
-  }
-  .topbar {
-    position: sticky; top: 0; z-index: 100;
-    background: rgba(15,15,26,0.92);
-    backdrop-filter: blur(12px);
-    border-bottom: 1px solid rgba(255,255,255,0.06);
-    padding: 1rem 2rem;
-    display: flex; align-items: center; gap: 1rem;
-  }
-  .topbar a {
-    color: #666; text-decoration: none; font-size: 0.9rem; font-weight: 500;
-    display: flex; align-items: center; gap: 0.4rem;
-  }
-  .topbar a:hover { color: #3498db; }
-  .topbar .brand { margin-left: auto; font-weight: 600; color: #3498db; font-size: 0.9rem; }
-  .container { max-width: 900px; margin: 0 auto; padding: 3rem 2rem 6rem; }
-  .hero {
-    text-align: center;
-    padding: 3rem 0;
-    margin-bottom: 3rem;
-  }
-  .hero .icon { font-size: 3.5rem; margin-bottom: 0.5rem; }
-  .hero h1 {
-    font-size: clamp(2rem, 4vw, 3rem);
-    font-weight: 800;
-    color: #3498db;
-    margin-bottom: 0.5rem;
-  }
-  .hero .tagline {
-    color: #888;
-    font-size: 1.1rem;
-    max-width: 600px;
-    margin: 0 auto;
-  }
-  .hero .meta {
-    display: inline-flex; gap: 1.5rem; margin-top: 1.5rem; flex-wrap: wrap; justify-content: center;
-  }
-  .hero .meta-item { text-align: center; }
-  .hero .meta-item .val { font-size: 1.6rem; font-weight: 800; color: #3498db; }
-  .hero .meta-item .lbl { font-size: 0.8rem; color: #666; }
-  .section {
-    margin-bottom: 3rem;
-    padding: 2.5rem;
-    background: rgba(255,255,255,0.02);
-    border: 1px solid rgba(255,255,255,0.06);
-    border-radius: 1.2rem;
-  }
-  .section h2 {
-    font-size: 1.5rem;
-    font-weight: 700;
-    color: #3498db;
-    margin-bottom: 1.5rem;
-    display: flex; align-items: center; gap: 0.75rem;
-  }
-  .section h3 {
-    font-size: 1.15rem;
-    font-weight: 600;
-    color: #ccc;
-    margin: 1.5rem 0 0.75rem;
-  }
-  .section p { margin-bottom: 1rem; color: #aaa; }
-  .section ul, .section ol { margin: 0.5rem 0 1rem 1.5rem; color: #aaa; }
-  .section li { margin-bottom: 0.4rem; }
-  .highlight-box {
-    background: rgba(41,128,185,0.06);
-    border-left: 3px solid #3498db;
-    padding: 1.2rem 1.5rem;
-    border-radius: 0 0.8rem 0.8rem 0;
-    margin: 1.5rem 0;
-    color: #bbb;
-  }
-  .pillars {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-    gap: 1rem;
-    margin: 1.5rem 0;
-  }
-  .pillar {
-    background: rgba(255,255,255,0.03);
-    border: 1px solid rgba(255,255,255,0.08);
-    border-radius: 1rem;
-    padding: 1.5rem;
-    text-align: center;
-  }
-  .pillar .icon-big { font-size: 2rem; margin-bottom: 0.5rem; }
-  .pillar .name { font-weight: 600; color: #3498db; margin-bottom: 0.3rem; }
-  .pillar .desc { font-size: 0.85rem; color: #666; }
-  table {
-    width: 100%;
-    border-collapse: collapse;
-    margin: 1rem 0;
-    font-size: 0.9rem;
-  }
-  th, td {
-    border: 1px solid rgba(255,255,255,0.08);
-    padding: 0.7rem 1rem;
-    text-align: left;
-  }
-  th { background: rgba(41,128,185,0.1); color: #3498db; font-weight: 600; }
-  td { color: #aaa; }
-  pre {
-    font-family: 'JetBrains Mono', 'Fira Code', monospace;
-    font-size: 0.85rem;
-    background: rgba(0,0,0,0.35);
-    border: 1px solid rgba(255,255,255,0.06);
-    border-radius: 0.8rem;
-    padding: 1.2rem 1.5rem;
-    overflow-x: auto;
-    margin: 1rem 0;
-    color: #ccc;
-    white-space: pre-wrap;
-  }
-  .tag-list { display: flex; flex-wrap: wrap; gap: 0.5rem; margin: 1rem 0; }
-  .tag-list span {
-    padding: 0.3rem 0.8rem;
-    background: rgba(41,128,185,0.08);
-    border: 1px solid rgba(41,128,185,0.15);
-    border-radius: 100px;
-    font-size: 0.8rem;
-    color: #3498db;
-  }
-  .back-link {
-    display: inline-flex; align-items: center; gap: 0.4rem;
-    color: #666; text-decoration: none; font-weight: 500; padding: 0.5rem 0;
-  }
-  .back-link:hover { color: #3498db; }
-  @media (max-width: 600px) {
-    .container { padding: 2rem 1rem; }
-    .section { padding: 1.5rem; }
-  }
+:root {
+  --bg: oklch(11% 0.018 248);
+  --bg-2: oklch(15% 0.022 248);
+  --bg-3: oklch(19% 0.026 248);
+  --accent: oklch(67% 0.19 48);
+  --accent-dim: oklch(50% 0.14 48);
+  --accent-ink: oklch(14% 0.04 48);
+  --text: oklch(91% 0.008 248);
+  --text-dim: oklch(60% 0.012 248);
+  --white: oklch(97% 0.004 248);
+  --font-display: 'Bebas Neue', sans-serif;
+  --font-body: 'DM Sans', sans-serif;
+  --font-mono: 'DM Mono', monospace;
+}
+
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html,body{overflow-x:clip}
+body{background:var(--bg);color:var(--text);font-family:var(--font-body);font-size:16px;line-height:1.6}
+
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:.01ms!important;transition-duration:.01ms!important}}
+
+/* NAV */
+nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:1.25rem 2.5rem;display:flex;align-items:center;justify-content:space-between;background:oklch(11% .018 248 / .92);backdrop-filter:blur(12px);border-bottom:1px solid oklch(22% .02 248)}
+.nav-brand{font-family:var(--font-display);font-size:1.5rem;letter-spacing:.05em;color:var(--white);text-decoration:none}
+.nav-brand span{color:var(--accent)}
+nav ul{display:flex;gap:2.5rem;list-style:none}
+nav a{color:var(--text-dim);text-decoration:none;font-size:.82rem;font-weight:500;letter-spacing:.08em;text-transform:uppercase;transition:color .2s}
+nav a:hover,nav a:focus-visible{color:var(--accent)}
+nav a:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+
+/* HERO */
+.hero{min-height:100svh;display:grid;grid-template-columns:1fr 1fr;position:relative;overflow:hidden}
+.hero-left{display:flex;flex-direction:column;justify-content:flex-end;padding:8rem 3.5rem 5rem;position:relative;z-index:2}
+.hero-eyebrow{font-family:var(--font-mono);font-size:.72rem;letter-spacing:.2em;text-transform:uppercase;color:var(--accent);margin-bottom:1.5rem;display:flex;align-items:center;gap:1rem}
+.hero-eyebrow::before{content:'';display:block;width:3rem;height:1px;background:var(--accent)}
+.hero-title{font-family:var(--font-display);font-size:clamp(5rem,10vw,9rem);line-height:.92;letter-spacing:.01em;color:var(--white);margin-bottom:2rem;overflow-wrap:anywhere}
+.hero-title em{color:var(--accent);font-style:normal;display:block}
+.hero-desc{font-size:1rem;color:var(--text-dim);max-width:42ch;line-height:1.65;margin-bottom:2.5rem}
+.hero-cta{display:flex;gap:1rem;flex-wrap:wrap}
+
+.btn-primary{background:var(--accent);color:var(--accent-ink);padding:.875rem 2rem;font-family:var(--font-body);font-size:.82rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;text-decoration:none;border:none;cursor:pointer;transition:background .2s,transform .15s;display:inline-flex;align-items:center;gap:.5rem;min-height:44px}
+.btn-primary:hover{background:oklch(72% .19 48);transform:translateY(-1px)}
+.btn-primary:focus-visible{outline:2px solid var(--white);outline-offset:2px}
+.btn-primary:active{transform:translateY(0)}
+
+.btn-ghost{background:transparent;color:var(--text-dim);padding:.875rem 2rem;font-family:var(--font-body);font-size:.82rem;font-weight:500;letter-spacing:.06em;text-transform:uppercase;text-decoration:none;border:1px solid oklch(32% .02 248);cursor:pointer;transition:border-color .2s,color .2s;min-height:44px;display:inline-flex;align-items:center}
+.btn-ghost:hover{border-color:var(--accent);color:var(--accent)}
+.btn-ghost:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+
+.hero-right{position:relative;overflow:hidden}
+.hero-right img{width:100%;height:100%;object-fit:cover;display:block;filter:brightness(.65) saturate(1.1)}
+.hero-right::after{content:'';position:absolute;inset:0;background:linear-gradient(to right,var(--bg) 0%,transparent 45%)}
+
+.hero-stats{position:absolute;bottom:2.5rem;right:2rem;z-index:10;display:flex;gap:0;background:oklch(12% .02 248 / .9);backdrop-filter:blur(16px);border:1px solid oklch(24% .02 248);border-left:3px solid var(--accent)}
+.stat{padding:1.25rem 1.75rem;text-align:center;border-right:1px solid oklch(22% .02 248)}
+.stat:last-child{border-right:none}
+.stat-val{font-family:var(--font-display);font-size:2rem;color:var(--accent);line-height:1;display:block}
+.stat-label{font-size:.65rem;letter-spacing:.12em;text-transform:uppercase;color:var(--text-dim);margin-top:.2rem;display:block}
+
+/* SECTIONS */
+section{padding:5rem 0}
+.container{max-width:1200px;margin:0 auto;padding:0 2.5rem}
+.section-eyebrow{font-family:var(--font-mono);font-size:.7rem;letter-spacing:.18em;text-transform:uppercase;color:var(--accent);margin-bottom:.6rem}
+.section-title{font-family:var(--font-display);font-size:clamp(2.5rem,5vw,4.5rem);line-height:.94;color:var(--white);margin-bottom:1.5rem;overflow-wrap:anywhere}
+
+/* PRODUCTS */
+.products-section{background:var(--bg-2);border-top:1px solid oklch(20% .02 248);border-bottom:1px solid oklch(20% .02 248)}
+.products-header{display:grid;grid-template-columns:1fr 1fr;gap:3rem;align-items:end;margin-bottom:3.5rem}
+.products-header p{color:var(--text-dim);line-height:1.65}
+
+.product-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5px;background:oklch(20% .02 248)}
+.product-card{background:var(--bg);overflow:hidden;transition:background .2s}
+.product-card:hover{background:var(--bg-3)}
+.product-card-img{width:100%;aspect-ratio:4/3;object-fit:contain;background:oklch(96% .003 60);padding:.75rem;display:block;transition:transform .4s cubic-bezier(.25,.46,.45,.94)}
+.product-card:hover .product-card-img{transform:scale(1.04)}
+.product-card-info{padding:1.25rem;border-top:1px solid oklch(20% .02 248)}
+.product-spec{font-family:var(--font-mono);font-size:.68rem;letter-spacing:.12em;text-transform:uppercase;color:var(--accent);margin-bottom:.3rem}
+.product-name{font-size:.95rem;font-weight:600;color:var(--white);margin-bottom:.4rem}
+.product-detail{font-size:.8rem;color:var(--text-dim);line-height:1.5}
+
+/* TABLE */
+.portfolio-section{background:var(--bg-3)}
+.portfolio-table{width:100%;border-collapse:collapse;margin-top:2.5rem;font-size:.88rem}
+.portfolio-table th{text-align:left;padding:.875rem 1.25rem;font-family:var(--font-mono);font-size:.68rem;letter-spacing:.12em;text-transform:uppercase;color:var(--accent);border-bottom:1px solid oklch(25% .02 248)}
+.portfolio-table td{padding:.875rem 1.25rem;border-bottom:1px solid oklch(20% .02 248);color:var(--text-dim);vertical-align:middle}
+.portfolio-table td:first-child{color:var(--white);font-weight:500}
+.portfolio-table tr:hover td{background:oklch(17% .02 248)}
+
+/* CERT */
+.cert-section{background:var(--bg)}
+.cert-inner{display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:center}
+.cert-image-wrap{position:relative}
+.cert-image-wrap img{width:100%;aspect-ratio:4/3;object-fit:cover;display:block;border:1px solid oklch(22% .02 248)}
+.cert-tag{position:absolute;top:1.5rem;left:-1rem;background:var(--accent);color:var(--accent-ink);padding:.5rem 1rem;font-family:var(--font-display);font-size:1.1rem;letter-spacing:.05em}
+.cert-list{list-style:none;display:flex;flex-direction:column;gap:1rem;margin-top:2rem}
+.cert-item{display:flex;align-items:flex-start;gap:1rem;padding:1.25rem;background:var(--bg-2);border:1px solid oklch(22% .02 248);border-left:3px solid var(--accent)}
+.cert-icon{width:2.5rem;height:2.5rem;background:var(--accent);display:flex;align-items:center;justify-content:center;flex-shrink:0;color:var(--accent-ink);font-weight:700;font-size:.72rem;font-family:var(--font-mono)}
+.cert-info h4{font-size:.88rem;font-weight:600;color:var(--white);margin-bottom:.2rem}
+.cert-info p{font-size:.8rem;color:var(--text-dim);line-height:1.5}
+
+/* COVERAGE */
+.coverage-section{background:var(--bg-2)}
+.regions-wrap{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:oklch(20% .02 248);margin-top:3rem}
+.region-item{background:var(--bg);padding:1.5rem;border-bottom:2px solid transparent;transition:border-color .2s,background .2s}
+.region-item:hover{border-bottom-color:var(--accent);background:var(--bg-3)}
+.region-number{font-family:var(--font-display);font-size:3rem;color:oklch(22% .025 248);line-height:1;margin-bottom:.4rem}
+.region-name{font-size:.88rem;font-weight:500;color:var(--text)}
+
+/* STEPS */
+.how-section{background:var(--bg)}
+.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:0;margin-top:3rem;position:relative}
+.steps::before{content:'';position:absolute;top:1.9rem;left:calc(100%/6);right:calc(100%/6);height:1px;background:linear-gradient(to right,transparent,var(--accent),transparent)}
+.step{padding:2rem;text-align:center}
+.step-num{width:3.75rem;height:3.75rem;border:2px solid var(--accent);display:flex;align-items:center;justify-content:center;font-family:var(--font-display);font-size:1.4rem;color:var(--accent);margin:0 auto 1.5rem;background:var(--bg);position:relative;z-index:1}
+.step h3{font-size:.9rem;font-weight:600;color:var(--white);margin-bottom:.6rem}
+.step p{font-size:.82rem;color:var(--text-dim);line-height:1.6}
+
+/* CTA */
+.cta-section{background:var(--accent);padding:6rem 0;position:relative;overflow:hidden}
+.cta-section::before{content:'CONDEL';position:absolute;right:-2rem;top:50%;transform:translateY(-50%);font-family:var(--font-display);font-size:14rem;color:oklch(60% .20 48 / .12);line-height:1;pointer-events:none;white-space:nowrap}
+.cta-inner{position:relative;z-index:1;display:flex;align-items:center;justify-content:space-between;gap:3rem;flex-wrap:wrap}
+.cta-text h2{font-family:var(--font-display);font-size:clamp(2.5rem,5vw,4rem);color:var(--accent-ink);line-height:.94;margin-bottom:.75rem}
+.cta-text p{color:oklch(20% .04 48);font-size:1rem;max-width:40ch}
+.cta-contact{display:flex;flex-direction:column;gap:.75rem}
+.contact-item{display:flex;align-items:center;gap:.75rem;color:var(--accent-ink);font-weight:500;font-size:.9rem}
+.contact-dot{width:8px;height:8px;background:var(--accent-ink);border-radius:50%;flex-shrink:0}
+.btn-dark{background:var(--accent-ink);color:var(--accent);padding:.875rem 2rem;font-family:var(--font-body);font-size:.82rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;text-decoration:none;border:none;cursor:pointer;transition:background .2s;display:inline-flex;align-items:center;gap:.5rem;min-height:44px;margin-top:1rem}
+.btn-dark:hover{background:oklch(10% .025 248)}
+.btn-dark:focus-visible{outline:2px solid var(--accent-ink);outline-offset:2px}
+
+/* FOOTER */
+footer{background:oklch(8% .015 248);padding:2rem 0;border-top:1px solid oklch(18% .02 248)}
+footer .container{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:1rem}
+footer p{color:var(--text-dim);font-size:.78rem}
+.footer-brand{font-family:var(--font-display);font-size:1.2rem;color:var(--accent);letter-spacing:.05em}
+
+/* RESPONSIVE */
+@media(max-width:768px){
+  nav ul{display:none}
+  nav{padding:1rem 1.5rem}
+  .hero{grid-template-columns:1fr;min-height:auto}
+  .hero-right{height:45vh;order:-1}
+  .hero-right::after{background:linear-gradient(to top,var(--bg) 0%,transparent 55%)}
+  .hero-left{padding:6rem 1.5rem 3rem}
+  .hero-stats{display:none}
+  .products-header{grid-template-columns:1fr}
+  .product-grid{grid-template-columns:1fr 1fr}
+  .cert-inner{grid-template-columns:1fr}
+  .cert-tag{left:0}
+  .regions-wrap{grid-template-columns:repeat(2,1fr)}
+  .steps{grid-template-columns:1fr}
+  .steps::before{display:none}
+  .cta-inner{flex-direction:column;align-items:flex-start}
+  .portfolio-table th,.portfolio-table td{padding:.7rem .75rem}
+  section{padding:3.5rem 0}
+}
+@media(max-width:414px){
+  .product-grid{grid-template-columns:1fr}
+}
 </style>
 </head>
 <body>
-<div class="topbar">
-  <a href="index.html">← Voltar ao índice</a>
-  <span class="brand">Condel</span>
-</div>
-<div class="container">
-  
-  <div class="hero">
-    <div class="icon">⚡</div>
-    <h1>Condel — Fios e Cabos Elétricos</h1>
-    <div class="tagline">Distribuidora com INMETRO — Brasília-DF</div>
-    <div class="meta">
-      <div class="meta-item"><div class="val">10%</div><div class="lbl">Comissão</div></div>
-      <div class="meta-item"><div class="val">150+</div><div class="lbl">Lojas Atendidas</div></div>
-      <div class="meta-item"><div class="val">24h</div><div class="lbl">Entrega DF</div></div>
+
+<nav>
+  <a href="index.html" class="nav-brand">MARCOS<span>.</span></a>
+  <ul>
+    <li><a href="#produtos">Produtos</a></li>
+    <li><a href="#certificacoes">Certificações</a></li>
+    <li><a href="#cobertura">Cobertura</a></li>
+    <li><a href="#contato">Contato</a></li>
+  </ul>
+</nav>
+
+<!-- HERO: Full split-screen -->
+<section class="hero">
+  <div class="hero-left">
+    <p class="hero-eyebrow">Representação Comercial — Brasília/DF</p>
+    <h1 class="hero-title">CONDEL<em>FIOS &amp; CABOS</em></h1>
+    <p class="hero-desc">Condutores elétricos com dupla certificação INMETRO. Entrega no DF com depósito próprio. Mais de 150 lojas atendidas na região.</p>
+    <div class="hero-cta">
+      <a href="#contato" class="btn-primary">Solicitar Pedido</a>
+      <a href="#produtos" class="btn-ghost">Ver Portfólio</a>
     </div>
   </div>
-
-  <div class="section">
-    <h2>📋 Posicionamento</h2>
-    <p><strong>Comissão:</strong> 10% | <strong>Certificação:</strong> INMETRO (2 certificados vigentes) | <strong>Base:</strong> Depósito próprio Brasília</p>
-    <p>Distribuidora de fios e cabos elétricos certificados INMETRO com depósito próprio em Brasília. Operação consolidada: 150+ lojas atendidas no DF, entrega 24h, estoque local. Vantagem: INMETRO como barreira de entrada (14 marcas multadas em 2024), entrega ágil, preço sem atravessador.</p>
-    <div class="highlight-box">
-      <strong>Portfólio:</strong> Fios 1,5mm a 12mm, cabos PP, alumínio, bobinas, aterramento, sonorização. <strong>Prazos:</strong> À vista (PIX), 7 dias ou 14-30 dias (redes maiores). <strong>Entrega:</strong> 24h no DF.
-    </div>
-    
-    <div class="pillars">
-      <div class="pillar">
-        <div class="icon-big">🚚</div>
-        <div class="name">Entrega no Mesmo Dia</div>
-        <div class="desc">DF e entorno. Não precisa esperar caminhão chegar de fora.</div>
+  <div class="hero-right">
+    <img src="./images/condel/loja-condel.jpg" alt="Loja com portfólio completo Condel em Brasília" fetchpriority="high">
+    <div class="hero-stats">
+      <div class="stat">
+        <span class="stat-val">150+</span>
+        <span class="stat-label">Lojas Atendidas</span>
       </div>
-      <div class="pillar">
-        <div class="icon-big">💰</div>
-        <div class="name">Preço Competitivo</div>
-        <div class="desc">Distribuidor direto, sem atravessador. Melhor margem pro lojista.</div>
+      <div class="stat">
+        <span class="stat-val">10%</span>
+        <span class="stat-label">Comissão Revendedor</span>
       </div>
-      <div class="pillar">
-        <div class="icon-big">🏭</div>
-        <div class="name">Depósito Próprio</div>
-        <div class="desc">Estoque local em Brasília. Menos ICMS, mais agilidade.</div>
-      </div>
-      <div class="pillar">
-        <div class="icon-big">✅</div>
-        <div class="name">Linha INMETRO</div>
-        <div class="desc">Certificação para memoriais descritivos e vistorias CREA.</div>
+      <div class="stat">
+        <span class="stat-val">2</span>
+        <span class="stat-label">Certs. INMETRO</span>
       </div>
     </div>
-
-    <p><strong>3 perfis de cliente:</strong> Lojas de material de construção (ticket R$300-500), construtoras/empreiteiros (R$1.500-3.000), grandes obras/redes (R$5.000+).</p>
   </div>
+</section>
 
-  <div class="section">
-    <h2>🗺️ Área de Atuação e Clientes Reais</h2>
-    <p>Atua em 8 regiões do DF com estratégia de rota diversificada. Clientes consolidados: Castelo Forte, Casa Forte, e 150+ lojas regionais de material de construção.</p>
-    <div class="tag-list">
-      <span>Samambaia</span><span>Taguatinga</span><span>Ceilândia</span><span>Vicente Pires</span>
-      <span>Águas Claras</span><span>Riacho Fundo I/II</span><span>Recanto das Emas</span><span>Gama</span>
+<!-- PRODUCTS -->
+<section class="products-section" id="produtos">
+  <div class="container">
+    <div class="products-header">
+      <div>
+        <p class="section-eyebrow">Portfólio Completo</p>
+        <h2 class="section-title">LINHA CONDEL</h2>
+      </div>
+      <p>Cabos flexíveis em diversas bitolas, todos com dupla camada de isolamento anti-chama, embalagem selada e garantia de origem certificada.</p>
+    </div>
+    <div class="product-grid">
+      <div class="product-card">
+        <img src="./images/condel/cabo-red-4mm.jpg" alt="Cabo Flexível Condel Vermelho 1x4mm" class="product-card-img" loading="lazy">
+        <div class="product-card-info">
+          <p class="product-spec">Cabo Flexível 750V</p>
+          <h3 class="product-name">1×4,00 mm² Vermelho</h3>
+          <p class="product-detail">100m · 3,200 kg · Anti-chama · ISO 9001</p>
+        </div>
+      </div>
+      <div class="product-card">
+        <img src="./images/condel/cabo-black-6mm.jpg" alt="Cabo Flexível Condel Preto 1x6mm" class="product-card-img" loading="lazy">
+        <div class="product-card-info">
+          <p class="product-spec">Cabo Flexível 750V</p>
+          <h3 class="product-name">1×6,00 mm² Preto</h3>
+          <p class="product-detail">100m · 3,600 kg · Anti-chama · Dupla camada</p>
+        </div>
+      </div>
+      <div class="product-card">
+        <img src="./images/condel/cabo-blue-150.jpg" alt="Cabo Flexível Condel Azul 1x1.5mm" class="product-card-img" loading="lazy">
+        <div class="product-card-info">
+          <p class="product-spec">Cabo Flexível 750V</p>
+          <h3 class="product-name">1×1,50 mm² Azul</h3>
+          <p class="product-detail">100m · 2,500 kg · Circuitos de iluminação</p>
+        </div>
+      </div>
+      <div class="product-card">
+        <img src="./images/condel/cabo-red-250.jpg" alt="Cabo Flexível Condel Vermelho 1x2.5mm" class="product-card-img" loading="lazy">
+        <div class="product-card-info">
+          <p class="product-spec">Cabo Flexível 750V</p>
+          <h3 class="product-name">1×2,50 mm² Vermelho</h3>
+          <p class="product-detail">100m · 2,300 kg · Tomadas e circuitos</p>
+        </div>
+      </div>
+      <div class="product-card">
+        <img src="./images/condel/cabo-green-6mm.jpg" alt="Cabo Flexível Condel Verde 1x6mm" class="product-card-img" loading="lazy">
+        <div class="product-card-info">
+          <p class="product-spec">Cabo Flexível 750V</p>
+          <h3 class="product-name">1×6,00 mm² Verde</h3>
+          <p class="product-detail">100m · 3,600 kg · Aterramento padrão ABNT</p>
+        </div>
+      </div>
+      <div class="product-card">
+        <img src="./images/condel/cabo-white-250.jpg" alt="Cabo Flexível Condel Branco 1x2.5mm" class="product-card-img" loading="lazy">
+        <div class="product-card-info">
+          <p class="product-spec">Cabo Flexível 750V</p>
+          <h3 class="product-name">1×2,50 mm² Branco</h3>
+          <p class="product-detail">100m · 2,300 kg · Neutro / retorno</p>
+        </div>
+      </div>
     </div>
   </div>
+</section>
 
-  <div class="section">
-    <h2>📸 Galeria de Produtos</h2>
-    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1.5rem; margin: 2rem 0;">
-      <img src="./images/condel/AC20EC1060CCAB53226B48C58A392895.jpg" alt="Condel Fios" style="width: 100%; height: 200px; object-fit: cover; border-radius: 0.8rem; border: 1px solid rgba(255,255,255,0.06);">
-      <img src="./images/condel/AC3E9A563FC5E1A12F130ABB85E0A244.jpg" alt="Condel Fios" style="width: 100%; height: 200px; object-fit: cover; border-radius: 0.8rem; border: 1px solid rgba(255,255,255,0.06);">
-      <img src="./images/condel/AC3FFCF2AE894AA5FB9A03ED73C9C420.jpg" alt="Condel Fios" style="width: 100%; height: 200px; object-fit: cover; border-radius: 0.8rem; border: 1px solid rgba(255,255,255,0.06);">
-      <img src="./images/condel/AC456E2BE8163F699C9EC373F6CAA7F5.jpg" alt="Condel Fios" style="width: 100%; height: 200px; object-fit: cover; border-radius: 0.8rem; border: 1px solid rgba(255,255,255,0.06);">
+<!-- PORTFOLIO TABLE -->
+<section class="portfolio-section">
+  <div class="container">
+    <p class="section-eyebrow">Linha Completa</p>
+    <h2 class="section-title">PORTFÓLIO</h2>
+    <table class="portfolio-table">
+      <thead>
+        <tr>
+          <th>Produto</th>
+          <th>Bitolas</th>
+          <th>Aplicação</th>
+          <th>Destaque</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td>Cabo Flexível</td><td>1,5mm a 12mm</td><td>Instalações residenciais e comerciais</td><td>Anti-chama, INMETRO</td></tr>
+        <tr><td>Cabo PP</td><td>2×1,5 a 2×4mm</td><td>Equipamentos móveis e extensões</td><td>Alta flexibilidade</td></tr>
+        <tr><td>Cabo Paralelo</td><td>2×1,50 a 2×2,50</td><td>Iluminação e eletrônicos leves</td><td>Bobinas 300–500m</td></tr>
+        <tr><td>Alumínio</td><td>10mm a 185mm</td><td>Redes de distribuição</td><td>Custo reduzido</td></tr>
+        <tr><td>Aterramento</td><td>4mm a 25mm</td><td>Proteção elétrica</td><td>Verde/amarelo ABNT</td></tr>
+        <tr><td>Sonorização</td><td>1 a 4 pares</td><td>Sistemas de áudio</td><td>Blindado</td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<!-- CERTIFICATIONS -->
+<section class="cert-section" id="certificacoes">
+  <div class="container">
+    <div class="cert-inner">
+      <div class="cert-image-wrap">
+        <img src="./images/condel/estoque-condel.jpg" alt="Estoque Condel distribuidor Brasília" loading="lazy">
+        <span class="cert-tag">INMETRO</span>
+      </div>
+      <div>
+        <p class="section-eyebrow">Qualidade Garantida</p>
+        <h2 class="section-title">CERTIFICADO E CONFIÁVEL</h2>
+        <p style="color:var(--text-dim);line-height:1.65;margin-bottom:1.5rem">Condel possui dois certificados INMETRO vigentes e certificação ISO 9001, assegurando produtos que atendem rigorosamente as normas técnicas brasileiras.</p>
+        <ul class="cert-list">
+          <li class="cert-item">
+            <div class="cert-icon">✓✓</div>
+            <div class="cert-info">
+              <h4>2 Certificados INMETRO Vigentes</h4>
+              <p>Conformidade com NBR NM 247-3. Produto testado e aprovado em laboratório acreditado.</p>
+            </div>
+          </li>
+          <li class="cert-item">
+            <div class="cert-icon">ISO</div>
+            <div class="cert-info">
+              <h4>ISO 9001 — Gestão da Qualidade</h4>
+              <p>Sistema de gestão certificado. Rastreabilidade total do produto da fábrica ao cliente.</p>
+            </div>
+          </li>
+          <li class="cert-item">
+            <div class="cert-icon">DF</div>
+            <div class="cert-info">
+              <h4>Depósito Próprio em Brasília</h4>
+              <p>Estoque local garante entrega no mesmo dia para pedidos urgentes no DF.</p>
+            </div>
+          </li>
+        </ul>
+      </div>
     </div>
   </div>
+</section>
 
-  <div class="section">
-    <h2>📅 Cronograma de 30 Dias — R$25.000</h2>
-    
-    <h3>Semana 1 (25-31 maio): Fundação</h3>
-    <p><strong>Objetivo:</strong> Prospectar 30 lojas de bairro. Portfólio impresso + amostra física (tato convence mais que PDF). WhatsApp com oferta de tabela.</p>
-    <p><strong>Meta:</strong> 30 visitas, 10 lojas comprando, R$3.000 faturados.</p>
-
-    <h3>Semana 2 (1-7 junho): Indicações + Digital</h3>
-    <p><strong>Objetivo:</strong> Clientes da Semana 1 indicarem outras lojas. Iniciar prospecção digital (Instagram + OLX). Iniciar prospecção de obras.</p>
-    <p><strong>Meta:</strong> +5 lojas, R$5.250. Acumulado: R$8.250.</p>
-
-    <h3>Semana 3 (8-14 junho): Grandes Contas</h3>
-    <p><strong>Objetivo:</strong> Visitar 3 construtoras de médio porte. Oferecer amostra grátis para engenheiro responsável ("testa nosso fio na sua obra").</p>
-    <p><strong>Meta:</strong> +2 construtoras. Ticket médio R$2.000. Acumulado: R$12.250.</p>
-
-    <h3>Semana 4 (15-21 junho): Fechamento</h3>
-    <p><strong>Objetivo:</strong> Campanha de reposição para lojas que compraram. Visitar 10 novas lojas (zona norte). Orçamentos para +5 construtoras. Dia de fechamento.</p>
-    <p><strong>Meta:</strong> R$12.750 na semana. <strong>Total Mês 1: R$25.000 batido.</strong></p>
-
-    <h3>Semana 5 (Bônus 22-30 junho): Transição</h3>
-    <p>Reabastecer lojas fiéis. Mapear 5 grandes redes. Preparar material institucional.</p>
-  </div>
-
-  <div class="section">
-    <h2>📈 Escala — R$65k/mês (5 meses)</h2>
-
-    <table>
-      <tr><th>Segmento</th><th>Mês 1-2</th><th>Mês 3</th><th>Mês 4-5</th><th>Ticket</th></tr>
-      <tr><td>Lojas de bairro</td><td>25 clientes</td><td>40</td><td>50</td><td>R$400</td></tr>
-      <tr><td>Pequenas construtoras</td><td>3</td><td>8</td><td>15</td><td>R$1.500</td></tr>
-      <tr><td>Médias construtoras</td><td>—</td><td>2</td><td>5</td><td>R$3.000</td></tr>
-      <tr><td>Grandes obras/redes</td><td>—</td><td>—</td><td>2</td><td>R$5.000+</td></tr>
-    </table>
-
-    <table>
-      <tr><th>Mês</th><th>Faturamento</th></tr>
-      <tr><td>1 (Jun)</td><td>R$15.000 (período parcial)</td></tr>
-      <tr><td>2 (Jul)</td><td>R$23.500</td></tr>
-      <tr><td>3 (Ago)</td><td>R$32.400</td></tr>
-      <tr><td>4 (Set)</td><td>R$46.500</td></tr>
-      <tr><td>5 (Out)</td><td><strong>R$65.000 ✅</strong></td></tr>
-    </table>
-
-    <h3>Gatilhos de Escala</h3>
-    <p><strong>30 lojas ativas</strong> → contratar ajudante de entregas.<br>
-    <strong>R$30k/mês</strong> → investir em estoque (SKUs 1,5mm e 2,5mm).<br>
-    <strong>10 construtoras ativas</strong> → tabela progressiva por volume.<br>
-    <strong>R$45k/mês</strong> → contratar vendedor externo (comissão 5%).<br>
-    <strong>R$60k/mês</strong> → estoque cabos PP maior bitola (maior margem).</p>
-  </div>
-
-  <div class="section">
-    <h2>💬 Scripts de Abordagem</h2>
-
-    <h3>Script 1: WhatsApp — Loja de Material</h3>
-    <pre>Olá [Nome], aqui é o Marcos da Condel Condutores Elétricos.
-
-Já fornecemos pra Castelo Forte e Casa Forte aqui no DF. Fio com
-INMETRO, entrega no mesmo dia e preço que dá boa margem pro
-revendedor.
-
-Quer ver nossa tabela?</pre>
-
-    <h3>Script 2: Abordagem Presencial — Loja de Bairro</h3>
-    <pre>1. Olhar o balcão — ver se tem fio exposto e de qual marca
-2. "Tudo bem? Sou da Condel — entrega mais rápida e preço melhor"
-3. Mostrar amostra física do fio (tato convence mais que PDF)
-4. "Qual bitola você mais vende? 1,5mm e 2,5mm? A gente tem o
-   melhor preço nessas duas."
-5. "Vou deixar uma caixa experimental. Se vender em uma semana
-   e a margem for boa, acertamos um pedido maior."</pre>
-
-    <h3>Script 3: WhatsApp/LinkedIn — Construtora</h3>
-    <pre>Prezado(a) [Nome],
-
-Me chamo Marcos Domingos, distribuidor da Condel Condutores
-Elétricos em Brasília.
-
-Trabalhamos com linha completa de fios e cabos com certificação
-INMETRO — ideais para memoriais descritivos e vistorias do CREA.
-
-Diferenciais:
-• Entrega direto no canteiro em até 24h (DF)
-• Preço competitivo para obras de médio/grande porte
-• Depósito próprio em Brasília
-• Linha econômica para obras sem laudo
-
-Gostaria de enviar uma cotação?</pre>
-
-    <h3>Script 4: Objeção — "Já tenho fornecedor"</h3>
-    <pre>"Que bom! Significa que você conhece bem o mercado. A gente
-entrega no mesmo dia — se seu fornecedor atrasar ou ficar sem
-estoque, você tem a Condel como opção. Quer deixar uma tabela
-conosco?"</pre>
-  </div>
-
-  <div class="section">
-    <h2>🔄 Régua de Follow-up e Recorrência</h2>
-    
-    <h3>Lojas</h3>
-    <table>
-      <tr><th>Dia</th><th>Ação</th></tr>
-      <tr><td>D+3</td><td>O fio vendeu bem? Precisa de reposição?</td></tr>
-      <tr><td>D+7</td><td>Preço especial em [X] esta semana</td></tr>
-      <tr><td>D+15</td><td>Estoque de 1,5mm e 2,5mm ok?</td></tr>
-      <tr><td>D+30</td><td>Faz 1 mês! Pedido maior?</td></tr>
-      <tr><td>D+60</td><td>Visita presencial de reabastecimento</td></tr>
-    </table>
-
-    <h3>Construtoras</h3>
-    <table>
-      <tr><th>Marco</th><th>Ação</th></tr>
-      <tr><td>Pós-orçamento</td><td>Recebeu? Posso ajustar pra fechar hoje?</td></tr>
-      <tr><td>1ª compra</td><td>Foi tranquilo? Só chamar se precisar.</td></tr>
-      <tr><td>15 dias</td><td>Obra progredindo? Próxima remessa?</td></tr>
-      <tr><td>30 dias</td><td>Quer cotar material pra próxima etapa?</td></tr>
-      <tr><td>Fim da obra</td><td>Parabéns! Pra próxima, chama a gente.</td></tr>
-    </table>
-
-    <h3>Fidelização</h3>
-    <p><strong>5+ pedidos:</strong> Tabela especial com 5% de desconto.<br>
-    <strong>Indicação que vira cliente:</strong> 1 rolo de fio 1,5mm de brinde.<br>
-    <strong>Grupo WhatsApp VIP:</strong> Apenas clientes com 3+ compras — ofertas relâmpago.</p>
-  </div>
-
-  <div class="section">
-    <h2>📊 KPI Dashboard</h2>
-    <table>
-      <tr><th>Métrica</th><th>Semana 1</th><th>Meta Semana 4</th></tr>
-      <tr><td>Lojas visitadas</td><td>30</td><td>80</td></tr>
-      <tr><td>Lojas que compraram</td><td>10</td><td>30</td></tr>
-      <tr><td>Construtoras abordadas</td><td>0</td><td>15</td></tr>
-      <tr><td>Construtoras que compraram</td><td>0</td><td>5</td></tr>
-      <tr><td>Ticket médio loja</td><td>R$300</td><td>R$500</td></tr>
-      <tr><td>Faturamento semanal</td><td>R$3.000</td><td>R$6.250</td></tr>
-      <tr><td><strong>Acumulado</strong></td><td><strong>R$3.000</strong></td><td><strong>R$25.000</strong></td></tr>
-    </table>
-  </div>
-
-  <div class="section">
-    <h2>📆 Calendário Executivo</h2>
-    <pre>MÊS 1 — JUNHO 2026
-
-SEMANA 1 (25-31 mai)   →  Prospectar 30 lojas de bairro
-SEMANA 2 (01-07 jun)   →  Ativar indicações + prospecção digital + início obras
-SEMANA 3 (08-14 jun)   →  Grandes contas e empreiteiros
-SEMANA 4 (15-21 jun)   →  Fechamento + consolidação → META R$25K
-SEMANA 5 (22-30 jun)   →  Transição mês 2 + mapear grandes redes
-
-MÊS 2 — JULHO        →  R$25-35k. Reforçar recorrência.
-MÊS 3 — AGOSTO       →  R$30-40k. Contratar ajudante. 8 construtoras.
-MÊS 4 — SETEMBRO     →  R$40-50k. Primeiras grandes contas.
-MÊS 5 — OUTUBRO      →  R$60k+. 15 construtoras + 55 lojas + 2 redes.</pre>
-    
-    <div class="highlight-box">
-      <strong>Regra de Ouro:</strong> Nos primeiros 30 dias, 80% do tempo é prospecção presencial. O WhatsApp sustenta a recorrência, mas a conquista se faz na loja e na obra. Não substituir visita por mensagem na fase inicial.
+<!-- COVERAGE -->
+<section class="coverage-section" id="cobertura">
+  <div class="container">
+    <p class="section-eyebrow">Área de Atendimento</p>
+    <h2 class="section-title">BRASÍLIA E ENTORNO</h2>
+    <p style="color:var(--text-dim);max-width:60ch;margin-top:.5rem">Visitas comerciais regulares em toda a região metropolitana de Brasília. Atendimento personalizado, entrega rápida.</p>
+    <div class="regions-wrap">
+      <div class="region-item"><div class="region-number">01</div><div class="region-name">Samambaia</div></div>
+      <div class="region-item"><div class="region-number">02</div><div class="region-name">Taguatinga</div></div>
+      <div class="region-item"><div class="region-number">03</div><div class="region-name">Ceilândia</div></div>
+      <div class="region-item"><div class="region-number">04</div><div class="region-name">Vicente Pires</div></div>
+      <div class="region-item"><div class="region-number">05</div><div class="region-name">Águas Claras</div></div>
+      <div class="region-item"><div class="region-number">06</div><div class="region-name">Riacho Fundo I e II</div></div>
+      <div class="region-item"><div class="region-number">07</div><div class="region-name">Recanto das Emas</div></div>
+      <div class="region-item"><div class="region-number">08</div><div class="region-name">Gama</div></div>
     </div>
   </div>
+</section>
 
-  <a href="index.html" class="back-link">← Voltar ao índice</a>
-</div>
+<!-- HOW IT WORKS -->
+<section class="how-section">
+  <div class="container">
+    <p class="section-eyebrow">Como Funciona</p>
+    <h2 class="section-title">DO PEDIDO À ENTREGA</h2>
+    <div class="steps">
+      <div class="step">
+        <div class="step-num">01</div>
+        <h3>Solicite por WhatsApp</h3>
+        <p>Envie a lista de produtos e quantidades. Resposta em minutos com disponibilidade e preço.</p>
+      </div>
+      <div class="step">
+        <div class="step-num">02</div>
+        <h3>Confirmação e Faturamento</h3>
+        <p>Pedido confirmado, NF emitida. Pagamento: PIX, 7 dias ou 14–30 dias conforme perfil.</p>
+      </div>
+      <div class="step">
+        <div class="step-num">03</div>
+        <h3>Entrega no Prazo</h3>
+        <p>Entrega no dia seguinte ou até 1 semana. Depósito próprio no DF garante agilidade.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-section" id="contato">
+  <div class="container">
+    <div class="cta-inner">
+      <div class="cta-text">
+        <h2>PRONTO PARA ABASTECER SEU ESTOQUE?</h2>
+        <p>Representante comercial em Brasília/DF. Atendimento personalizado, entrega rápida, produto certificado.</p>
+        <a href="https://wa.me/556192966199" class="btn-dark" target="_blank" rel="noopener">Falar no WhatsApp →</a>
+      </div>
+      <div class="cta-contact">
+        <div class="contact-item"><span class="contact-dot"></span><span>Marcos Domingos — Representante Condel</span></div>
+        <div class="contact-item"><span class="contact-dot"></span><span>(61) 9296-6199 (WhatsApp)</span></div>
+        <div class="contact-item"><span class="contact-dot"></span><span>Atendimento Seg–Sex, 8h–18h</span></div>
+        <div class="contact-item"><span class="contact-dot"></span><span>Brasília/DF e Entorno</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <span class="footer-brand">CONDEL</span>
+    <p>Representação Comercial Marcos Domingos · Brasília/DF</p>
+    <p style="color:oklch(40% .01 248)">Condutores Elétricos INMETRO · ISO 9001</p>
+  </div>
+</footer>
+
 </body>
 </html>
