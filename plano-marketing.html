@@ -3,571 +3,643 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Plano de Marketing | Representação Comercial Marcos Domingos</title>
+<title>Estratégia Primordial — Marcos Domingos · Documento Interno</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=IBM+Plex+Sans:wght@300;400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>
-  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
-  * { margin: 0; padding: 0; box-sizing: border-box; }
-  body {
-    font-family: 'Inter', system-ui, -apple-system, sans-serif;
-    background: #0f0f1a;
-    color: #e0e0e0;
-    line-height: 1.7;
-  }
-  .topbar {
-    position: sticky; top: 0; z-index: 100;
-    background: rgba(15,15,26,0.92);
-    backdrop-filter: blur(12px);
-    border-bottom: 1px solid rgba(255,255,255,0.06);
-    padding: 1rem 2rem;
-    display: flex; align-items: center; gap: 1rem;
-  }
-  .topbar a {
-    color: #666; text-decoration: none; font-size: 0.9rem; font-weight: 500;
-    display: flex; align-items: center; gap: 0.4rem;
-  }
-  .topbar a:hover { color: #D47B2A; }
-  .topbar .brand { margin-left: auto; font-weight: 600; color: #D47B2A; font-size: 0.9rem; }
-  .container { max-width: 900px; margin: 0 auto; padding: 3rem 2rem 6rem; }
-  .hero {
-    text-align: center;
-    padding: 3rem 0;
-    margin-bottom: 3rem;
-  }
-  .hero .icon { font-size: 3.5rem; margin-bottom: 0.5rem; }
-  .hero h1 {
-    font-size: clamp(2rem, 4vw, 3rem);
-    font-weight: 800;
-    color: #D47B2A;
-    margin-bottom: 0.5rem;
-  }
-  .hero .tagline {
-    color: #888;
-    font-size: 1.1rem;
-    max-width: 600px;
-    margin: 0 auto;
-  }
-  .hero .subtitle {
-    display: inline-block;
-    margin-top: 1rem;
-    padding: 0.4rem 1.2rem;
-    background: rgba(212,123,42,0.12);
-    border: 1px solid rgba(212,123,42,0.25);
-    border-radius: 100px;
-    font-size: 0.85rem;
-    font-weight: 600;
-    color: #D47B2A;
-  }
-  .section {
-    margin-bottom: 3rem;
-    padding: 2.5rem;
-    background: rgba(255,255,255,0.02);
-    border: 1px solid rgba(255,255,255,0.06);
-    border-radius: 1.2rem;
-  }
-  .section h2 {
-    font-size: 1.5rem;
-    font-weight: 700;
-    color: #D47B2A;
-    margin-bottom: 1.5rem;
-    display: flex; align-items: center; gap: 0.75rem;
-  }
-  .section h3 {
-    font-size: 1.15rem;
-    font-weight: 600;
-    color: #ccc;
-    margin: 1.5rem 0 0.75rem;
-  }
-  .section h3:first-child { margin-top: 0; }
-  .section p { margin-bottom: 1rem; color: #aaa; }
-  .section ul, .section ol { margin: 0.5rem 0 1rem 1.5rem; color: #aaa; }
-  .section li { margin-bottom: 0.4rem; }
-  .highlight-box {
-    background: rgba(212,123,42,0.06);
-    border-left: 3px solid #D47B2A;
-    padding: 1.2rem 1.5rem;
-    border-radius: 0 0.8rem 0.8rem 0;
-    margin: 1.5rem 0;
-    color: #bbb;
-  }
-  .grid-2 {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 1rem;
-    margin: 1rem 0;
-  }
-  .stat-card {
-    background: rgba(255,255,255,0.03);
-    border: 1px solid rgba(255,255,255,0.06);
-    border-radius: 0.8rem;
-    padding: 1.2rem;
-    text-align: center;
-  }
-  .stat-card .value { font-size: 1.8rem; font-weight: 800; color: #D47B2A; }
-  .stat-card .label { font-size: 0.85rem; color: #666; margin-top: 0.25rem; }
-  table {
-    width: 100%;
-    border-collapse: collapse;
-    margin: 1rem 0;
-    font-size: 0.9rem;
-  }
-  th, td {
-    border: 1px solid rgba(255,255,255,0.08);
-    padding: 0.7rem 1rem;
-    text-align: left;
-  }
-  th { background: rgba(212,123,42,0.1); color: #D47B2A; font-weight: 600; }
-  td { color: #aaa; }
-  .badge {
-    display: inline-block;
-    padding: 0.3rem 0.8rem;
-    border-radius: 100px;
-    font-size: 0.75rem;
-    font-weight: 600;
-    margin: 0.15rem;
-  }
-  .badge-orange { background: rgba(212,123,42,0.15); color: #D47B2A; }
-  .badge-blue { background: rgba(41,128,185,0.15); color: #3498db; }
-  .badge-red { background: rgba(192,57,43,0.15); color: #e74c3c; }
-  .badge-green { background: rgba(39,174,96,0.15); color: #2ecc71; }
-  .badge-purple { background: rgba(142,68,173,0.15); color: #9b59b6; }
-  .timeline {
-    position: relative;
-    padding-left: 2rem;
-    margin: 1rem 0;
-  }
-  .timeline::before {
-    content: '';
-    position: absolute;
-    left: 0.5rem;
-    top: 0;
-    bottom: 0;
-    width: 2px;
-    background: rgba(212,123,42,0.3);
-  }
-  .timeline-item {
-    position: relative;
-    margin-bottom: 1.5rem;
-    padding-left: 1.5rem;
-  }
-  .timeline-item::before {
-    content: '';
-    position: absolute;
-    left: -1.65rem;
-    top: 0.5rem;
-    width: 10px;
-    height: 10px;
-    border-radius: 50%;
-    background: #D47B2A;
-  }
-  .timeline-item h4 {
-    color: #D47B2A;
-    font-size: 1rem;
-    margin-bottom: 0.3rem;
-  }
-  .timeline-item p {
-    color: #999;
-    font-size: 0.9rem;
-    margin-bottom: 0.3rem;
-  }
-  .op-card {
-    background: rgba(255,255,255,0.03);
-    border: 1px solid rgba(255,255,255,0.08);
-    border-radius: 1rem;
-    padding: 1.5rem;
-    margin-bottom: 1rem;
-  }
-  .op-card h4 {
-    color: #D47B2A;
-    font-size: 1.1rem;
-    margin-bottom: 0.5rem;
-  }
-  .footer {
-    text-align: center;
-    padding: 3rem 0;
-    color: #444;
-    font-size: 0.85rem;
-    border-top: 1px solid rgba(255,255,255,0.06);
-    margin-top: 4rem;
-  }
-  .footer a { color: #666; text-decoration: none; }
-  .footer a:hover { color: #999; }
-  @media (max-width: 600px) {
-    .container { padding: 2rem 1rem; }
-    .grid-2 { grid-template-columns: 1fr; }
-    .section { padding: 1.5rem; }
-  }
-  html { scroll-behavior: smooth; }
-  .nav-links {
-    display: flex; flex-wrap: wrap; gap: 0.5rem; justify-content: center;
-    margin-top: 1.5rem;
-  }
-  .nav-links a {
-    color: #666; text-decoration: none; font-size: 0.8rem; font-weight: 500;
-    padding: 0.3rem 0.7rem; border: 1px solid rgba(255,255,255,0.08); border-radius: 100px;
-    transition: all 0.2s;
-  }
-  .nav-links a:hover { color: #D47B2A; border-color: rgba(212,123,42,0.3); }
+:root{
+  --bg:oklch(97% .004 240);--bg-2:oklch(94% .006 240);--bg-3:oklch(91% .008 240);
+  --border:oklch(84% .01 240);--border-s:oklch(72% .015 240);
+  --text:oklch(18% .01 240);--text-dim:oklch(48% .012 240);--text-m:oklch(62% .01 240);
+  --accent:oklch(40% .12 250);--accent-l:oklch(92% .04 250);
+  --gold:oklch(60% .14 78);--gold-bg:oklch(96% .04 82);
+  --red:oklch(52% .16 22);--red-bg:oklch(96% .03 20);
+  --green:oklch(48% .14 145);--green-bg:oklch(95% .04 145);
+  --font-d:'Instrument Serif',Georgia,serif;
+  --font-b:'IBM Plex Sans',sans-serif;
+  --font-m:'IBM Plex Mono',monospace;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html,body{overflow-x:clip}
+body{background:var(--bg);color:var(--text);font-family:var(--font-b);font-size:15px;line-height:1.7}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:.01ms!important;transition-duration:.01ms!important}}
+
+.topbar{position:sticky;top:0;z-index:100;background:oklch(97% .004 240 / .95);backdrop-filter:blur(8px);border-bottom:1px solid var(--border);padding:.875rem 2rem;display:flex;align-items:center;gap:1rem}
+.topbar a{color:var(--text-dim);text-decoration:none;font-size:.82rem;font-weight:400;transition:color .15s}
+.topbar a:hover{color:var(--accent)}
+.topbar a:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.topbar-sep{color:var(--border-s);font-size:.8rem}
+.topbar-title{font-size:.82rem;font-weight:500;color:var(--text)}
+.topbar-badge{margin-left:auto;background:var(--red-bg);color:var(--red);padding:.2rem .7rem;font-size:.68rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;border:1px solid oklch(86% .04 20)}
+
+.page-wrap{display:grid;grid-template-columns:220px 1fr;min-height:100vh}
+
+.sidebar{background:var(--bg-2);border-right:1px solid var(--border);padding:2rem 0;position:sticky;top:44px;height:calc(100svh - 44px);overflow-y:auto}
+.sidebar-lbl{font-size:.63rem;letter-spacing:.14em;text-transform:uppercase;color:var(--text-m);font-weight:600;padding:.5rem 1.25rem .3rem;display:block}
+.sidebar a{display:block;padding:.4rem 1.25rem;font-size:.8rem;color:var(--text-dim);text-decoration:none;transition:background .15s,color .15s;border-left:2px solid transparent}
+.sidebar a:hover{background:var(--bg-3);color:var(--text);border-left-color:var(--border-s)}
+.sidebar a:focus-visible{outline:2px solid var(--accent);outline-offset:-2px}
+
+main{padding:3rem 3.5rem 6rem;max-width:880px}
+
+.doc-header{margin-bottom:3rem;padding-bottom:2rem;border-bottom:1px solid var(--border)}
+.doc-meta{display:flex;gap:1.25rem;flex-wrap:wrap;margin-bottom:1.25rem}
+.meta-item{font-size:.73rem;color:var(--text-m);display:flex;align-items:center;gap:.3rem}
+.meta-dot{width:4px;height:4px;border-radius:50%;background:var(--text-m)}
+.doc-title{font-family:var(--font-d);font-size:clamp(2rem,4vw,3rem);font-weight:400;color:var(--text);line-height:1.1;margin-bottom:.4rem}
+.doc-sub{font-size:1rem;color:var(--text-dim);font-family:var(--font-d);font-style:italic}
+.warn{background:var(--red-bg);border:1px solid oklch(84% .06 20);border-left:3px solid var(--red);padding:.875rem 1.25rem;margin-top:1.25rem;display:flex;gap:.75rem;align-items:flex-start}
+.warn-icon{color:var(--red);font-weight:600;font-size:.78rem;flex-shrink:0;margin-top:.1rem;font-family:var(--font-m)}
+.warn-text{font-size:.8rem;color:oklch(36% .1 22);line-height:1.55}
+
+.sec{margin-bottom:3rem;scroll-margin-top:60px}
+.sec-hd{margin-bottom:1.25rem;padding-bottom:.625rem;border-bottom:1px solid var(--border)}
+.sec-num{font-family:var(--font-m);font-size:.67rem;color:var(--text-m);font-weight:500;letter-spacing:.06em;display:block;margin-bottom:.2rem}
+.sec-title{font-family:var(--font-d);font-size:1.4rem;font-weight:400;color:var(--text);line-height:1.2}
+h3{font-size:.86rem;font-weight:600;color:var(--text);margin:1.5rem 0 .6rem;letter-spacing:-.01em}
+h3:first-child{margin-top:0}
+p{color:var(--text-dim);font-size:.86rem;line-height:1.7;margin-bottom:.75rem;font-weight:300}
+p:last-child{margin-bottom:0}
+
+.card-row{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;margin:1rem 0}
+.card{background:var(--bg-2);border:1px solid var(--border);padding:1.25rem}
+.card-lbl{font-size:.63rem;letter-spacing:.12em;text-transform:uppercase;color:var(--text-m);font-weight:600;margin-bottom:.35rem}
+.card-val{font-family:var(--font-d);font-size:1.9rem;color:var(--text);line-height:1.1}
+.card-val.a{color:var(--accent)}
+.card-val.g{color:var(--gold)}
+.card-note{font-size:.73rem;color:var(--text-m);margin-top:.2rem;font-weight:300}
+
+.badge{display:inline-block;padding:.15rem .6rem;font-size:.66rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase}
+.bg{background:var(--green-bg);color:var(--green);border:1px solid oklch(84% .06 145)}
+.bb{background:var(--accent-l);color:var(--accent);border:1px solid oklch(84% .06 250)}
+.br{background:var(--red-bg);color:var(--red);border:1px solid oklch(86% .06 20)}
+.bo{background:var(--gold-bg);color:oklch(42% .12 75);border:1px solid oklch(86% .06 82)}
+
+.tw{overflow-x:auto;margin:.875rem 0}
+table{width:100%;border-collapse:collapse;font-size:.8rem}
+thead th{background:var(--bg-2);text-align:left;padding:.55rem .875rem;font-weight:600;color:var(--text);border-bottom:2px solid var(--border-s);font-size:.75rem;letter-spacing:.01em;white-space:nowrap}
+td{padding:.5rem .875rem;border-bottom:1px solid var(--border);color:var(--text-dim);font-weight:300;vertical-align:top}
+td:first-child{color:var(--text);font-weight:500}
+tr:hover td{background:var(--bg-2)}
+td.ok{color:var(--green);font-weight:500}
+td.bad{color:var(--red)}
+
+.pb{background:var(--bg);border:1px solid var(--border);margin-bottom:1.25rem}
+.pb-hd{background:var(--bg-2);border-bottom:1px solid var(--border);padding:.875rem 1.25rem;display:flex;align-items:center;gap:.875rem}
+.pb-title{font-family:var(--font-d);font-size:1.05rem;color:var(--text);font-weight:400}
+.pb-body{padding:1.25rem;display:grid;grid-template-columns:1fr 1fr;gap:1.25rem}
+.pb-field{}
+.pb-key{font-size:.63rem;letter-spacing:.1em;text-transform:uppercase;color:var(--text-m);font-weight:600;margin-bottom:.25rem}
+.pb-val{font-size:.83rem;color:var(--text);font-weight:400}
+.pb-big{font-family:var(--font-d);font-size:1.4rem;color:var(--accent)}
+
+.cl{display:flex;flex-wrap:wrap;gap:.4rem;margin:.4rem 0}
+.chip{background:var(--bg-2);border:1px solid var(--border);padding:.25rem .65rem;font-size:.76rem;color:var(--text-dim);font-weight:400}
+
+.code{background:oklch(16% .01 240);border:1px solid oklch(24% .012 240);padding:1.25rem 1.5rem;font-family:var(--font-m);font-size:.76rem;color:oklch(80% .01 240);line-height:1.75;overflow-x:auto;margin:.875rem 0}
+.code .cm{color:oklch(50% .01 240)}
+.code .hl{color:oklch(76% .15 82)}
+
+.diff{margin:.875rem 0;border:1px solid var(--border);overflow:hidden}
+.dr{display:grid;grid-template-columns:80px 1fr;font-size:.77rem}
+.dl{padding:.45rem .875rem;font-weight:500;font-family:var(--font-m);font-size:.67rem;letter-spacing:.04em}
+.dv{padding:.45rem .875rem;font-weight:300;color:var(--text-dim);border-left:1px solid var(--border)}
+.dr.old .dl{background:var(--red-bg);color:var(--red)}
+.dr.old .dv{background:oklch(98% .01 20);text-decoration:line-through;color:oklch(64% .08 20)}
+.dr.new .dl{background:var(--green-bg);color:var(--green)}
+.dr.new .dv{background:oklch(98% .02 145);color:oklch(32% .1 145)}
+.dr+.dr{border-top:1px solid var(--border)}
+
+.pl{list-style:none;display:flex;flex-direction:column;gap:.6rem;margin:.6rem 0}
+.pi{display:flex;align-items:flex-start;gap:.875rem;padding:.875rem 1rem;background:var(--bg-2);border:1px solid var(--border)}
+.pi:hover{border-color:var(--border-s)}
+.pn{font-family:var(--font-m);font-size:.68rem;font-weight:500;color:var(--text-m);padding:.12rem .4rem;background:var(--bg-3);border:1px solid var(--border);flex-shrink:0;margin-top:.1rem}
+.pt{font-size:.83rem;font-weight:600;color:var(--text);margin-bottom:.15rem}
+.pd{font-size:.76rem;color:var(--text-dim);line-height:1.55;font-weight:300}
+
+.tl{display:flex;flex-direction:column;gap:0;margin:.875rem 0}
+.ti{display:grid;grid-template-columns:110px 1fr;position:relative}
+.ti::before{content:'';position:absolute;left:110px;top:0;bottom:0;width:1px;background:var(--border)}
+.tp{padding:.875rem 1.25rem .875rem 0;font-size:.73rem;font-weight:600;color:var(--text-m);text-align:right;border-top:1px solid var(--border)}
+.tc{padding:.875rem 0 .875rem 1.25rem;border-top:1px solid var(--border);position:relative}
+.tc::before{content:'';position:absolute;left:calc(-4px - .5px);top:1.1rem;width:9px;height:9px;background:var(--bg);border:2px solid var(--border-s);border-radius:50%}
+.tc h4{font-size:.8rem;font-weight:600;color:var(--text);margin-bottom:.35rem}
+.tc ul{list-style:none;display:flex;flex-direction:column;gap:.2rem}
+.tc li{font-size:.76rem;color:var(--text-dim);font-weight:300;padding-left:.75rem;position:relative}
+.tc li::before{content:'→';position:absolute;left:0;color:var(--text-m);font-size:.68rem}
+
+footer{background:var(--bg-2);border-top:1px solid var(--border);padding:1.25rem 3.5rem;font-size:.73rem;color:var(--text-m);display:flex;gap:1rem;align-items:center;flex-wrap:wrap}
+
+.container{max-width:880px}
+
+@media(max-width:900px){
+  .page-wrap{grid-template-columns:1fr}
+  .sidebar{display:none}
+  main{padding:2rem 1.5rem 4rem}
+  .card-row{grid-template-columns:1fr 1fr}
+  .pb-body{grid-template-columns:1fr}
+  footer{padding:1.25rem 1.5rem}
+}
+@media(max-width:480px){.card-row{grid-template-columns:1fr}}
 </style>
 </head>
 <body>
+
 <div class="topbar">
-  <a href="index.html">← Planos</a>
-  <span class="brand">Marcos Domingos</span>
+  <a href="index.html">← Hub</a>
+  <span class="topbar-sep">/</span>
+  <span class="topbar-title">Estratégia Primordial</span>
+  <span class="topbar-badge">Interno · Equipe</span>
 </div>
 
-<div class="container">
+<div class="page-wrap">
 
-  <!-- HERO -->
-  <div class="hero">
-    <div class="icon">📊</div>
-    <h1>Plano de Marketing</h1>
-    <p class="tagline">Representação Comercial Marcos Domingos — Distrito Federal</p>
-    <span class="subtitle">Junho 2026</span>
-    <div class="nav-links">
-      <a href="#resumo">Resumo</a>
-      <a href="#contexto">Contexto</a>
-      <a href="#operacoes">Operações</a>
-      <a href="#mercado">Mercado</a>
-      <a href="#posicionamento">Posicionamento</a>
-      <a href="#canais">Canais</a>
-      <a href="#precificacao">Preços</a>
-      <a href="#digital">Digital</a>
-      <a href="#cronograma">Cronograma</a>
-      <a href="#metricas">Métricas</a>
-      <a href="#riscos">Riscos</a>
-      <a href="#orcamento">Orçamento</a>
-      <a href="#conclusao">Conclusão</a>
+<nav class="sidebar">
+  <div>
+    <span class="sidebar-lbl">Visão Geral</span>
+    <a href="#perfil">01. Perfil Marcos</a>
+    <a href="#metodo">02. Método de Trabalho</a>
+  </div>
+  <div>
+    <span class="sidebar-lbl">Produtos</span>
+    <a href="#pimel">03. PIMEL — Mel</a>
+    <a href="#condel">04. Condel — Cabos</a>
+    <a href="#linguica">05. Linguiça Exata</a>
+  </div>
+  <div>
+    <span class="sidebar-lbl">Operação</span>
+    <a href="#area">06. Área de Atuação</a>
+    <a href="#comissoes">07. Comissões e Prazos</a>
+    <a href="#clientes">08. Clientes Reais</a>
+  </div>
+  <div>
+    <span class="sidebar-lbl">Estratégia</span>
+    <a href="#rotina">09. Rotina Diária</a>
+    <a href="#roadmap">10. Roadmap</a>
+    <a href="#concorrencia">11. Concorrência</a>
+    <a href="#diferenciais">12. Diferenciais</a>
+  </div>
+  <div>
+    <span class="sidebar-lbl">LPs Clientes</span>
+    <a href="pimel.html">→ LP Pimel</a>
+    <a href="condel.html">→ LP Condel</a>
+    <a href="linguica-exata.html">→ LP Linguiça</a>
+  </div>
+</nav>
+
+<main>
+
+<header class="doc-header">
+  <div class="doc-meta">
+    <span class="meta-item"><span class="meta-dot"></span>Versão 1.0 · 03/06/2026</span>
+    <span class="meta-item"><span class="meta-dot"></span>Baseado em áudios transcritos</span>
+    <span class="meta-item"><span class="meta-dot"></span>Marcos Domingos</span>
+  </div>
+  <h1 class="doc-title">Estratégia Primordial</h1>
+  <p class="doc-sub">Plano de Marketing Consolidado — Marcos Domingos · Brasília/DF</p>
+  <div class="warn">
+    <span class="warn-icon">⚠ INTERNO</span>
+    <div class="warn-text">Documento de uso exclusivo da equipe. Contém dados de comissão, metas reais, análise de concorrência e estratégia operacional. Não compartilhar com clientes.</div>
+  </div>
+</header>
+
+<!-- 01 PERFIL -->
+<section class="sec" id="perfil">
+  <div class="sec-hd">
+    <span class="sec-num">01 — PERFIL</span>
+    <h2 class="sec-title">Quem é Marcos Domingos</h2>
+  </div>
+  <div class="card-row">
+    <div class="card">
+      <p class="card-lbl">Produtos</p>
+      <p class="card-val a">3</p>
+      <p class="card-note">Pimel · Condel · Linguiça Exata</p>
+    </div>
+    <div class="card">
+      <p class="card-lbl">Equipe</p>
+      <p class="card-val">Solo</p>
+      <p class="card-note">Estratégia deve considerar capacidade individual</p>
+    </div>
+    <div class="card">
+      <p class="card-lbl">Área Principal</p>
+      <p class="card-val" style="font-size:1rem;margin-top:.2rem">Brasília/DF</p>
+      <p class="card-note">+ 8 regiões do entorno</p>
     </div>
   </div>
+  <p>Representante comercial autônomo, trabalhando sozinho (SOLO) com três produtos complementares no DF. Qualquer plano que assuma equipe ou volume de visitas além do viável individual será ineficaz e deve ser descartado.</p>
+</section>
 
-  <!-- 1. RESUMO EXECUTIVO -->
-  <div class="section" id="resumo">
-    <h2>📋 1. Resumo Executivo</h2>
-    <p>Marcos Domingos é representante comercial autônomo (SOLO) no Distrito Federal, atuando em 3 linhas de produto consolidadas: PIMEL (Mel), Condel (Fios Elétricos) e Linguiça Exata (Alimentos). Este plano estrutura estratégias executáveis por uma única pessoa, focando em maximizar resultados com recursos limitados.</p>
-    <div class="grid-2">
-      <div class="stat-card">
-        <div class="value">3</div>
-        <div class="label">Linhas de Produto</div>
-      </div>
-      <div class="stat-card">
-        <div class="value">8</div>
-        <div class="label">Regiões no DF</div>
-      </div>
-    </div>
+<!-- 02 MÉTODO -->
+<section class="sec" id="metodo">
+  <div class="sec-hd">
+    <span class="sec-num">02 — MÉTODO</span>
+    <h2 class="sec-title">Estratégia de Rota Diversificada</h2>
   </div>
+  <div class="code">
+<span class="cm"># Método confirmado nos áudios — rota diversificada</span>
+Ao se deslocar por uma região →
+  Parar em lojas de material de construção  <span class="hl">→ Condel</span>
+  Parar em padarias, supermercados          <span class="hl">→ Pimel + Linguiça Exata</span>
+  Parar em farmácias, empórios              <span class="hl">→ Pimel</span>
+  Parar em restaurantes, churrascarias      <span class="hl">→ Linguiça Exata</span>
 
-  <!-- 2. CONTEXTO E SITUAÇÃO ATUAL -->
-  <div class="section" id="contexto">
-    <h2>🔍 2. Contexto e Situação Atual</h2>
-    <p>Marcos Domingos opera como representante comercial autônomo, utilizando estratégia de <strong>rota diversificada</strong>: ao se deslocar por uma região, identifica oportunidades múltiplas (lojas de material de construção, padarias, farmácias, mercados) e aborda com produto adequado. Atua em 8 regiões do DF com 3 linhas de produto consolidadas.</p>
-    <h3>Operação Atual</h3>
-    <ul>
-      <li><strong>Prospecção:</strong> Segunda-quarta ativa no DF, entrega até 1 semana após pedido</li>
-      <li><strong>Canais atuais:</strong> Door-to-door + WhatsApp pessoal</li>
-      <li><strong>Capacidade:</strong> 3 dias/semana dedicados a prospecção, sem presença digital profissional</li>
-      <li><strong>Follow-up:</strong> WhatsApp + contato presencial para leads qualificados</li>
-    </ul>
-    <div class="highlight-box">
-      <strong>Desafio principal:</strong> Sem presença digital estruturada (WhatsApp Business, catálogos, plataformas B2B), escalabilidade é limitada. Solução: implementação gradual de canais digitais mantendo foco no operacional.
-    </div>
-  </div>
-
-  <!-- 3. OPERAÇÕES COMERCIAIS -->
-  <div class="section" id="operacoes">
-    <h2>🏭 3. Operações Comerciais</h2>
-
-    <div class="op-card">
-      <h4>🍯 PIMEL — Mel e Derivados do Cerrado</h4>
-      <p><strong>Comissão:</strong> 5% | <strong>Certificação:</strong> SISBI (venda nacional)</p>
-      <p><strong>Produtos:</strong> mel natural, mel orgânico, linha premium (3 floradas), própolis, pólen, compostos, sachês</p>
-      <p><strong>Clientes reais:</strong> Dia a Dia, Costa Atacado, Super Adega, Tático, Castelo Forte, Casa Forte, Reino Pão, Pão Flocos</p>
-      <p><strong>Prazos:</strong> À vista (PIX) • 7 dias (clientes estabelecidos) • 14-30 dias (redes maiores)</p>
-      <span class="badge badge-orange">SISBI Nacional</span>
-      <span class="badge badge-orange">Mel Premium</span>
-      <span class="badge badge-green">Recorrência</span>
-    </div>
-
-    <div class="op-card">
-      <h4>⚡ Condel — Fios e Cabos Elétricos</h4>
-      <p><strong>Comissão:</strong> 10% | <strong>Certificação:</strong> INMETRO (2 certificados vigentes)</p>
-      <p><strong>Produtos:</strong> fios 1,5mm a 12mm, cabos PP, alumínio, bobinas, aterramento, sonorização</p>
-      <p><strong>Operação:</strong> 150+ lojas no DF, depósito próprio em Brasília, entrega 24h</p>
-      <p><strong>Prazos:</strong> À vista (PIX) • 7 dias (clientes) • 14-30 dias (redes maiores)</p>
-      <span class="badge badge-blue">INMETRO Certificado</span>
-      <span class="badge badge-blue">150+ lojas</span>
-      <span class="badge badge-green">24h DF</span>
-    </div>
-
-    <div class="op-card">
-      <h4>🥩 Linguiça Exata — Linguiças Artesanais</h4>
-      <p><strong>Comissão:</strong> 10% | <strong>Origem:</strong> Anápolis-GO (25 anos de mercado)</p>
-      <p><strong>Produtos:</strong> linguiça fina (frango/porco), grossa suína, bacon, queijo coalho — vácuo, 500g bandeja</p>
-      <p><strong>Metas:</strong> 300kg/semana → 2.000kg/semana | Preço: R$20-24/kg</p>
-      <p><strong>Logística:</strong> Prospecção seg-qua em Brasília, entrega sexta-feira de Anápolis</p>
-      <span class="badge badge-red">Artesanal</span>
-      <span class="badge badge-red">25 anos GO</span>
-      <span class="badge badge-green">Sexta DF</span>
-    </div>
-  </div>
-
-  <!-- 3.1 ÁREA DE ATUAÇÃO -->
-  <div class="section">
-    <h2>🗺️ Área de Atuação — Marcos Domingos</h2>
-    <p>Atua prioritariamente em 8 regiões administrativas do Distrito Federal:</p>
-    <p style="display: flex; flex-wrap: wrap; gap: 1rem; margin-top: 1rem;">
-      <span class="badge badge-orange">Samambaia</span>
-      <span class="badge badge-orange">Taguatinga</span>
-      <span class="badge badge-orange">Ceilândia</span>
-      <span class="badge badge-orange">Vicente Pires</span>
-      <span class="badge badge-orange">Águas Claras</span>
-      <span class="badge badge-orange">Riacho Fundo I/II</span>
-      <span class="badge badge-orange">Recanto das Emas</span>
-      <span class="badge badge-orange">Gama</span>
-    </p>
-    <div class="highlight-box">
-      <strong>Estratégia de rota diversificada:</strong> Ao passar por uma região, identifica oportunidades no caminho (lojas de material de construção, padarias, farmácias, mercados) e aborda com produto adequado, maximizando cada deslocamento.
-    </div>
-  </div>
-
-  <!-- 3.2 TABELA DE COMISSÕES E PRAZOS -->
-  <div class="section">
-    <h2>💰 Tabela de Comissões e Prazos</h2>
-    <table>
-      <tr><th>Produto</th><th>Comissão</th><th>Pagamento</th><th>Entrega</th></tr>
-      <tr><td>PIMEL (Mel)</td><td>5%</td><td>PIX • 7d • 14-30d</td><td>2-4 dias</td></tr>
-      <tr><td>Condel (Fios)</td><td>10%</td><td>PIX • 7d • 14-30d</td><td>24h DF</td></tr>
-      <tr><td>Linguiça Exata</td><td>10%</td><td>PIX obrigatório</td><td>Sexta-feira DF</td></tr>
-    </table>
-  </div>
-
-  <!-- 4. ANÁLISE DE MERCADO -->
-  <div class="section" id="mercado">
-    <h2>📈 4. Análise de Mercado</h2>
-
-    <h3>4.1 Fios e Cabos Elétricos (Condel)</h3>
-    <div class="grid-2">
-      <div class="stat-card">
-        <div class="value">USD 8.86B</div>
-        <div class="label">Mercado LATAM 2024</div>
-      </div>
-      <div class="stat-card">
-        <div class="value">5.5%</div>
-        <div class="label">CAGR até 2029</div>
-      </div>
-    </div>
-    <p><em>Fonte: Mordor Intelligence. Projeção 2029: USD 11.60 bilhões.</em></p>
-    <p><strong>Concorrentes no DF:</strong></p>
-    <ul>
-      <li>Sarkis Material Elétrico (QSA 14, Taguatinga)</li>
-      <li>Eletrogomes (SIA Quadra 5C 55)</li>
-      <li>DF Atacadista (SIA Trecho 2)</li>
-      <li>WL Atacadista (SIA Trecho 3)</li>
-      <li>V&M Materiais de Construção (Rua 01)</li>
-    </ul>
-
-    <h3>4.2 Linguiça Exata — Linguiças Artesanais</h3>
-    <p>Fabricação em Anápolis/GO (25 anos de mercado). Diferenciais: sabor autêntico sem conservantes, fábrica certificada, logística validada (entrega sexta-feira em Brasília).</p>
-    <p><strong>Metas de volume:</strong> Fase 1: 300kg/semana → Fase 2: 2.000kg/semana. Preço: R$20-24/kg progressivo por volume.</p>
-    <p><strong>Público-alvo:</strong> Supermercados, padarias, restaurantes, churrascarias, food service.</p>
-
-    <h3>4.3 PIMEL — Mel e Derivados do Cerrado</h3>
-    <div class="grid-2">
-      <div class="stat-card">
-        <div class="value">326</div>
-        <div class="label">Apicultores registrados no DF (2025)</div>
-      </div>
-      <div class="stat-card">
-        <div class="value">R$ 21,13/kg</div>
-        <div class="label">Preço referência FIPMEL</div>
-      </div>
-    </div>
-    <p>Demanda institucional: mel do DF incorporado à merenda escolar. Qualidade Cerrado é referência nacional.</p>
-
-    <h3>4.4 Ambiente de Representação Comercial</h3>
-    <p>Regulação: Lei 4.886/65, registro CORE obrigatório. 70% das empresas usam WhatsApp Business — oportunidade imediata de implementação.</p>
-  </div>
-
-  <!-- 5. POSICIONAMENTO E PÚBLICO-ALVO -->
-  <div class="section" id="posicionamento">
-    <h2>🎯 5. Posicionamento e Público-Alvo</h2>
-
-    <div class="highlight-box">
-      <strong>Posicionamento Geral:</strong> "Representante de confiança com produtos certificados e entrega garantida"
-    </div>
-
-    <h3>Diferenciais competitivos</h3>
-    <ul>
-      <li>Certificação INMETRO (diferencial competitivo em fios/cabos)</li>
-      <li>Qualidade Cerrado (mel)</li>
-      <li>Sabor autêntico (linguiça artesanal)</li>
-      <li>Entrega confiável (sexta-feira para linguiça, 1-4 dias para outros produtos)</li>
-    </ul>
-  </div>
-
-  <!-- 6. CANAIS DE VENDA -->
-  <div class="section" id="canais">
-    <h2>🛣️ 6. Canais de Venda</h2>
-
-    <h3>6.1 Canais Atuais</h3>
-    <ul>
-      <li>Door-to-door (visitas presenciais)</li>
-      <li>WhatsApp pessoal</li>
-    </ul>
-    <div class="highlight-box">
-      <strong>Limitação:</strong> sem presença digital profissional, baixa escalabilidade
-    </div>
-
-    <h3>6.2 Canais Recomendados</h3>
-    <p>Implementar em ordem de prioridade: WhatsApp Business → Catálogos digitais → Plataformas B2B → Landing page profissional.</p>
-  </div>
-
-  <!-- 7. ESTRATÉGIA DE PREÇOS -->
-  <div class="section" id="precificacao">
-    <h2>💰 7. Estratégia de Preços</h2>
-
-    <h3>7.1 PIMEL / Condel</h3>
-    <p>Competir com base em valor (certificação INMETRO), qualidade e serviço.</p>
-    <table>
-      <thead>
-        <tr><th>Volume</th><th>Desconto</th></tr>
-      </thead>
-      <tbody>
-        <tr><td>1-10 rolos</td><td>Preço de tabela</td></tr>
-        <tr><td>11-50 rolos</td><td>5% desconto</td></tr>
-        <tr><td>51+ rolos</td><td>10% desconto</td></tr>
-      </tbody>
-    </table>
-
-    <h3>7.2 Linguiça Artesanal</h3>
-    <p>Posicionamento premium. Preço justo, competitivo com industrial. Valor percebido: qualidade superior, sem conservantes. Desconto para restaurantes de alta rotatividade.</p>
-
-    <h3>7.3 Mel</h3>
-    <p>Preço de referência: R$ 21-25/kg. Diferencial qualidade Cerrado. Pacotes promocionais (compre 2 kg, ganhe 10%). Merenda escolar: negociação em lote com governo DF.</p>
-  </div>
-
-  <!-- 8. AÇÕES DIGITAIS -->
-  <div class="section" id="digital">
-    <h2>📱 8. Ações Digitais</h2>
-
-    <h3>8.1 WhatsApp Business — IMPLEMENTAÇÃO IMEDIATA</h3>
-    <div class="highlight-box">
-      <strong>Prioridade CRÍTICA</strong> — implementar em 0-7 dias
-    </div>
-
-    <h3>8.2 Catálogos Digitais</h3>
-    <ul>
-      <li><strong>Catálogo PIMEL</strong> — já existe (Catálogo 2025 Pimel Final.pdf), verificar atualização de preços, adicionar certificados INMETRO</li>
-      <li><strong>Catálogo Condel</strong> — reutilizar design PIMEL, incluir 2 certificados INMETRO</li>
-      <li><strong>Catálogo Linguiça</strong> — fotos de produtos, fábrica em Anápolis, diferenciais</li>
-      <li><strong>Catálogo Mel</strong> — fotos de mel/derivados, diferencial Cerrado, preço por kg</li>
-    </ul>
-
-    <h3>8.3 Plataformas B2B</h3>
-    <ul>
-      <li><strong>MF Rural</strong> (PIMEL/mel): cadastro gratuito, produtos com fotos, leads via WhatsApp</li>
-      <li><strong>A Casa do Produtor</strong> (linguiça): parceria, amostras, comissão por venda</li>
-    </ul>
-  </div>
-
-  <!-- 9. CRONOGRAMA 90 DIAS -->
-  <div class="section" id="cronograma">
-    <h2>📅 9. Cronograma 90 Dias</h2>
-
-    <div class="timeline">
-      <div class="timeline-item">
-        <h4>Dias 1-14: Fundação Digital</h4>
-        <p>WhatsApp Business, catálogos digitais, presença digital básica</p>
-      </div>
-      <div class="timeline-item">
-        <h4>Dias 15-30: Expansão de Canais</h4>
-        <p>Plataformas B2B, MF Rural, A Casa do Produtor, primeiras parcerias</p>
-      </div>
-      <div class="timeline-item">
-        <h4>Dias 31-60: Consolidação e Otimização</h4>
-        <p>Ajuste de preços, otimização de canais, métricas iniciais</p>
-      </div>
-      <div class="timeline-item">
-        <h4>Dias 61-90: Escalabilidade e Avaliação</h4>
-        <p>Avaliação de resultados, expansão de operações, planejamento próximo ciclo</p>
-      </div>
-    </div>
-  </div>
-
-  <!-- 10. MÉTRICAS DE SUCESSO -->
-  <div class="section" id="metricas">
-    <h2>📊 10. Métricas de Sucesso</h2>
-
-    <h3>10.1 Métricas de Vendas</h3>
-    <ul>
-      <li>Receita mensal por linha de produto</li>
-      <li>Número de clientes ativos</li>
-      <li>Ticket médio por cliente</li>
-      <li>Taxa de recorrência</li>
-    </ul>
-
-    <h3>10.2 Métricas Digitais</h3>
-    <ul>
-      <li>Contatos via WhatsApp Business</li>
-      <li>Downloads de catálogos</li>
-      <li>Leads de plataformas B2B</li>
-      <li>Taxa de conversão digital → venda</li>
-    </ul>
-  </div>
-
-  <!-- 11. RISCOS E MITIGAÇÃO -->
-  <div class="section" id="riscos">
-    <h2>⚠️ 11. Riscos e Mitigação</h2>
-    <table>
-      <thead>
-        <tr><th>Risco</th><th>Mitigação</th></tr>
-      </thead>
-      <tbody>
-        <tr><td>Sem presença digital</td><td>Implementar WhatsApp Business imediatamente</td></tr>
-        <tr><td>Concorrência de grandes redes</td><td>Foco em certificação INMETRO e serviço personalizado</td></tr>
-        <tr><td>Capacidade limitada (solo)</td><td>Priorizar canais digitais com menor demanda operacional</td></tr>
-        <tr><td>Sazonalidade de produtos</td><td>Diversificar linhas de produto (fios + alimentos)</td></tr>
-      </tbody>
-    </table>
-  </div>
-
-  <!-- 12. ORÇAMENTO ESTIMADO -->
-  <div class="section" id="orcamento">
-    <h2>💵 12. Orçamento Estimado</h2>
-    <p>Plano desenhado para representante solo com orçamento mínimo.</p>
-    <div class="grid-2">
-      <div class="stat-card">
-        <div class="value">R$ 350</div>
-        <div class="label">Custo fixo total (único)</div>
-      </div>
-      <div class="stat-card">
-        <div class="value">R$ 0-50/mês</div>
-        <div class="label">Custo recorrente</div>
-      </div>
-    </div>
-    <div class="highlight-box">
-      Investimento mínimo para executar este plano completo.
-    </div>
-  </div>
-
-  <!-- 13. CONCLUSÃO -->
-  <div class="section" id="conclusao">
-    <h2>✅ 13. Conclusão</h2>
-    <p>Este plano de marketing estabelece um caminho claro e executável para Marcos Domingos profissionalizar sua representação comercial no Distrito Federal. Considerando que Marcos atua como representante solo, todas as ações foram desenhadas para serem implementadas por uma única pessoa, com orçamento mínimo.</p>
-    <div class="highlight-box">
-      <strong>3 Pilares Estratégicos:</strong>
-      <ul style="margin-top: 0.5rem;">
-        <li><strong>PIMEL (5% comissão):</strong> Mel com SISBI, certificação nacional, atende redes estabelecidas</li>
-        <li><strong>Condel (10% comissão):</strong> Fios/cabos com INMETRO, 150+ lojas DF, entrega 24h</li>
-        <li><strong>Linguiça Exata (10% comissão):</strong> Artesanal 25 anos, entrega sexta-feira DF, metas 300-2.000kg/semana</li>
-      </ul>
-      <p style="margin-top: 1rem;">Estratégia de rota diversificada (3 dias/semana prospecção) com implementação digital gradual (WhatsApp Business, catálogos, plataformas B2B).</p>
-    </div>
-  </div>
-
-  <div class="footer">
-    Gerado por CMO Agent — Paperclip<br>
-    <a href="index.html">Planos de Marketing • Marcos Domingos</a>
-  </div>
+<span class="cm"># Resultado: prospecção de 3 produtos num único deslocamento</span>
 </div>
+
+  <h3>Calendário Semanal Confirmado</h3>
+  <div class="tw"><table>
+    <thead><tr><th>Dia</th><th>Atividade</th><th>Produto Foco</th></tr></thead>
+    <tbody>
+      <tr><td>Segunda</td><td>Prospecção ativa — rota diversificada</td><td>Todos</td></tr>
+      <tr><td>Terça</td><td>Prospecção + leads WhatsApp + visitas</td><td>Todos</td></tr>
+      <tr><td>Quarta</td><td>Prospecção + follow-ups</td><td>Todos</td></tr>
+      <tr><td>Quinta</td><td>Follow-up, confirmação de pedidos, adm.</td><td>—</td></tr>
+      <tr><td>Sexta</td><td><strong>Entrega Linguiça Exata</strong> (vem de Anápolis)</td><td>Linguiça Exata</td></tr>
+    </tbody>
+  </table></div>
+
+  <h3>Ajustes Plano CMO → Realidade</h3>
+  <div class="diff">
+    <div class="dr old"><span class="dl">CMO</span><span class="dv">180 km/dia de visitas presenciais</span></div>
+    <div class="dr new"><span class="dl">REAL</span><span class="dv">2–3 visitas/dia com leads pré-qualificados via WhatsApp</span></div>
+  </div>
+  <div class="diff">
+    <div class="dr old"><span class="dl">CMO</span><span class="dv">10–20 novos contatos/dia PIMEL</span></div>
+    <div class="dr new"><span class="dl">REAL</span><span class="dv">5–8 contatos/dia focando qualidade dos leads</span></div>
+  </div>
+  <div class="diff">
+    <div class="dr old"><span class="dl">CMO</span><span class="dv">Linguiça Exata foco em Goiânia/Anápolis</span></div>
+    <div class="dr new"><span class="dl">REAL</span><span class="dv">Marcos opera em Brasília/DF federal — estratégia redirecionada</span></div>
+  </div>
+</section>
+
+<!-- 03 PIMEL -->
+<section class="sec" id="pimel">
+  <div class="sec-hd">
+    <span class="sec-num">03 — PRODUTO</span>
+    <h2 class="sec-title">PIMEL — Mel e Derivados do Cerrado</h2>
+  </div>
+  <div class="pb">
+    <div class="pb-hd">
+      <span class="badge bo">Pimel</span>
+      <span class="pb-title">Mel, Própolis, Pólen e Derivados</span>
+      <span style="margin-left:auto"><span class="badge bg">SISBI</span></span>
+    </div>
+    <div class="pb-body">
+      <div>
+        <div class="pb-field" style="margin-bottom:1rem">
+          <p class="pb-key">Comissão</p>
+          <p class="pb-big">5%</p>
+        </div>
+        <div class="pb-field" style="margin-bottom:1rem">
+          <p class="pb-key">Certificação</p>
+          <p class="pb-val">SISBI — autoriza venda nacional</p>
+        </div>
+        <div class="pb-field">
+          <p class="pb-key">Base Operacional</p>
+          <p class="pb-val">Entreposto próprio no DF</p>
+        </div>
+      </div>
+      <div>
+        <div class="pb-field" style="margin-bottom:1rem">
+          <p class="pb-key">Prazos de Pagamento</p>
+          <p class="pb-val">PIX · 7 dias · 14–30 dias (redes maiores)</p>
+        </div>
+        <div class="pb-field">
+          <p class="pb-key">Prazo de Entrega</p>
+          <p class="pb-val">Pequenos: até 2 dias<br>Com planejamento: 2–4 dias</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <h3>Portfólio Pimel</h3>
+  <div class="tw"><table>
+    <thead><tr><th>Produto</th><th>Tipo</th><th>Canal</th><th>Obs.</th></tr></thead>
+    <tbody>
+      <tr><td>Mel Natural</td><td>Carro-chefe</td><td>Supermercados, atacados</td><td>Alta rotatividade</td></tr>
+      <tr><td>Mel Orgânico</td><td>Premium</td><td>Empórios, lojas naturais</td><td>Alta margem</td></tr>
+      <tr><td>Linha 3 Floradas</td><td>Premium</td><td>Varejo premium</td><td>Embalagem diferenciada</td></tr>
+      <tr><td>Própolis</td><td>Alta demanda</td><td>Farmácias, empórios</td><td>Vende sozinho</td></tr>
+      <tr><td>Pólen Apícola</td><td>Complementar</td><td>Lojas naturais</td><td>Nutricional</td></tr>
+      <tr><td>Compostos</td><td>Complementar</td><td>Varejo especializado</td><td>Funcional</td></tr>
+      <tr><td>Sachês Individuais</td><td>Food service</td><td>Padarias, hotéis, cafés</td><td>Boa margem, fácil venda</td></tr>
+    </tbody>
+  </table></div>
+
+  <h3>Estratégia Pimel — Prioridades</h3>
+  <ul class="pl">
+    <li class="pi"><span class="pn">P1</span><div><p class="pt">SISBI como diferencial de abertura</p><p class="pd">Concorrentes menores não têm. Abre portas para redes que exigem documentação nacional.</p></div></li>
+    <li class="pi"><span class="pn">P2</span><div><p class="pt">Pré-qualificar leads via WhatsApp</p><p class="pd">Enviar catálogo + certificado SISBI antes da visita. Visitar só quem demonstra interesse.</p></div></li>
+    <li class="pi"><span class="pn">P3</span><div><p class="pt">Focar redes regionais (não grandes redes)</p><p class="pd">Menos concorrência. Castelo Forte, Casa Forte, Super Adega, Costa Atacado — já clientes.</p></div></li>
+    <li class="pi"><span class="pn">P4</span><div><p class="pt">Enviar amostras via Correios para leads remotos</p><p class="pd">Custo de amostra pequeno vs. custo de visita. Filtra leads sem deslocamento.</p></div></li>
+  </ul>
+</section>
+
+<!-- 04 CONDEL -->
+<section class="sec" id="condel">
+  <div class="sec-hd">
+    <span class="sec-num">04 — PRODUTO</span>
+    <h2 class="sec-title">Condel — Fios e Cabos Elétricos</h2>
+  </div>
+  <div class="pb">
+    <div class="pb-hd">
+      <span class="badge bb">Condel</span>
+      <span class="pb-title">Condutores Elétricos Certificados</span>
+      <span style="margin-left:auto"><span class="badge bb">2× INMETRO</span></span>
+    </div>
+    <div class="pb-body">
+      <div>
+        <div class="pb-field" style="margin-bottom:1rem">
+          <p class="pb-key">Comissão</p>
+          <p class="pb-big">10%</p>
+        </div>
+        <div class="pb-field" style="margin-bottom:1rem">
+          <p class="pb-key">Certificação</p>
+          <p class="pb-val">2 INMETRO vigentes + ISO 9001</p>
+        </div>
+        <div class="pb-field">
+          <p class="pb-key">Depósito DF</p>
+          <p class="pb-val">Base própria em Brasília</p>
+        </div>
+      </div>
+      <div>
+        <div class="pb-field" style="margin-bottom:1rem">
+          <p class="pb-key">Meta</p>
+          <p class="pb-val">150–180 lojas atendidas no DF</p>
+        </div>
+        <div class="pb-field" style="margin-bottom:1rem">
+          <p class="pb-key">Pagamento</p>
+          <p class="pb-val">PIX · 7 dias · 14–30 dias</p>
+        </div>
+        <div class="pb-field">
+          <p class="pb-key">Entrega</p>
+          <p class="pb-val">24h no DF (depósito próprio)</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <h3>Portfólio Condel</h3>
+  <div class="tw"><table>
+    <thead><tr><th>Produto</th><th>Bitolas</th><th>Aplicação</th></tr></thead>
+    <tbody>
+      <tr><td>Cabo Flexível</td><td>1,5mm a 12mm</td><td>Residencial e comercial — carro-chefe</td></tr>
+      <tr><td>Cabo PP</td><td>2×1,5 a 2×4mm</td><td>Equipamentos móveis, extensões</td></tr>
+      <tr><td>Cabo Paralelo</td><td>2×1,50 a 2×2,50</td><td>Iluminação — bobinas 300–500m</td></tr>
+      <tr><td>Alumínio</td><td>10mm a 185mm</td><td>Redes de distribuição</td></tr>
+      <tr><td>Aterramento</td><td>4mm a 25mm</td><td>Proteção elétrica — verde/amarelo ABNT</td></tr>
+      <tr><td>Sonorização</td><td>1 a 4 pares</td><td>Sistemas de áudio, blindado</td></tr>
+    </tbody>
+  </table></div>
+
+  <h3>Concorrência Condel no DF</h3>
+  <div class="tw"><table>
+    <thead><tr><th>Concorrente</th><th>Tipo</th><th>Nossa Vantagem</th></tr></thead>
+    <tbody>
+      <tr><td>Sarkis Material Elétrico</td><td>Regional</td><td class="ok">INMETRO duplo + ISO 9001</td></tr>
+      <tr><td>Eletrogomes</td><td>Atacado/varejo</td><td class="ok">Depósito DF → entrega 24h</td></tr>
+      <tr><td>DF Atacadista</td><td>Atacado</td><td class="ok">Certificação superior</td></tr>
+      <tr><td>WL Atacadista</td><td>Atacado</td><td class="ok">Preço + documentação completa</td></tr>
+    </tbody>
+  </table></div>
+</section>
+
+<!-- 05 LINGUIÇA -->
+<section class="sec" id="linguica">
+  <div class="sec-hd">
+    <span class="sec-num">05 — PRODUTO</span>
+    <h2 class="sec-title">Linguiça Exata — Artesanal Anápolis/GO</h2>
+  </div>
+  <div class="pb">
+    <div class="pb-hd">
+      <span class="badge br">Linguiça Exata</span>
+      <span class="pb-title">25 Anos de Fábrica Própria em Anápolis</span>
+    </div>
+    <div class="pb-body">
+      <div>
+        <div class="pb-field" style="margin-bottom:1rem">
+          <p class="pb-key">Comissão</p>
+          <p class="pb-big">10%</p>
+        </div>
+        <div class="pb-field" style="margin-bottom:1rem">
+          <p class="pb-key">Origem</p>
+          <p class="pb-val">Anápolis/GO — fundada em 2000</p>
+        </div>
+        <div class="pb-field">
+          <p class="pb-key">Pagamento</p>
+          <p class="pb-val">PIX obrigatório · 7 dias · 14–30d (grandes)</p>
+        </div>
+      </div>
+      <div>
+        <div class="pb-field" style="margin-bottom:1rem">
+          <p class="pb-key">Preço por kg</p>
+          <p class="pb-val">R$24 (até 50kg) · R$22 (50–150kg) · R$20 (150–500kg)</p>
+        </div>
+        <div class="pb-field" style="margin-bottom:1rem">
+          <p class="pb-key">Entrega Brasília</p>
+          <p class="pb-val">Toda sexta-feira (vem de Anápolis)</p>
+        </div>
+        <div class="pb-field">
+          <p class="pb-key">Metas</p>
+          <p class="pb-val">Curto: 300 kg/sem → Médio: 2.000 kg/sem</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <h3>Tabela de Preços com Comissão</h3>
+  <div class="tw"><table>
+    <thead><tr><th>Volume</th><th>Preço/kg</th><th>Público</th><th>Comissão 10%</th></tr></thead>
+    <tbody>
+      <tr><td>Até 50 kg</td><td><strong>R$ 24,00</strong></td><td>Padarias, restaurantes pequenos</td><td>R$ 2,40/kg</td></tr>
+      <tr><td>50 a 150 kg</td><td><strong>R$ 22,00</strong></td><td>Supermercados, redes de padaria</td><td>R$ 2,20/kg</td></tr>
+      <tr><td>150 a 500 kg</td><td><strong>R$ 20,00</strong></td><td>Distribuidores, grandes redes</td><td>R$ 2,00/kg</td></tr>
+    </tbody>
+  </table></div>
+
+  <div class="warn" style="margin-top:1rem">
+    <span class="warn-icon">!</span>
+    <div class="warn-text"><strong>Correção crítica:</strong> Plano CMO focou erroneamente em Goiânia/Anápolis. Marcos opera em Brasília/DF federal. Toda estratégia de prospecção redirecionada para DF e entorno.</div>
+  </div>
+</section>
+
+<!-- 06 ÁREA -->
+<section class="sec" id="area">
+  <div class="sec-hd">
+    <span class="sec-num">06 — OPERAÇÃO</span>
+    <h2 class="sec-title">Área de Atuação</h2>
+  </div>
+  <div class="tw"><table>
+    <thead><tr><th>#</th><th>Região</th><th>Tipo de Estabelecimento</th><th>Produto Foco</th></tr></thead>
+    <tbody>
+      <tr><td>1</td><td>Samambaia</td><td>Lojas material construção, supermercados</td><td>Condel + Linguiça</td></tr>
+      <tr><td>2</td><td>Taguatinga</td><td>Atacados, material elétrico, padarias</td><td>Condel + Pimel</td></tr>
+      <tr><td>3</td><td>Ceilândia</td><td>Lojas material construção, mercados</td><td>Condel + Linguiça</td></tr>
+      <tr><td>4</td><td>Vicente Pires</td><td>Comércio misto</td><td>Todos</td></tr>
+      <tr><td>5</td><td>Águas Claras</td><td>Supermercados, empórios premium</td><td>Pimel + Linguiça</td></tr>
+      <tr><td>6</td><td>Riacho Fundo I/II</td><td>Comércio local</td><td>Linguiça + Pimel</td></tr>
+      <tr><td>7</td><td>Recanto das Emas</td><td>Supermercados, padarias</td><td>Todos</td></tr>
+      <tr><td>8</td><td>Gama</td><td>Atacado, material construção</td><td>Condel + Pimel</td></tr>
+    </tbody>
+  </table></div>
+</section>
+
+<!-- 07 COMISSÕES -->
+<section class="sec" id="comissoes">
+  <div class="sec-hd">
+    <span class="sec-num">07 — FINANCEIRO</span>
+    <h2 class="sec-title">Comissões e Prazos Consolidados</h2>
+  </div>
+  <div class="tw"><table>
+    <thead><tr><th>Produto</th><th>Comissão</th><th>Pag. Vista</th><th>Pag. 7d</th><th>Pag. 14–30d</th><th>Entrega</th></tr></thead>
+    <tbody>
+      <tr><td>PIMEL</td><td><strong>5%</strong></td><td>PIX</td><td>Estabelecidos</td><td>Redes maiores</td><td>2 a 4 dias</td></tr>
+      <tr><td>Condel</td><td><strong>10%</strong></td><td>PIX</td><td>Estabelecidos</td><td>Redes maiores</td><td>24h (DF)</td></tr>
+      <tr><td>Linguiça Exata</td><td><strong>10%</strong></td><td>PIX (obrigatório)</td><td>Estabelecidos</td><td>Análise carteira</td><td>Sexta-feira</td></tr>
+    </tbody>
+  </table></div>
+</section>
+
+<!-- 08 CLIENTES -->
+<section class="sec" id="clientes">
+  <div class="sec-hd">
+    <span class="sec-num">08 — CRM</span>
+    <h2 class="sec-title">Clientes Reais Confirmados nos Áudios</h2>
+  </div>
+  <h3>PIMEL</h3>
+  <div class="cl">
+    <span class="chip">Dia a Dia</span><span class="chip">Costa Atacado</span><span class="chip">Super Adega</span><span class="chip">Tático</span><span class="chip">Castelo Forte</span><span class="chip">Casa Forte</span><span class="chip">Reino Pão</span><span class="chip">Pão Flocos</span><span class="chip">Superbom</span><span class="chip">Atacadão</span><span class="chip">Caique</span><span class="chip">Armazém do Queijo</span>
+  </div>
+  <h3 style="margin-top:1.25rem">Condel</h3>
+  <div class="cl">
+    <span class="chip">Castelo Forte</span><span class="chip">Casa Forte</span><span class="chip" style="background:var(--accent-l);border-color:oklch(80% .06 250);color:var(--accent)">150+ lojas no DF</span>
+  </div>
+  <h3 style="margin-top:1.25rem">Linguiça Exata</h3>
+  <div class="cl">
+    <span class="chip">Reino Pão</span><span class="chip">Delícia Mineira (secundário)</span><span class="chip">Restaurantes em Brasília</span>
+  </div>
+</section>
+
+<!-- 09 ROTINA -->
+<section class="sec" id="rotina">
+  <div class="sec-hd">
+    <span class="sec-num">09 — OPERAÇÃO</span>
+    <h2 class="sec-title">Rotina Diária Recomendada</h2>
+  </div>
+  <div class="code">
+<span class="hl">Manhã (9–12h): Follow-ups + Prospecção WhatsApp</span>
+  ├── Revisar planilha de leads
+  ├── Enviar mensagens para novos contatos (5–8/dia)
+  └── Agendar visitas para leads quentes
+
+<span class="hl">Tarde (13–17h): Visitas presenciais (máx 2–3/dia)</span>
+  ├── Rota diversificada: lojas + padarias + mercados
+  ├── Entregar amostras quando relevante
+  └── Fechar vendas / pedidos
+
+<span class="hl">Final do dia: Atualizar planilha CRM</span>
+  ├── Registrar contatos feitos
+  ├── Marcar follow-ups pendentes
+  └── Planejar próxima rota
+</div>
+</section>
+
+<!-- 10 ROADMAP -->
+<section class="sec" id="roadmap">
+  <div class="sec-hd">
+    <span class="sec-num">10 — ROADMAP</span>
+    <h2 class="sec-title">Prioridades por Prazo</h2>
+  </div>
+  <div class="tl">
+    <div class="ti">
+      <div class="tp">1–2 sem.</div>
+      <div class="tc">
+        <h4>Curto Prazo</h4>
+        <ul>
+          <li>Planilha de prospecção (Google Sheets — 3 abas por produto)</li>
+          <li>Digitalizar catálogos das 3 operações (PDF + fotos)</li>
+          <li>WhatsApp Business com etiquetas por produto</li>
+          <li>Organizar fotos reais por categoria</li>
+        </ul>
+      </div>
+    </div>
+    <div class="ti">
+      <div class="tp">1 mês</div>
+      <div class="tc">
+        <h4>Médio Prazo</h4>
+        <ul>
+          <li>Landing pages ✅ (este projeto — feito)</li>
+          <li>Prospecção ativa WhatsApp (5–8 contatos/dia)</li>
+          <li>Visitas só para leads qualificados (2–3/dia)</li>
+          <li>Follow-up semanal sistemático</li>
+        </ul>
+      </div>
+    </div>
+    <div class="ti">
+      <div class="tp">3–6 meses</div>
+      <div class="tc">
+        <h4>Longo Prazo</h4>
+        <ul>
+          <li>Google Ads para Condel (ROI B2B alto)</li>
+          <li>Facebook/Instagram Ads Linguiça Exata (local)</li>
+          <li>Google Meu Negócio Pimel</li>
+          <li>Expansão GO/MG quando DF estabilizado</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 11 CONCORRÊNCIA -->
+<section class="sec" id="concorrencia">
+  <div class="sec-hd">
+    <span class="sec-num">11 — MERCADO</span>
+    <h2 class="sec-title">Análise de Concorrência</h2>
+  </div>
+  <h3>Condel — DF</h3>
+  <div class="tw"><table>
+    <thead><tr><th>Concorrente</th><th>Tipo</th><th>Nossa Vantagem</th></tr></thead>
+    <tbody>
+      <tr><td>Sarkis Material Elétrico</td><td>Regional</td><td class="ok">INMETRO duplo + ISO 9001</td></tr>
+      <tr><td>Eletrogomes</td><td>Atacado/varejo</td><td class="ok">Depósito DF → 24h</td></tr>
+      <tr><td>DF Atacadista</td><td>Atacado</td><td class="ok">Certificação superior</td></tr>
+      <tr><td>WL Atacadista</td><td>Atacado</td><td class="ok">Preço + documentação</td></tr>
+    </tbody>
+  </table></div>
+</section>
+
+<!-- 12 DIFERENCIAIS -->
+<section class="sec" id="diferenciais">
+  <div class="sec-hd">
+    <span class="sec-num">12 — POSICIONAMENTO</span>
+    <h2 class="sec-title">Diferenciais e Argumentos de Venda</h2>
+  </div>
+  <div class="tw"><table>
+    <thead><tr><th>Produto</th><th>Diferencial Principal</th><th>Script de Abertura</th></tr></thead>
+    <tbody>
+      <tr><td>PIMEL</td><td>SISBI — venda nacional</td><td><em>"Único mel do Cerrado com SISBI — você pode vender em qualquer estado, sem risco de autuação."</em></td></tr>
+      <tr><td>Condel</td><td>2× INMETRO + ISO 9001 + 24h</td><td><em>"Produto certificado, entrega amanhã. Concorrente sem INMETRO pode te dar dor de cabeça com fiscal."</em></td></tr>
+      <tr><td>Linguiça Exata</td><td>25 anos + preço progressivo</td><td><em>"Direto da fábrica com 25 anos. Quanto mais você compra, mais barato fica — a partir de R$20/kg."</em></td></tr>
+    </tbody>
+  </table></div>
+
+  <h3>Observações Operacionais</h3>
+  <p><strong>Delícia Mineira:</strong> operação secundária. Marcos carrega os materiais mas não é foco por conta de concorrência de preços.</p>
+  <p><strong>Capacidade solo:</strong> Marcos trabalha SOZINHO. Qualidade de leads &gt; quantidade de visitas. Nunca pressionar por volume inviável de prospecção presencial.</p>
+</section>
+
+</main>
+</div>
+
+<footer>
+  <span>Estratégia Primordial · Marcos Domingos</span>
+  <span>·</span>
+  <span>V1.0 · 03/06/2026</span>
+  <span>·</span>
+  <span>Fonte: áudios transcritos + plano CMO</span>
+  <span style="margin-left:auto;color:var(--red);font-weight:600;font-size:.75rem">USO INTERNO — NÃO COMPARTILHAR</span>
+</footer>
+
 </body>
 </html>
